@@ -10,15 +10,14 @@
             "webRoot": "${workspaceFolder}/src"
         },
         {
-            "type": "node",
-            "request": "launch",
             "name": "Launch Program",
-            "console": "internalConsole",
-            "program": "${file}",
+            "program": "${fileBasename}",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/${relativeFileDirname}",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "cwd": "${fileDirname}"
-        }
+            "type": "node"
+        },
     ]
 }

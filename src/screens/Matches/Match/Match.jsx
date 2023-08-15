@@ -104,9 +104,9 @@ const Match = ({ matchSnapshot }) => {
 
   const betSaved = () =>
     isBetValid(currentBet) &&
-    currentBet.betTeamA === bet.betTeamA &&
-    currentBet.betTeamB === bet.betTeamB &&
-    currentBet.betWinner === bet.betWinner
+    currentBet.betTeamA === bet?.betTeamA &&
+    currentBet.betTeamB === bet?.betTeamB &&
+    currentBet.betWinner === bet?.betWinner
 
   return (
     match.display && (
@@ -123,7 +123,7 @@ const Match = ({ matchSnapshot }) => {
             <div className="match-teams">
               <Bet
                 team={teamA}
-                betValue={currentBet.betTeamA}
+                betValue={currentBet?.betTeamA}
                 onBetValueUpdated={handleTeamAChange}
                 past={past}
               />
@@ -132,8 +132,8 @@ const Match = ({ matchSnapshot }) => {
                   <Odds
                     name_teamA={teamA.name}
                     name_teamB={teamB.name}
-                    bet_teamA={currentBet.betTeamA}
-                    bet_teamB={currentBet.betTeamB}
+                    bet_teamA={currentBet?.betTeamA}
+                    bet_teamB={currentBet?.betTeamB}
                     odds={match.odds}
                   />
                 )}
@@ -142,7 +142,7 @@ const Match = ({ matchSnapshot }) => {
               </div>
               <Bet
                 team={teamB}
-                betValue={currentBet.betTeamB}
+                betValue={currentBet?.betTeamB}
                 onBetValueUpdated={handleTeamBChange}
                 past={past}
               />
