@@ -1,8 +1,8 @@
 import teal from '@mui/material/colors/teal'
 import cyan from '@mui/material/colors/cyan'
-import { createMuiTheme, adaptV4Theme } from '@mui/material/styles'
+import { createTheme, adaptV4Theme } from '@mui/material/styles'
 
-const theme = createMuiTheme(
+const theme = createTheme(
   adaptV4Theme({
     palette: {
       primary: cyan,

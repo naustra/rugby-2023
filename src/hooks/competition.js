@@ -4,7 +4,7 @@ import { useFirestore, useFirestoreDocData } from 'reactfire'
 export const useCompetitionData = () => {
   const firestore = useFirestore()
   const competitionsRef = collection(firestore, 'competitions')
-  const documentRef = doc(competitionsRef, '1BWoxRomTm3aaJFqRVHV')
+  const documentRef = doc(competitionsRef, 'GsayPL2SzeLl79O2l1Bc')
 
   return useFirestoreDocData(documentRef).data
 }
