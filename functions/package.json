@@ -7,11 +7,11 @@
     "@google-cloud/firestore": "^4.15.1",
     "@google-cloud/storage": "^5.19.4",
     "firebase-admin": "^10.2.0",
-    "firebase-functions": "^3.22.0"
+    "firebase-functions": "^4.4.1"
   },
   "engines": {
-    "node": "14",
-    "npm": ">=7"
+    "node": "18",
+    "npm": ">=9"
   },
   "scripts": {
     "lint": "eslint src -c .eslintrc.js",

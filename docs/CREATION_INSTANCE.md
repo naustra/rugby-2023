@@ -28,7 +28,7 @@ Depuis le dossier local de l'application:
 1. Si ce n'est pas déjà fait, se logger avec le CLI avec la commande `firebase login`
 1. Ajouter le projet localement avec la commande `firebase use --add` puis choisir le nom du projet créé précédemment
 1. Modifier le fichier `src/firebaseConfig.js` pour pointer vers la nouvelle configuration selon les bonnes variables d'environnement. Ajouter la clé `vapidKey` générée dans l'étape précédente.
-1. Lancer un premier build de l'application en faisant attention aux variables d'environnement pour pointer vers la bonne config. Si besoin ajouter un script de build dans le package.json. `cross-env REACT_APP_DATABASE=MON_ENV react-scripts build`
+1. Lancer un premier build de l'application en faisant attention aux variables d'environnement pour pointer vers la bonne config. Si besoin ajouter un script de build dans le package.json. `npm run build`
 1. Lancer le premier déploiement avec la commande `firebase deploy`. La plupart des APIs devraient être activées automatiquement.
 
 Si le déploiement est complet, l'instance est correctement créée.

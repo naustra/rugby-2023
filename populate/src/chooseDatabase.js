@@ -1,9 +1,6 @@
-const serviceAccount =
-  process.env.REACT_APP_DATABASE === 'LDC'
-    ? require('./ssh_keys/ldc-2021-firebase-adminsdk-sek14.json')
-    : require('./ssh_keys/euro2021-3d006-firebase-adminsdk-swizj.json')
+// ! PROD
+const serviceAccount = require('./.ssh_keys/rugby-2023-e5f84-firebase-adminsdk-147un-78fa4d1cad.json')
 
-const directoryDatabase =
-  process.env.REACT_APP_DATABASE === 'LDC' ? 'ldc' : 'euro'
+const directoryDatabase = 'coupe-du-monde'
 
 module.exports = { serviceAccount, directoryDatabase }

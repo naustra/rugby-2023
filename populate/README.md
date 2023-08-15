@@ -16,3 +16,4 @@ Go to `Settings/Project/Service account/Firebase admin SDK` in Firebase console.
 
 Then put the correct link to the generated file in `populate.js`, at the serviceAccount import.
 
+Create a dir .ssh_keys and put the private key (Parametres de projet > Comptes de services) in it.
