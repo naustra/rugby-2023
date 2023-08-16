@@ -14,7 +14,7 @@ const getColor = (value) => {
   return `#${toHex(r)}${toHex(g)}00`
 }
 
-const Odds = ({ P1, P2, A, B, N, phase, teamA, teamB }) => {
+const Odds = ({ A, B, N, teamA, teamB }) => {
   const oddBasis = (
     <div className="odds-container">
       <Tooltip
@@ -26,11 +26,15 @@ const Odds = ({ P1, P2, A, B, N, phase, teamA, teamB }) => {
           {A}
         </div>
       </Tooltip>
-      <Tooltip placement="top" title="Cote du match nul" enterTouchDelay={0}>
-        <div className="odd" style={{ backgroundColor: getColor(N) }}>
-          {N}
-        </div>
-      </Tooltip>
+      {N !== 0 ? (
+        <Tooltip placement="top" title="Cote du match nul" enterTouchDelay={0}>
+          <div className="odd" style={{ backgroundColor: getColor(N) }}>
+            {N}
+          </div>
+        </Tooltip>
+      ) : (
+        <div></div>
+      )}
       <Tooltip
         placement="left"
         title={`Cote de victoire de l'équipe: ${teamB.name}`}
@@ -43,45 +47,13 @@ const Odds = ({ P1, P2, A, B, N, phase, teamA, teamB }) => {
     </div>
   )
 
-  return (
-    phase &&
-    (phase === '0' ? (
-      oddBasis
-    ) : (
-      <Fragment>
-        {oddBasis}
-        <div className="odds-container">
-          <Tooltip
-            placement="right"
-            title={`Cote de victoire finale de l'équipe: ${teamA.name}`}
-            enterTouchDelay={0}
-          >
-            <div className="odd" style={{ backgroundColor: getColor(P1) }}>
-              {P1}
-            </div>
-          </Tooltip>
-          <Tooltip
-            placement="left"
-            title={`Cote de victoire finale de l'équipe: ${teamB.name}`}
-            enterTouchDelay={0}
-          >
-            <div className="odd" style={{ backgroundColor: getColor(P2) }}>
-              {P2}
-            </div>
-          </Tooltip>
-        </div>
-      </Fragment>
-    ))
-  )
+  return oddBasis
 }
 
 Odds.propTypes = {
-  P1: PropTypes.number,
-  P2: PropTypes.number,
   A: PropTypes.number,
   B: PropTypes.number,
   N: PropTypes.number,
-  phase: PropTypes.string,
   teamA: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }),

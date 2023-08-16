@@ -49,7 +49,7 @@ const Match = ({ matchSnapshot }) => {
       winner && (winner === 'A' || winner === 'B')
 
     if (
-      !conformsTo(this.state.bet, {
+      !conformsTo(updatedBet, {
         betTeamA: scoreValidator,
         betTeamB: scoreValidator,
       })
@@ -124,11 +124,11 @@ const Match = ({ matchSnapshot }) => {
               <div className="points-odds-container">
                 {!past && (
                   <Odds
-                    name_teamA={teamA.name}
-                    name_teamB={teamB.name}
-                    bet_teamA={currentBet?.betTeamA}
-                    bet_teamB={currentBet?.betTeamB}
-                    odds={match.odds}
+                    teamA={teamA}
+                    teamB={teamB}
+                    A={match.odds.PA}
+                    N={match.odds.PN}
+                    B={match.odds.PB}
                   />
                 )}
                 {past && <Scores {...match} />}
