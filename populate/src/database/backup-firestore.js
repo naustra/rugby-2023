@@ -26,4 +26,3 @@ const exportCollection = (collectionName) => {
 
 exportCollection('matches')
 exportCollection('teams')
-exportCollection('stadiums')
