@@ -40,7 +40,6 @@ import Profile from '../Profile'
 import RankingPage from '../Ranking'
 import Rib from '../Rib'
 import RulesPage from '../Rules'
-import Stadiums from '../Stadiums'
 import ValidInscriptionPage from '../ValidInscription'
 import './App.scss'
 import ConnectionWidget from './ConnectionWidget'
@@ -146,7 +145,6 @@ const App = () => {
             <Route exact path="/" element={<HomePage />} />
             <Route path="/rules" element={<RulesPage />} />
             <Route path="/faq" element={<FAQPage />} />
-            <Route path="/stadiums" element={<Stadiums />} />
 
             {signedIn && (
               <>

@@ -4,8 +4,8 @@
 export interface Match {
   /** Date et heure du coup d'envoi */
   dateTime: FirebaseFirestore.Timestamp
-  /** Identifiant du stade */
-  stadium: string
+  /** Identifiant de la ville */
+  ville: string
   /** Identifiant de l'équipe A */
   teamA: string
   /** Identifiant de l'équipe B */

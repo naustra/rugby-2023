@@ -20,17 +20,13 @@ import Scores from './Scores'
 import ValidIcon from './ValidIcon'
 
 const empty = {}
-const scoreValidator = (score) => isNumber(score) && score >= 0
-const winnerValidator = (winner) => winner && (winner === 'A' || winner === 'B')
 
-const proxiColors = ['#BAEE90', '#E0EE90', '#EEEE90', '#EEDD90', '#EEC590']
-
-const getBackgroundColor = (proxiLevel, pointsWon) => {
+const getBackgroundColor = (pointsWon) => {
   // No bet ?
   const hasBet = isNumber(pointsWon)
 
   if (!hasBet) return 'lightgrey'
-  return isNil(proxiLevel) ? '#EEAB90' : proxiColors[proxiLevel]
+  return '#EEAB90'
 }
 
 const Match = ({ matchSnapshot }) => {
