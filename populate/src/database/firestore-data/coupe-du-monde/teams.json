@@ -1,174 +1,146 @@
 {
-  "teams": {
-    "-Kj2zfp9V5wdpN59exkD": {
-      "code": "it",
-      "elimination": false,
-      "group": "A",
-      "name": "Italie",
-      "unveiled": true,
-      "winOdd": 110
-    },
-    "-Kj2zfpEdmB6SgyPd85W": {
-      "code": "gb-wls",
-      "elimination": true,
-      "group": "A",
-      "name": "Pays de Galles",
-      "winOdd": 1400
-    },
-    "-Kj2zfpFzqykBwiz5dcL": {
-      "code": "tr",
-      "elimination": true,
-      "group": "A",
-      "name": "Turquie",
-      "winOdd": 560
-    },
-    "-Kj2zfpFzqykBwiz5dcM": {
-      "code": "ch",
-      "elimination": true,
-      "group": "A",
-      "name": "Suisse",
-      "winOdd": 690
-    },
-    "-Kj2zfpFzqykBwiz5dcN": {
-      "code": "dk",
-      "elimination": true,
-      "group": "B",
-      "name": "Danemark",
-      "winOdd": 285
-    },
-    "-Kj2zfpGJmSTghyT06un": {
-      "code": "fi",
-      "elimination": true,
-      "group": "B",
-      "name": "Finlande",
-      "winOdd": 4600
-    },
-    "-Kj2zfpGJmSTghyT06uo": {
-      "code": "ru",
-      "elimination": true,
-      "group": "B",
-      "name": "Russie",
-      "winOdd": 690
-    },
-    "-Kj2zfpHPqNpMy7ZgxmM": {
-      "code": "be",
-      "elimination": true,
-      "group": "B",
-      "name": "Belgique",
-      "winOdd": 64
-    },
-    "-Kj2zfpIxWevwDITiL0V": {
-      "code": "ua",
-      "elimination": true,
-      "group": "C",
-      "name": "Ukraine",
-      "winOdd": 690
-    },
-    "-Kj2zfpJov1GY9sA2IgE": {
-      "code": "nl",
-      "elimination": true,
-      "group": "C",
-      "name": "Pays-Bas",
-      "winOdd": 120
-    },
-    "-Kj2zfpJov1GY9sA2IgF": {
-      "code": "at",
-      "elimination": true,
-      "group": "C",
-      "name": "Autriche",
-      "winOdd": 930
-    },
-    "-Kj2zfpKYdjdHhPukkXr": {
-      "code": "mk",
-      "elimination": true,
-      "group": "C",
-      "name": "Macédoine du N.",
-      "winOdd": 4600
-    },
-    "-Kj2zfpKYdjdHhPukkXs": {
-      "code": "gb-eng",
-      "elimination": true,
-      "group": "D",
-      "name": "Angleterre",
-      "unveiled": true,
-      "winOdd": 55
-    },
-    "-Kj2zfpKYdjdHhPukkXt": {
-      "code": "hr",
-      "elimination": true,
-      "group": "D",
-      "name": "Croatie",
-      "winOdd": 322
-    },
-    "-Kj2zfpKYdjdHhPukkXu": {
-      "code": "gb-sct",
-      "elimination": true,
-      "group": "D",
-      "name": "Écosse",
-      "winOdd": 1400
-    },
-    "-Kj2zfpLjC03AaK-W8Lo": {
-      "code": "cz",
-      "elimination": true,
-      "group": "D",
-      "name": "R. tchèque",
-      "winOdd": 1150
-    },
-    "-Kj2zfpM7z9dtuBQZC4c": {
-      "code": "se",
-      "elimination": true,
-      "group": "E",
-      "name": "Suède",
-      "winOdd": 690
-    },
-    "-Kj2zfpN8l22eNCLSzLj": {
-      "code": "pl",
-      "elimination": true,
-      "group": "E",
-      "name": "Pologne",
-      "winOdd": 690
-    },
-    "-Kj2zfpN8l22eNCLSzLk": {
-      "code": "es",
-      "elimination": true,
-      "group": "E",
-      "name": "Espagne",
-      "winOdd": 83
-    },
-    "-Kj2zfpN8l22eNCLSzLl": {
-      "code": "sk",
-      "elimination": true,
-      "group": "E",
-      "name": "Slovaquie",
-      "winOdd": 1400
-    },
-    "-Kj2zfpO3MwCoLIdNuNf": {
-      "code": "de",
-      "elimination": true,
-      "group": "F",
-      "name": "Allemagne",
-      "winOdd": 83
-    },
-    "-Kj2zfpO3MwCoLIdNuNg": {
-      "code": "fr",
-      "elimination": true,
-      "group": "F",
-      "name": "France",
-      "winOdd": 55
-    },
-    "-Kj2zfpPgzwXCT7Bnm1y": {
-      "code": "pt",
-      "elimination": true,
-      "group": "F",
-      "name": "Portugal",
-      "winOdd": 92
-    },
-    "-Kj2zfpRCBdqgDxcBLBQ": {
-      "code": "hu",
-      "elimination": true,
-      "group": "F",
-      "name": "Hongrie",
-      "winOdd": 2300
-    }
-  }
+   "teams": {
+      "-0agys2jsljwl7s7x32j": {
+         "code": "uy",
+         "elimination": false,
+         "group": "A",
+         "name": "Uruguay",
+         "winOdd": 3000
+      },
+      "-15vkjrz347bb8661p2c": {
+         "code": "au",
+         "elimination": false,
+         "group": "C",
+         "name": "Australie",
+         "winOdd": 12
+      },
+      "-3z1ybtzkm6dtyr0qv8z": {
+         "code": "ws",
+         "elimination": false,
+         "group": "D",
+         "name": "Samoa",
+         "winOdd": 500
+      },
+      "-4oa75ucoei2xqcmcw55": {
+         "code": "ie",
+         "elimination": false,
+         "group": "B",
+         "name": "Irlande",
+         "winOdd": 6
+      },
+      "-5ltshzo1rqw0av6x5i8": {
+         "code": "gb-wls",
+         "elimination": true,
+         "group": "C",
+         "name": "Pays de Galles",
+         "winOdd": 40
+      },
+      "-b3j145tij1hqfzo5d0h": {
+         "code": "fr",
+         "elimination": true,
+         "group": "A",
+         "name": "France",
+         "winOdd": 3.75
+      },
+      "-b91330v345czod558y0": {
+         "code": "pt",
+         "elimination": true,
+         "group": "C",
+         "name": "Portugal",
+         "winOdd": 3000
+      },
+      "-ea5m9rzcr63k8j7brxs": {
+         "code": "nz",
+         "elimination": false,
+         "group": "A",
+         "name": "Nouvelle-Zélande",
+         "winOdd": 3.75
+      },
+      "-j862kl0yi0nfmngb1n8": {
+         "code": "it",
+         "elimination": false,
+         "group": "A",
+         "name": "Italie",
+         "unveiled": false,
+         "winOdd": 500
+      },
+      "-j9p716y3qazwd6f4m0d": {
+         "code": "cl",
+         "elimination": false,
+         "group": "D",
+         "name": "Chili",
+         "winOdd": 3000
+      },
+      "-koy8srrsgmrirzki1f8": {
+         "code": "fj",
+         "elimination": false,
+         "group": "C",
+         "name": "Fidji",
+         "winOdd": 150
+      },
+      "-kv10juhy4xip6e0lsmn": {
+         "code": "ar",
+         "elimination": false,
+         "group": "D",
+         "name": "Argentine",
+         "winOdd": 25
+      },
+      "-lt7n3kpgzmfj487029j": {
+         "code": "jp",
+         "elimination": false,
+         "group": "D",
+         "name": "Japon",
+         "winOdd": 300
+      },
+      "-oxh3a2vosqcx68ssmmd": {
+         "code": "ro",
+         "elimination": false,
+         "group": "B",
+         "name": "Roumanie",
+         "winOdd": 3000
+      },
+      "-p80u4yp27pe0yq1m8nc": {
+         "code": "na",
+         "elimination": false,
+         "group": "A",
+         "name": "Namibie",
+         "winOdd": 3000
+      },
+      "-s01yam76lu79pjuwxq0": {
+         "code": "ge",
+         "elimination": false,
+         "group": "C",
+         "name": "Géorgie",
+         "winOdd": 750
+      },
+      "-tbgtcmmvw8bwex4piti": {
+         "code": "gb-eng",
+         "elimination": true,
+         "group": "D",
+         "name": "Angleterre",
+         "unveiled": true,
+         "winOdd": 12
+      },
+      "-v69orwwy1vzwzi1gd7s": {
+         "code": "to",
+         "elimination": false,
+         "group": "B",
+         "name": "Tonga",
+         "winOdd": 500
+      },
+      "-vo7g4zwoqc3ra4sxmxn": {
+         "code": "gb-sct",
+         "elimination": false,
+         "group": "B",
+         "name": "Écosse",
+         "winOdd": 40
+      },
+      "-yl5u7zxd06dh7ii6aln": {
+         "code": "za",
+         "elimination": false,
+         "group": "B",
+         "name": "Afrique du Sud",
+         "winOdd": 5.5
+      }
+   }
 }

@@ -8,6 +8,7 @@ interface Odds {
   PA: number
   PN: number
   PB: number
+  [key: string]: number
 }
 
 interface Scores {
@@ -22,7 +23,7 @@ interface Bet {
   pointsWon: number
 }
 
-const facteurMultiplicateurPhase: { [key: number]: number } = {
+const facteurMultiplicateurPhase: { [key: string]: number } = {
   0: 1,
   4: 2,
   2: 4,
@@ -58,8 +59,6 @@ export const updateScore = functions
     const realScoreTeamA = scores.A
     const realScoreTeamB = scores.B
     const realResult = findResult(realScoreTeamA, realScoreTeamB)
-
-    const oddScore = odds[`P${realResult}`]
 
     // Get bets
     const bets = db.collection('bets')
@@ -150,11 +149,7 @@ const updatePointsWon = (id: string, points = 0): Promise<void> => {
         }),
       ),
     )
-    .then(() =>
-      console.log(
-        `Bet ${id} update with ${points} points. Proxi ${proxiLevel}`,
-      ),
-    )
+    .then(() => console.log(`Bet ${id} update with ${points} points`))
     .catch((err) => {
       console.error(`Bet ${id} update failure:`, err)
     })
