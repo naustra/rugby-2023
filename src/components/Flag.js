@@ -1,23 +1,14 @@
 import PropTypes from 'prop-types'
+import { memo } from 'react'
 
-import memoize from 'lodash/memoize'
-
-export const imgUrl = memoize((country) =>
-  require(`../assets/flags/${country}.svg`),
-) // eslint-disable-line global-require
-
-const Flag = ({ country, className, style }) => {
+const Flag = memo(({ country, className, style }) => {
   if (!country) return null
 
-  return (
-    <img
-      src={imgUrl(country).default}
-      alt={country}
-      className={className}
-      style={style}
-    />
-  )
-}
+  const flag = require(`../assets/flags/${country}.svg`)
+
+  console.log('🚀 ~ file: Flag.js:9 ~ Flag ~ flag:', flag)
+  return <img src={flag} alt={country} className={className} style={style} />
+})
 
 Flag.propTypes = {
   country: PropTypes.string,
