@@ -48,19 +48,17 @@ const Match = ({ matchSnapshot }) => {
   const past = match.dateTime.toMillis() <= Date.now()
 
   const isBetValid = (updatedBet) => {
+    const scoreValidator = (score) => isNumber(score) && score >= 0
+    const winnerValidator = (winner) =>
+      winner && (winner === 'A' || winner === 'B')
+
     if (
-      !conformsTo(updatedBet, {
+      !conformsTo(this.state.bet, {
         betTeamA: scoreValidator,
         betTeamB: scoreValidator,
       })
-    ) {
+    )
       return false
-    }
-
-    if (match.phase !== '0' && !updatedBet.betWinner) {
-      /* Default winner is A when we bet a draw */
-      updatedBet.betWinner = 'A'
-    }
 
     return match.phase === '0'
       ? true

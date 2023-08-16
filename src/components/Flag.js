@@ -6,7 +6,6 @@ const Flag = memo(({ country, className, style }) => {
 
   const flag = require(`../assets/flags/${country}.svg`)
 
-  console.log('🚀 ~ file: Flag.js:9 ~ Flag ~ flag:', flag)
   return <img src={flag} alt={country} className={className} style={style} />
 })
 
