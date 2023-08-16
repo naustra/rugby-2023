@@ -70,8 +70,8 @@ exports.updateScore = functions
             console.log(
               "YOU LOSE SON, you didn't find the score neither the match issue",
             )
-            promises.push(updateUserScore(oddScore, userId, oldBetScore))
-            promises.push(updatePointsWon(oddScore, betId))
+            promises.push(updateUserScore(userId, oldBetScore))
+            promises.push(updatePointsWon(betId))
           } else {
             // If the user found the result, he win points
             const oddBet = odds[`P${betResult}`]
@@ -84,10 +84,8 @@ exports.updateScore = functions
 
             const points = (oddBet - nbButsEcart) * facteurMultiplicateur
 
-            promises.push(
-              updateUserScore(oddScore, userId, oldBetScore, points),
-            )
-            promises.push(updatePointsWon(oddScore, betId, points))
+            promises.push(updateUserScore(userId, oldBetScore, points))
+            promises.push(updatePointsWon(betId, points))
           }
         })
 
@@ -95,7 +93,7 @@ exports.updateScore = functions
       })
   })
 
-const updateUserScore = (oddScore, userId, oldBetScore = 0, points) => {
+const updateUserScore = (userId, oldBetScore = 0, points = 0) => {
   console.log(`Updating user score for ${userId}`)
   const user = db.collection('opponents').doc(userId)
 
@@ -115,7 +113,7 @@ const updateUserScore = (oddScore, userId, oldBetScore = 0, points) => {
     .catch((err) => console.error(`User ${userId} score update failure:`, err))
 }
 
-const updatePointsWon = (oddScore, id, coeffProxi = 0, points) => {
+const updatePointsWon = (id, points = 0) => {
   console.log(`Updating points won for bet ${id}`)
   const bets = db.collection('bets').doc(id)
 
