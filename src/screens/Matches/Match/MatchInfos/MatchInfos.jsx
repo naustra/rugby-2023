@@ -5,7 +5,6 @@ import fr from 'date-fns/locale/fr'
 import PropTypes from 'prop-types'
 import { useStadium } from '../../../../hooks/stadiums'
 import './matchInfos.scss'
-import StadiumTooltip from './StadiumTooltip'
 
 const MatchInfos = ({ match }) => {
   const dateTime = match.dateTime.toDate()
@@ -22,9 +21,7 @@ const MatchInfos = ({ match }) => {
         </div>
       </Tooltip>
       <div>•</div>
-      <Tooltip title={<StadiumTooltip {...stadium} />} enterTouchDelay={0}>
-        <div>{stadium.city}</div>
-      </Tooltip>
+      <div>{stadium.city}</div>
       <div>•</div>
       <div>{match.streaming}</div>
     </div>
