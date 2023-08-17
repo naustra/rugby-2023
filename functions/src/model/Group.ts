@@ -1,10 +1,7 @@
 /**
  * Modèle d'un groupe d'utilisateurs
  */
-export interface Group {
-  /** Prix du groupe (0 si gratuit) */
-  price: number
-}
+export interface Group {}
 
 /**
  * Objet qui représente une candidature à un groupe

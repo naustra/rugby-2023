@@ -5,17 +5,6 @@ import { Group, GroupApply } from '../model'
 
 const db = admin.firestore()
 
-const isPayingGroup = async (
-  groupRef: FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData>,
-) => {
-  const groupSnapshot = await groupRef.get()
-  if (!groupSnapshot.exists) {
-    throw new Error(`Group with id ${groupRef.id} does not exist`)
-  }
-  const group = groupSnapshot.data() as Group
-  return group.price > 0
-}
-
 export const applyInGroup = functions
   .region(EU_WEST_3)
   .firestore.document('groupApply/{applyId}')
@@ -23,7 +12,7 @@ export const applyInGroup = functions
     const { groupId, uid } = groupApplySnapshot.data() as GroupApply
 
     const groupRef = db.collection('groups').doc(groupId)
-    const payingGroup = await isPayingGroup(groupRef)
+    const payingGroup = false
 
     const membersKey = payingGroup ? 'awaitingMembers' : 'members'
 

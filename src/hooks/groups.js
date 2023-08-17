@@ -21,22 +21,6 @@ import {
 import { v4 as uuidv4 } from 'uuid'
 import { useIsUserAdmin } from './user'
 
-const priceValidationMessage = (price) => (
-  <>
-    Payer {price}€ sur la&nbsp;
-    <a
-      title="Site cagnotte"
-      className="group-join-link"
-      href="https://www.paypal.com/pools/c/8zxiGanwSa"
-      target="_blank"
-      rel="noreferrer"
-    >
-      cagnotte
-    </a>
-    &nbsp; pour valider votre inscription !
-  </>
-)
-
 export const useCreateGroup = () => {
   const user = useUser().data
   const firestore = useFirestore()
@@ -132,22 +116,12 @@ export const useApplyInGroup = () => {
         },
       )
 
-      if (group.price > 0) {
-        enqueueSnackbar(
-          <>
-            Demande envoyée pour la tribu&nbsp;<b>{group.name}</b> !{' '}
-            {priceValidationMessage(group.price)}
-          </>,
-          { variant: 'success' },
-        )
-      } else {
-        enqueueSnackbar(
-          <>
-            Inscription dans la tribu&nbsp;<b>{group.name}</b> !
-          </>,
-          { variant: 'success' },
-        )
-      }
+      enqueueSnackbar(
+        <>
+          Inscription dans la tribu&nbsp;<b>{group.name}</b> !
+        </>,
+        { variant: 'success' },
+      )
     },
     [enqueueSnackbar, firestore, user.uid],
   )

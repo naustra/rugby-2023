@@ -6,15 +6,12 @@ import FormControl from '@mui/material/FormControl'
 import FormHelperText from '@mui/material/FormHelperText'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useCreateGroup } from '../../../hooks/groups'
 import './CreateGroup.scss'
-import CurrencyFormat from './CurrencyFormat'
 
 const CreateGroup = () => {
   const [name, setName] = useState('')
-  const [price, setPrice] = useState('')
-  const [percent, setPercent] = useState('50')
   const createGroup = useCreateGroup()
 
   const errorMessage =
@@ -23,10 +20,6 @@ const CreateGroup = () => {
   const isFormValid = () => name && !errorMessage
 
   const handleNameChange = (e) => setName(e.target.value)
-
-  const handlePriceChange = (e) => setPrice(e.target.value)
-
-  const handlePercentChange = (e) => setPercent(e.target.value)
 
   return (
     <Card className="create-group-card">
@@ -39,10 +32,9 @@ const CreateGroup = () => {
       </Typography>
       <br />
       <Typography variant="body2">
-        Le prix d'inscription aux tribus est libre. Pour une tribu gratuite,
-        laissez le champ &quot;Prix à payer par personne&quot; vide. Le
-        pourcentage rétribué à PAM doit être entre 20% et 80%. Le reste est
-        partagé entre les vainqueurs du concours.
+        L'inscription aux tribus est gratuite. <br /> Néanmoins, il est
+        conseillé aux tribus de mettre en place une cagnotte pour récompenser
+        les vainqueurs et rajouter de l'enjeu.
       </Typography>
 
       <CardContent className="create-group-content">
@@ -55,33 +47,6 @@ const CreateGroup = () => {
           />
           {errorMessage && <FormHelperText>{errorMessage}</FormHelperText>}
         </FormControl>
-
-        <FormControl className="create-group-field">
-          <TextField
-            label="Prix à payer par personne"
-            value={price}
-            onChange={handlePriceChange}
-            InputProps={{
-              inputComponent: CurrencyFormat,
-            }}
-          />
-        </FormControl>
-
-        <FormControl className="create-group-field">
-          <TextField
-            type="number"
-            disabled={price <= 0}
-            label="Pourcentage réattribué à l'association PAM"
-            value={percent}
-            onChange={handlePercentChange}
-            InputProps={{
-              inputProps: {
-                max: 80,
-                min: 20,
-              },
-            }}
-          />
-        </FormControl>
       </CardContent>
 
       <CardActions>
@@ -90,12 +55,8 @@ const CreateGroup = () => {
           onClick={async () => {
             await createGroup({
               name,
-              price: Number(price),
-              percent: Number(percent),
             })
             setName('')
-            setPrice('')
-            setPercent('50')
           }}
           color="primary"
           variant="contained"

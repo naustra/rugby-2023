@@ -52,34 +52,15 @@ function FAQPage() {
           tribu, un joueur ne peut accéder au groupe de jeu."
       />
       <FaqEntry
-        question="Paiement Obligatoire ?"
-        answer="Dans l'absolu, non. Vous pouvez jouer sans miser, cependant vous ne gagnerez rien à part
-          le titre
-          honorifique de champion de votre tribu. Chaque Tribu fixe son prix d'entrée,
-          le pourcentage de reversement
-          à l'association PAM (de 20% à 80%), et les gains seront redistribués aux membres
-          de l'équipe en fonction du classement de la tribu."
+        question="Est-ce gratuit ?"
+        answer="Oui, l'inscription au site est gratuite. Néanmoins, il est conseillé aux tribus de mettre en place une
+          cagnotte pour récompenser les vainqueurs et rajouter de l'enjeu."
       />
       <FaqEntry
-        question="Comment payer ?"
-        answer={
-          <>
-            Si vous souhaitez créer une tribu payante, il faudra vous acquitter
-            vous et les autres participants de la somme que vous aurez choisie.
-            Pour ce faire, un lien vers la cagnotte PayPal de
-            l&apos;organisation se génère. Le paiement s&apos;effectue via cette
-            cagnotte, par virement bancaire ou en main propre auprès des
-            administrateurs. Votre demande ne sera validée par nos
-            administrateurs qu&apos;après le règlement intégral de la somme
-            requise.
-            <br />
-            <i>
-              Pour toute mise sur le jeu, un pourcentage entre 20% et 80% des
-              fonds misés seront reversés à l&apos;association Pour un Ailleurs
-              Meilleur.
-            </i>
-          </>
-        }
+        question="Comment faire un don ?"
+        answer="Si vous souhaitez faire un don, aller sur le lien vers la cagnotte
+            PayPal et faites un don. L'équipe de ParionsMasques vous remercie
+            d'avance pour votre générosité."
       />
       <FaqEntry
         question="Je ne peux plus accéder à mes paris après m'être connecté !"

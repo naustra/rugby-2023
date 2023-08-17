@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 import size from 'lodash/size'
 
 const AdminGroupRow = ({
-  group: { name, joinKey, price, members, awaitingMembers },
+  group: { name, joinKey, members, awaitingMembers },
 }) => (
   <TableRow>
     <TableCell>
@@ -18,11 +18,7 @@ const AdminGroupRow = ({
       {size(awaitingMembers) > 0 && `${size(awaitingMembers)} en attente`}
     </TableCell>
     <TableCell numeric>
-      {price ? (
-        price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })
-      ) : (
-        <Typography variant="caption">gratuit</Typography>
-      )}
+      <Typography variant="caption">gratuit</Typography>
     </TableCell>
     <TableCell>{joinKey}</TableCell>
   </TableRow>
@@ -36,7 +32,6 @@ AdminGroupRow.propTypes = {
     joinKey: PropTypes.string.isRequired,
     members: PropTypes.arrayOf(PropTypes.string),
     awaitingMembers: PropTypes.arrayOf(PropTypes.string),
-    price: PropTypes.number,
   }),
 }
 

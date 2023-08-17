@@ -51,14 +51,14 @@ const HomePage = () => {
   return (
     <div className="home-page-div">
       <p className="home-speech">
-        Bienvenue sur ParionsMasques, le site de pronostics de la Coupe du monde de rugby 2023.
-        Jouez en famille ou entre amis et affrontez d&apos;autres tribus ! Le
-        but ? Pariez au plus proche de la réalité les résultats des équipes,
-        marquez des points, et tentez de gagner la première place.
+        Bienvenue sur ParionsMasques, le site de pronostics de la Coupe du monde
+        de rugby 2023. Jouez en famille ou entre amis et affrontez d&apos;autres
+        tribus ! Le but ? Pariez au plus proche de la réalité les résultats des
+        équipes, marquez des points, et tentez de gagner la première place.
         <br />
         <br />
-        Fans de rugby aux grands cœurs, le site s&apos;engage à reverser une
-        partie des gains (20% à 80%) à l&apos;association humanitaire{' '}
+        Fans de rugby aux grands cœurs, nous récoltons des sous sur cette
+        cagnotte (mettre lien) pour financer l'association humanitaire{' '}
         <a
           title="Site PAM"
           href="https://pourunailleursmeilleur.wordpress.com/"

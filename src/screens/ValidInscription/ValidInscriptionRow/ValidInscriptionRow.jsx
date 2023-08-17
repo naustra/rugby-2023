@@ -7,7 +7,7 @@ import { useValidApply } from '../../../hooks/groups'
 
 const ValidInscriptionRow = ({
   user: { displayName, email, uid },
-  group: { name, price },
+  group: { name },
   groupId,
 }) => {
   const validApply = useValidApply(groupId, uid)
@@ -18,9 +18,6 @@ const ValidInscriptionRow = ({
       </TableCell>
       <TableCell>{displayName}</TableCell>
       <TableCell>{email}</TableCell>
-      <TableCell numeric>
-        {price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}
-      </TableCell>
       <TableCell>
         <Button variant="contained" color="primary" onClick={validApply}>
           Valider
@@ -28,10 +25,6 @@ const ValidInscriptionRow = ({
       </TableCell>
     </TableRow>
   )
-}
-
-ValidInscriptionRow.defaultProps = {
-  price: 0,
 }
 
 ValidInscriptionRow.propTypes = {
@@ -42,7 +35,6 @@ ValidInscriptionRow.propTypes = {
   }),
   group: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    price: PropTypes.number,
   }),
   groupId: PropTypes.string.isRequired,
 }

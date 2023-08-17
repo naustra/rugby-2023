@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography'
 import isEmpty from 'lodash/isEmpty'
 import map from 'lodash/map'
 import { useGroupsForUser } from '../../../hooks/groups'
-import DisplayPrice from './DisplayPrice'
 import GroupRow from './GroupRow'
 import './MyGroups.scss'
 
@@ -23,9 +22,6 @@ const MyGroups = () => {
       <Typography gutterBottom variant="h1">
         Mes tribus
       </Typography>
-
-      {/* Composant qui s'affiche si membre en attente dans au moins un groupe */}
-      <DisplayPrice groups={groups} />
 
       <CardContent className="my-groups-card-content">
         <Table>
