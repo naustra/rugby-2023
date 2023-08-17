@@ -150,7 +150,7 @@ function FAQPage() {
         question="Je me suis inscris dans une tribu, j'ai payé et été débité, mais je ne retrouve pas ma tribu ?"
         answer="Vérifiez bien que vous vous êtes connectés avec le bon compte d'inscription. Si malgré tout le
           problème subsiste, contacter nos administrateurs à l'adresse suivante:
-          parionsmasques2021@gmail.com"
+          pierre@le-bihan.eu"
       />
       <FaqEntry
         question="Est-ce que les cotes changent ?"
@@ -166,7 +166,7 @@ function FAQPage() {
       <FaqEntry
         question="Pourquoi ne puis-je pas pronostiquer sur le gagnant de la coupe-du-monde ?"
         answer="Si vous avez émis ce pronostic après le 08 septembre 2023 à 21h, il est en effet trop tard (cf. règlement). 
-          Si ce n'est pas le cas, merci de nous envoyer un mail à parionsmasques2021@gmail.com avant la date du
+          Si ce n'est pas le cas, merci de nous envoyer un mail à pierre@le-bihan.eu avant la date du
           premier match de la coupe."
       />
       <FaqEntry
@@ -179,16 +179,8 @@ function FAQPage() {
         question="J'ai trouvé un bug, comment puis-je le signaler ?"
         answer={
           <>
-            Vous pouvez créer un rapport de bug (ou issue), sur le site&nbsp;
-            <a
-              href="https://github.com/naustra/rugby-2023/issues/new"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub du projet
-            </a>
-            . Il est aussi possible d&apos;envoyer un mail à
-            parionsmasques2021@gmail.com décrivant le bug.
+            Vous pouvez envoyer un mail à
+            pierre@le-bihan.eu décrivant le bug.
           </>
         }
       />
@@ -216,7 +208,7 @@ function FAQPage() {
 
       <FaqEntry
         question="Mon problème n'est pas répertorié dans cette FAQ"
-        answer="Vous pouvez nous envoyer votre requête à l'adresse parionsmasques2021@gmail.com. Nous vous
+        answer="Vous pouvez nous envoyer votre requête à l'adresse pierre@le-bihan.eu. Nous vous
           répondrons le plus rapidement possible afin que votre expérience de jeu soit la plus réussie."
       />
     </div>
