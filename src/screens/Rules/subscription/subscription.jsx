@@ -15,16 +15,9 @@ const Subscription = () => (
     </p>
     <Typography variant="h2">Droits d’inscription</Typography>
     <p>
-      A la création de la tribu, il est possible de définir les droits
-      d'inscription.
-      <br />
-      Le créateur pourra définir si la tribu possède des droits d'inscription,
-      le montant des droits d'inscription et également le pourcentage que chaque
-      participant de la tribu reversera à l’association à but humanitaire PAM
-      (entre 20% et 80% des droits d'inscription).
-      <br />
-      Les participants devront s'affranchir des droits d’inscription pour avoir
-      leur compte activé.
+      L'inscription est gratuite et instantanée. Néanmoins, il est conseillé aux
+      tribus de mettre en place une cagnotte pour récompenser les vainqueurs et
+      rajouter de l'enjeu.
     </p>
     <Typography variant="h2">Date de validation des pronostics</Typography>
     <p>

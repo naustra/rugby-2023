@@ -1,6 +1,5 @@
 import { getFunctions } from '@firebase/functions'
 import { FunctionsProvider, useFirebaseApp } from 'reactfire'
-import AdminGroups from './AdminGroups'
 import CreateGroup from './CreateGroup'
 import './groups.scss'
 import JoinGroup from './JoinGroup'
@@ -16,7 +15,6 @@ const Groups = () => {
         <MyGroups />
         <JoinGroup />
         <CreateGroup />
-        <AdminGroups />
       </div>
     </FunctionsProvider>
   )

@@ -38,9 +38,7 @@ import NotFoundPage from '../NotFoundPage'
 import NotificationHandler from '../Notifications/NotificationHandler'
 import Profile from '../Profile'
 import RankingPage from '../Ranking'
-import Rib from '../Rib'
 import RulesPage from '../Rules'
-import ValidInscriptionPage from '../ValidInscription'
 import './App.scss'
 import ConnectionWidget from './ConnectionWidget'
 import NavigationMenu from './NavigationMenu'
@@ -153,15 +151,9 @@ const App = () => {
                 <Route path="/ranking" element={<RankingPage />} />
                 <Route path="/groups" element={<GroupsPage />} />
                 <Route path="/profile" element={<Profile />} />
-                <Route path="/rib" element={<Rib />} />
 
                 {/* Route accessible pour admin */}
-                {adminUser && (
-                  <Route
-                    path="/validinscription"
-                    element={<ValidInscriptionPage />}
-                  />
-                )}
+                {adminUser && <></>}
               </>
             )}
 

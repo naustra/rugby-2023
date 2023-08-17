@@ -29,7 +29,9 @@ const MyGroups = () => {
             <TableRow>
               <TableCell>Nom de la tribu</TableCell>
               <TableCell>Créateur</TableCell>
+              <TableCell>Membres</TableCell>
               <TableCell>Statut</TableCell>
+              <TableCell>Code</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

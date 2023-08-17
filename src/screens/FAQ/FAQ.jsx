@@ -19,15 +19,20 @@ function FAQPage() {
           détermineront votre place dans le classement de votre tribu."
       />
       <FaqEntry
-        question="Qu'est-ce qu'une tribu ?"
-        answer="Une tribu est un groupe de personnes qui regroupe des amis, des connaissances, des familles, avec lesquels vous aurez
-          choisi de jouer. Chacun d'entre vous peut créer sa propre tribu s'il le souhaite"
+        question="Est-ce gratuit ?"
+        answer="Oui, l'inscription au site est gratuite. Néanmoins, il est conseillé aux tribus de mettre en place une
+          cagnotte pour récompenser les vainqueurs et rajouter de l'enjeu."
       />
       <FaqEntry
         question="Comment participer ?"
         answer="Après vous être connecté, vous devez tout d'abord rejoindre une tribu ou créer votre propre tribu.
           Une fois cette étape réalisée, vous pourrez pronostiquer votre vainqueur final ainsi que vos premiers
           matchs."
+      />
+      <FaqEntry
+        question="Qu'est-ce qu'une tribu ?"
+        answer="Une tribu est un groupe de personnes qui regroupe des amis, des connaissances, des familles, avec lesquels vous aurez
+          choisi de jouer. Chacun d'entre vous peut créer sa propre tribu s'il le souhaite"
       />
       <FaqEntry
         question="Comment rejoindre une tribu ?"
@@ -52,9 +57,9 @@ function FAQPage() {
           tribu, un joueur ne peut accéder au groupe de jeu."
       />
       <FaqEntry
-        question="Est-ce gratuit ?"
-        answer="Oui, l'inscription au site est gratuite. Néanmoins, il est conseillé aux tribus de mettre en place une
-          cagnotte pour récompenser les vainqueurs et rajouter de l'enjeu."
+        question="Je souhaite supprimer quelqu'un de ma tribu ou lui confier le role d'admin ?"
+        answer="Si vous souhaitez supprimer quelqu'un de votre tribu, contacter le développeur de l'application qui
+        a été un peu trop fainéant pour coder un module de suppression de joueur. Il vous répondra dans les plus brefs délais. (pierre@le-bihan.eu)"
       />
       <FaqEntry
         question="Comment faire un don ?"
@@ -77,27 +82,6 @@ function FAQPage() {
         question="Où se trouve le code ?"
         answer="Après création de votre tribu, et sa validation, le code s'affiche dans une fenêtre.
           Ce code, vous pourrez également le retrouver dans la section « Administrer mes tribus » du menu."
-      />
-      <FaqEntry
-        question="Si j'ai parié une somme, combien puis-je espérer gagner à la fin du jeu ?"
-        answer={
-          <>
-            Cela reste le choix du créateur de la tribu de choisir le
-            pourcentage d'attribution des gains de ce concours de pronostics.
-            Prenons, l'exemple de répartition suivant : <br />1<sup>ère</sup>{' '}
-            place: 55%, 2<sup>ème</sup> place: 30%, 3<sup>ème</sup> place: 15%
-            <br />
-            Le pourcentage s&apos;effectue sur la totalité des sommes misées
-            (déduction faite des dons à l&apos;association PAM). Par exemple:{' '}
-            <br />
-            Nous sommes 10 personnes à jouer pour 15€ par personnes. 50% de la
-            mise revient à PAM il reste donc un total de 75€ : 1<sup>
-              ère
-            </sup>{' '}
-            place: 41,25€, 2<sup>ème</sup> place: 22,50€, 3<sup>ème</sup> place:
-            11,25€.
-          </>
-        }
       />
       <FaqEntry
         question="Puis-je faire partie/administrer plusieurs tribus ?"
@@ -127,21 +111,16 @@ function FAQPage() {
           requête par mail en vérifiant au préalable que vous avez bien suivis la démarche d'inscription."
       />
       <FaqEntry
-        question="Je me suis inscris dans une tribu, j'ai payé et été débité, mais je ne retrouve pas ma tribu ?"
+        question="Je me suis inscris dans une tribu, mais je ne la retrouve plus"
         answer="Vérifiez bien que vous vous êtes connectés avec le bon compte d'inscription. Si malgré tout le
           problème subsiste, contacter nos administrateurs à l'adresse suivante:
           pierre@le-bihan.eu"
       />
       <FaqEntry
         question="Est-ce que les cotes changent ?"
-        answer={
-          <>
-            Les côtes ont été réalisées par notre équipe de bêta testeurs.
-            Celle-ci peuvent être amenées à changer au début de la compétition.
-            Un fois la compétition démarrée, les côtes ne changeront plus une
-            fois un nouveau match publié.
-          </>
-        }
+        answer="
+            Les côtes des matches sont mises à jour tous les soirs que cela soit avant ou après la compétition et ne bougent plus une fois le match commencé.
+            Les côtes de vainqueur final sont figées au démarrage de la compétition."
       />
       <FaqEntry
         question="Pourquoi ne puis-je pas pronostiquer sur le gagnant de la coupe-du-monde ?"

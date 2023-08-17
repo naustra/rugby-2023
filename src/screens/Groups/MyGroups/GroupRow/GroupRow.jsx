@@ -9,7 +9,7 @@ import { useOpponents } from '../../../../hooks/opponents'
 import GroupStatus from './GroupStatus'
 
 const GroupRow = ({
-  group: { name, members, awaitingMembers, createdBy } = {},
+  group: { name, members, joinKey, awaitingMembers, createdBy } = {},
 }) => {
   const { uid } = useAuth().currentUser
   const createdByArray = useMemo(() => [createdBy], [createdBy])
@@ -23,6 +23,7 @@ const GroupRow = ({
       <TableCell>
         <Avatar avatarUrl={creator?.data().avatarUrl} />
       </TableCell>
+      <TableCell>{members.length}</TableCell>
       <TableCell>
         <GroupStatus
           member={includes(members, uid)}
@@ -30,6 +31,7 @@ const GroupRow = ({
           admin={createdBy === uid}
         />
       </TableCell>
+      <TableCell>{joinKey}</TableCell>
     </TableRow>
   )
 }
