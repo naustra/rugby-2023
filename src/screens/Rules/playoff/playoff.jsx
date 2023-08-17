@@ -8,12 +8,10 @@ const Playoff = () => (
       <Typography variant="h1">Règles durant la phase finale</Typography>
       <p>
         Le fonctionnement des paris à partir de ce niveau de la compétition est
-        identique à celui de la phase de groupe, à un détail près,
-        <b> le score final est celui au bout de 80 minutes</b>. Néanmoins, en
-        cas de match nul, il faut préciser le vainqueur en cas de prolongation,
-        voire tirs au but. Vous gagnerez ainsi des points si vous avez au moins
-        le bon vainqueur (voir plus grâce à la proximité au score car les scores
-        nuls rentrent en compte).
+        identique à celui de la phase de groupe, à un détail près, la côte du
+        match nul d'existe plus. Pour gérer les très rares exceptions des tirs
+        au buts, en cas de victoire aux tirs au buts, cela sera décompté comme
+        une victoire avec un seul point d'avance.
       </p>
     </div>
     <div>
