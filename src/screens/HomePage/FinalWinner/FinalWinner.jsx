@@ -40,7 +40,7 @@ const FinalWinner = () => {
       <Typography className="winner-typo" color="textSecondary">
         {isPast(CompetitionStartDate)
           ? 'Vous avez parié pour :'
-          : "Quel pays gagnera l'EURO 2021 ?"}
+          : "Quel pays gagnera la Coupe du monde de rugby 2023 ?"}
       </Typography>
       <CardContent>
         <Suspense fallback={<></>}>

@@ -14,14 +14,14 @@ function FAQPage() {
       </p>
       <FaqEntry
         question="Qu'est-ce que c'est ?"
-        answer="Un site qui vous permet de jouer avec les pronostics de l'EURO 2021, entre amis ou en famille.
+        answer="Un site qui vous permet de jouer avec les pronostics de la Coupe du monde de rugby 2023, entre amis ou en famille.
           À chaque bon pronostic, vous marquez un certain nombre de points, qui cumulés au fur et à mesure
           détermineront votre place dans le classement de votre tribu."
       />
       <FaqEntry
         question="Qu'est-ce qu'une tribu ?"
         answer="Une tribu est un groupe de personnes qui regroupe des amis, des connaissances, des familles, avec lesquels vous aurez
-          choisi de jouer.chacun d'entre vous peut créer sa propre tribu, s'il le souhaite"
+          choisi de jouer. Chacun d'entre vous peut créer sa propre tribu s'il le souhaite"
       />
       <FaqEntry
         question="Comment participer ?"
@@ -165,7 +165,7 @@ function FAQPage() {
       />
       <FaqEntry
         question="Pourquoi ne puis-je pas pronostiquer sur le gagnant de la coupe-du-monde ?"
-        answer="Si vous avez émis ce pronostic après le 11 juin 2021 à 21h, il est en effet trop tard (cf. règlement). 
+        answer="Si vous avez émis ce pronostic après le 08 septembre 2023 à 21h, il est en effet trop tard (cf. règlement). 
           Si ce n'est pas le cas, merci de nous envoyer un mail à parionsmasques2021@gmail.com avant la date du
           premier match de la coupe."
       />
@@ -181,7 +181,7 @@ function FAQPage() {
           <>
             Vous pouvez créer un rapport de bug (ou issue), sur le site&nbsp;
             <a
-              href="https://github.com/mbernardeau/euro-2021/issues/new"
+              href="https://github.com/naustra/rugby-2023/issues/new"
               target="_blank"
               rel="noreferrer"
             >
@@ -203,7 +203,7 @@ function FAQPage() {
             <br />
             Vous pouvez consulter la politique de confidentialité complète{' '}
             <a
-              href="https://github.com/mbernardeau/euro-2021/blob/master/confidentialite.md"
+              href="https://github.com/naustra/rugby-2023/blob/master/confidentialite.md"
               target="_blank"
               rel="noreferrer"
             >

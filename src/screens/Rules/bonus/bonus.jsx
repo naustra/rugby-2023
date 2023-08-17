@@ -10,7 +10,7 @@ const Bonus = () => (
       Vainqueur final
     </Typography>
     <p>
-      Chaque joueur pronostique également le champion de l'EURO 2021 avant que
+      Chaque joueur pronostique également le champion de la Coupe du monde de rugby 2023 avant que
       la compétition commence. Si jamais celui-ci est trouvé par le parieur une
       fois la compétition terminée, la cote associée au pays pronostiqué est
       ajouté aux autres points gagnés durant toute la compétition.
@@ -34,15 +34,15 @@ const Bonus = () => (
           header={[
             'Phase',
             'Poules',
-            '8ème de finale',
-            '4ème de finale',
-            'demi finale',
-            'finale',
+            'Quart de finale',
+            'Demi finale',
+            '3eme place',
+            'Finale',
             'Vainqueur final',
           ]}
           rows={[
-            ['Nombres de matchs', '36', '8', '4', '2', '1', 'N/A'],
-            ['% points total', '45', '16.5', '12.5', '9', '7', '10'],
+            ['Nombres de matchs', '40', '4', '2', '1', '1', 'N/A'],
+            ['% points total', '45', '12.5', '9', '5', '7', '10'],
           ]}
         />
       </div>

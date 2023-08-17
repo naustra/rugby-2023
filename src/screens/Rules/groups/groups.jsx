@@ -22,46 +22,10 @@ const Groups = () => (
           </li>
           <li>
             Ensuite soit on a le score parfait (100% de la côte est attribué),
-            soit on a un score plus ou moins proche (entre 10% et 60% de la côte
-            est attribué).
+            soit on a un score plus ou moins proche (un malus correspondant à l'écart au score sera appliqué).
           </li>
         </ol>
-        Pour intéresser tout le monde à chaque match, et quelque soit le score,
-        nous avons créé un niveau de proximité pour attribuer des points à ceux
-        qui ont un score le plus proche possible. Ceci est défini par un niveau
-        de proximité tel que défini ci-dessous :
       </p>
-    </div>
-    <div>
-      <div className="table_section">
-        <Table
-          header={[
-            'Niveau de proximité',
-            '1ère proxi',
-            '2ème proxi',
-            '3ème proxi',
-            '4ème proxi',
-          ]}
-          rows={[
-            [
-              'Pourcentage de points par rapport au score parfait',
-              '60 %',
-              '35 %',
-              '20 %',
-              '10 %',
-            ],
-            [
-              'Nombre de buts d’écarts si nb_buts < 3',
-              'N/A',
-              '1 (2 pour nuls)',
-              '2',
-              '3+',
-            ],
-            ['Nombre de buts d’écarts si nb_buts < 6', '1', '2', '3', '4+'],
-            ['Nombre de buts d’écarts si nb_buts >= 6', '2', '3', '4', '5+'],
-          ]}
-        />
-      </div>
     </div>
     <div>
       <p>
@@ -75,7 +39,7 @@ const Groups = () => (
             'Score pronostiqués',
             'Vainqueur pronostiqué',
             'Score réel',
-            'Cote du score réel',
+            'Cote du résultat final',
             'Vainqueur réel',
             'Points gagnés',
           ]}
@@ -83,121 +47,79 @@ const Groups = () => (
             [
               'Bon score',
               <div>
-                <div>3-1</div>
+                <div>30-10</div>
               </div>,
               <div>
                 <div>France</div>
               </div>,
               <div>
-                <div>3-1</div>
+                <div>30-10</div>
               </div>,
               <div>
-                <div>11.6</div>
+                <div>116</div>
               </div>,
               <div>
                 <div>France</div>
               </div>,
               <div>
-                <div>11.6</div>
+                <div>116</div>
               </div>,
             ],
             [
-              '1ere proximité',
+              'Bon résultat',
               <div>
-                <div>2-1</div>
+                <div>20-10</div>
               </div>,
               <div>
                 <div>France</div>
               </div>,
               <div>
-                <div>3-1</div>
+                <div>30-10</div>
               </div>,
               <div>
-                <div>11.6</div>
+                <div>116</div>
               </div>,
               <div>
                 <div>France</div>
               </div>,
               <div>
-                <div>11.6 x 0.6 = 6.96</div>
+                <div>116 - |30-20| = 106</div>
               </div>,
             ],
             [
-              '2eme proximité',
+              'Bon résultat',
               <div>
-                <div>2-0</div>
+                <div>40-0</div>
               </div>,
               <div>
                 <div>France</div>
               </div>,
               <div>
-                <div>3-1</div>
+                <div>30-10</div>
               </div>,
               <div>
-                <div>11.6</div>
-              </div>,
-              <div>
-                <div>France</div>
-              </div>,
-              <div>
-                <div>11.6 x 0.35 = 4.06</div>
-              </div>,
-            ],
-            [
-              '3eme proximité',
-              <div>
-                <div>1-0</div>
+                <div>116</div>
               </div>,
               <div>
                 <div>France</div>
               </div>,
               <div>
-                <div>3-1</div>
-              </div>,
-              <div>
-                <div>11.6</div>
-              </div>,
-              <div>
-                <div>France</div>
-              </div>,
-              <div>
-                <div>11.6 x 0.2 = 2.32</div>
-              </div>,
-            ],
-            [
-              '4eme proximité',
-              <div>
-                <div>6-1</div>
-              </div>,
-              <div>
-                <div>France</div>
-              </div>,
-              <div>
-                <div>3-1</div>
-              </div>,
-              <div>
-                <div>11.6</div>
-              </div>,
-              <div>
-                <div>France</div>
-              </div>,
-              <div>
-                <div>11.6 x 0.1 = 1.16</div>
+                <div>116 - |30-40| - |10-0| = 96</div>
               </div>,
             ],
             [
               'Mauvais vainqueur',
               <div>
-                <div>1-2</div>
+                <div>15-20</div>
               </div>,
               <div>
                 <div>Australie</div>
               </div>,
               <div>
-                <div>3-1</div>
+                <div>30-10</div>
               </div>,
               <div>
-                <div>11.6</div>
+                <div>116</div>
               </div>,
               <div>
                 <div>France</div>

@@ -35,7 +35,7 @@ const Subscription = () => (
       &nbsp;En ce qui concerne les pronostics sur le vainqueur de la
       compétition, ceux-ci doivent être réalisés avant le premier match de la
       compétition, soit
-      <b> le jeudi 11 Juin 2021 à 21h.</b>
+      <b> le vendredi 08 septembre 2023 à 21h.</b>
       <br />
       <br />
       <b>
