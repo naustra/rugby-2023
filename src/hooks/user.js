@@ -1,8 +1,4 @@
-import {
-  FacebookAuthProvider,
-  GoogleAuthProvider,
-  signInWithRedirect,
-} from '@firebase/auth'
+import { GoogleAuthProvider, signInWithRedirect } from '@firebase/auth'
 import { collection, doc } from '@firebase/firestore'
 import { useNavigate } from 'react-router'
 import {
@@ -19,16 +15,6 @@ export const useGoogleLogin = () => {
   auth.languageCode = 'fr'
 
   const provider = new GoogleAuthProvider()
-
-  return () => signInWithRedirect(auth, provider)
-}
-
-export const useFacebookLogin = () => {
-  const auth = useAuth()
-
-  auth.languageCode = 'fr'
-
-  const provider = new FacebookAuthProvider()
 
   return () => signInWithRedirect(auth, provider)
 }

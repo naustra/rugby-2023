@@ -6,7 +6,7 @@ export interface UserProfile {
   displayName: string
   winnerTeam: string
   profile?: {
-    // Photo de profil (uniquement pour facebook)
+    // Photo de profil
     picture: {
       data: {
         height: number

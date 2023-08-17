@@ -32,20 +32,20 @@ function FAQPage() {
       <FaqEntry
         question="Comment rejoindre une tribu ?"
         answer="Allez dans l'onglet 'Gestion des Tribus' dans le menu déroulant, entrez le code que vous a indiqué
-          votre chef d'équipe dans la section 'Rejoindre une tribu'. Ensuite payez le règlement selon l'un des moyens décrits 
+          votre chef d'équipe dans la section 'Rejoindre une tribu'. Ensuite payez le règlement selon l'un des moyens décrits
           si il y en a un. Votre demande sera validée auprès de nos administrateurs et vous pourrez ensuite commencez
           vos pronostics."
       />
       <FaqEntry
         question="Comment créer ma tribu ?"
         answer="Allez dans l'onglet 'Gestion des Tribus' dans le menu déroulant. Dans la section 'Créer une tribu',
-          choisissez le nom de la tribu, le coût de participation par personne, ainsi que le pourcentage 
-          à reverser à PAM (choix entre 20% et 80%). un code d'accès sera alors crée, et qu'il vous suffira 
+          choisissez le nom de la tribu, le coût de participation par personne, ainsi que le pourcentage
+          à reverser à PAM (choix entre 20% et 80%). un code d'accès sera alors crée, et qu'il vous suffira
           à envoyer aux personnes qui souhaitent faire parti de votre tribu"
       />
       <FaqEntry
         question="Administrer une tribu, qu'est-ce que ça implique ?"
-        answer="L'administrateur de groupe va à la fois et créer et gérer sa tribu. Comment ? 
+        answer="L'administrateur de groupe va à la fois et créer et gérer sa tribu. Comment ?
           C'est à lui que revient
           la charge de transmettre les codes aux joueurs qu'il souhaite voir participer avec lui.
           Sans le code de
@@ -53,11 +53,11 @@ function FAQPage() {
       />
       <FaqEntry
         question="Paiement Obligatoire ?"
-        answer="Dans l'absolu, non. Vous pouvez jouer sans miser, cependant vous ne gagnerez rien à part 
+        answer="Dans l'absolu, non. Vous pouvez jouer sans miser, cependant vous ne gagnerez rien à part
           le titre
-          honorifique de champion de votre tribu. Chaque Tribu fixe son prix d'entrée, 
-          le pourcentage de reversement 
-          à l'association PAM (de 20% à 80%), et les gains seront redistribués aux membres 
+          honorifique de champion de votre tribu. Chaque Tribu fixe son prix d'entrée,
+          le pourcentage de reversement
+          à l'association PAM (de 20% à 80%), et les gains seront redistribués aux membres
           de l'équipe en fonction du classement de la tribu."
       />
       <FaqEntry
@@ -83,8 +83,8 @@ function FAQPage() {
       />
       <FaqEntry
         question="Je ne peux plus accéder à mes paris après m'être connecté !"
-        answer="Vérifier votre compte de connexion. Le compte Facebook et Gmail n'est pas lié. 
-          Si vous vous connectez avec l'un puis que vous utilisez l'autre, vous n'aurez 
+        answer="Vérifier votre compte de connexion. Le compte Gmail n'est pas lié.
+          Si vous vous connectez avec l'un puis que vous utilisez l'autre, vous n'aurez
           plus accès à vos pronostics"
       />
       <FaqEntry
@@ -129,10 +129,9 @@ function FAQPage() {
           Par contre, vous ne pourrez parier qu'un seul score de match, et qui sera votre choix dans toutes les tribus auquel vou participez"
       />
       <FaqEntry
-        question="Ai-je besoin de plusieurs adresses mail ou profils Facebook pour m'inscrire dans
-          des tribus différentes ?"
-        answer="Absolument pas. Vous pouvez avoir autant de tribu que vous le désirez sur le même compte mail ou
-          facebook. Si vous changez de compte de connexion, vous serez aux yeux du site un nouveau
+        question="Ai-je besoin de plusieurs comptes pour m'inscrire dans des tribus différentes ?"
+        answer="Absolument pas. Vous pouvez avoir autant de tribu que vous le désirez sur le même compte.
+          Si vous changez de compte de connexion, vous serez aux yeux du site un nouveau
           challenger, et il vous faudra vous inscrire ou réinscrire dans les tribus en suivant les modalités
           précédentes."
       />
@@ -165,7 +164,7 @@ function FAQPage() {
       />
       <FaqEntry
         question="Pourquoi ne puis-je pas pronostiquer sur le gagnant de la coupe-du-monde ?"
-        answer="Si vous avez émis ce pronostic après le 08 septembre 2023 à 21h, il est en effet trop tard (cf. règlement). 
+        answer="Si vous avez émis ce pronostic après le 08 septembre 2023 à 21h, il est en effet trop tard (cf. règlement).
           Si ce n'est pas le cas, merci de nous envoyer un mail à pierre@le-bihan.eu avant la date du
           premier match de la coupe."
       />
@@ -179,8 +178,7 @@ function FAQPage() {
         question="J'ai trouvé un bug, comment puis-je le signaler ?"
         answer={
           <>
-            Vous pouvez envoyer un mail à
-            pierre@le-bihan.eu décrivant le bug.
+            Vous pouvez envoyer un mail à pierre@le-bihan.eu décrivant le bug.
           </>
         }
       />

@@ -66,7 +66,7 @@ suivantes :
 
 - Prénoms, noms
 - Adresse mail
-- Tokens de connexions facebook/google
+- Tokens de connexions google
   Ces données sont collectées lorsque l'utilisateur effectue l'une des opérations
   suivantes sur le site :
   Lorsque l'utilisateur crée un compte sur le site web
