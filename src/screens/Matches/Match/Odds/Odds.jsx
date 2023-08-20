@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Tooltip from '@mui/material/Tooltip'
 import padStart from 'lodash/padStart'
@@ -22,7 +21,7 @@ const Odds = ({ A, B, N, teamA, teamB }) => {
         title={`Cote de victoire de l'équipe: ${teamA.name}`}
         enterTouchDelay={0}
       >
-        <div className="odd" style={{ backgroundColor: getColor(A) }}>
+        <div className="odd left" style={{ backgroundColor: getColor(A) }}>
           {A}
         </div>
       </Tooltip>
@@ -40,7 +39,7 @@ const Odds = ({ A, B, N, teamA, teamB }) => {
         title={`Cote de victoire de l'équipe: ${teamB.name}`}
         enterTouchDelay={0}
       >
-        <div className="odd" style={{ backgroundColor: getColor(B) }}>
+        <div className="odd right" style={{ backgroundColor: getColor(B) }}>
           {B}
         </div>
       </Tooltip>

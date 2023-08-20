@@ -1,13 +1,23 @@
 .odds-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin: 5px 15px;
 
   .odd {
     padding: 3px 0;
-    color: white;
+    color: dimgray;
     text-align: center;
-    font-weight: bold;
+    font-weight: 500;
     width: 3em;
+  }
+
+  .left {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  .right {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
   }
 }

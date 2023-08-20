@@ -46,19 +46,17 @@ const Matches = () => {
   const LaunchBetDate = new Date(useCompetitionData().launchBet.seconds * 1000)
 
   return isPast(LaunchBetDate) ? (
-    <>
-      <AppBar position="fixed" className="matches-tab-bar">
-        <Tabs value={selectedTab} onChange={handleTabChange} centered>
-          <Tab label="En cours" />
-          <Tab label="Terminés" />
-        </Tabs>
-      </AppBar>
+    <div className="bg-gray-100 p-2">
+      <Tabs value={selectedTab} onChange={handleTabChange} centered>
+        <Tab label="A venir" />
+        <Tab label="En cours/Terminés" />
+      </Tabs>
       <div className="matches-container">
         {map(filteredMatches, (documentSnapshot) => (
           <Match matchSnapshot={documentSnapshot} key={documentSnapshot.id} />
         ))}
       </div>
-    </>
+    </div>
   ) : (
     <Typography variant="h1">
       ⚠ Les pronostics seront accessibles à partir du 9 juin à 8h ! D'ici là,

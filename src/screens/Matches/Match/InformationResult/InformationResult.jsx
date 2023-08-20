@@ -30,7 +30,7 @@ const InformationResult = ({ proxi, pointsWon }) => {
       placement="right"
       enterTouchDelay={0}
     >
-      <div className="tooltip-svg-container">
+      <div className="">
         <HelpOutlineIcon></HelpOutlineIcon>
       </div>
     </Tooltip>

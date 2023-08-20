@@ -1,6 +1,5 @@
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-import Divider from '@mui/material/Divider'
 import conformsTo from 'lodash/conformsTo'
 import isNil from 'lodash/isNil'
 import isNumber from 'lodash/isNumber'
@@ -69,7 +68,7 @@ const Match = ({ matchSnapshot }) => {
     ({ target: { value } }) => {
       const updatedBet = {
         ...currentBet,
-        [`betTeam${team}`]: value,
+        [`betTeam${team}`]: Number(value),
       }
       setCurrentBet(updatedBet)
       saveBetIfValid(updatedBet)
@@ -105,41 +104,54 @@ const Match = ({ matchSnapshot }) => {
   return (
     match.display && (
       <>
-        <Card className="match-card">
+        <Card className="match-card" variant="outlined">
           <CardContent
-            className="match-content"
             style={{
+              paddingBottom: '15px',
               backgroundColor:
                 past &&
-                getBackgroundColor(currentBet.proxi, currentBet.pointsWon),
+                getBackgroundColor(currentBet?.proxi, currentBet?.pointsWon),
             }}
           >
-            <div className="match-teams">
+            {/* header */}
+            <div className="flex justify-between">
+              {past ? (
+                <InformationResult {...bet} />
+              ) : (
+                <ValidIcon valid={betSaved()} />
+              )}
+              <InformationMatch phase={match.phase} group={teamA.group} />
+            </div>
+
+            {/* teams */}
+            <div className="flex justify-around my-4">
               <Bet
                 team={teamA}
                 betValue={currentBet?.betTeamA}
                 onBetValueUpdated={handleTeamAChange}
                 past={past}
               />
-              <div className="points-odds-container">
-                {!past && (
-                  <Odds
-                    teamA={teamA}
-                    teamB={teamB}
-                    A={match.odds.PA}
-                    N={match.odds.PN}
-                    B={match.odds.PB}
-                  />
-                )}
-                {past && <Scores {...match} />}
-                {past && <PointsWon {...match} {...bet} />}
-              </div>
               <Bet
                 team={teamB}
                 betValue={currentBet?.betTeamB}
                 onBetValueUpdated={handleTeamBChange}
                 past={past}
               />
+            </div>
+
+            {/* odds */}
+            <div className="points-odds-container">
+              {!past && (
+                <Odds
+                  teamA={teamA}
+                  teamB={teamB}
+                  A={match.odds.PA}
+                  N={match.odds.PN}
+                  B={match.odds.PB}
+                />
+              )}
+              {past && <Scores {...match} />}
+              {past && <PointsWon {...match} {...bet} />}
             </div>
             {match.phase !== '0' && displayChoiceWinner(bet) && (
               <ChoiceWinner
@@ -150,14 +162,9 @@ const Match = ({ matchSnapshot }) => {
                 past={past}
               />
             )}
-            <Divider />
+
+            {/* footer */}
             <MatchInfos match={match} />
-            <InformationMatch phase={match.phase} group={teamA.group} />
-            {past ? (
-              <InformationResult {...bet} />
-            ) : (
-              <ValidIcon valid={betSaved()} />
-            )}
           </CardContent>
         </Card>
       </>

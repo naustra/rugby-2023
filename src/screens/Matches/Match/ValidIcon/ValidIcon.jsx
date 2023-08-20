@@ -6,7 +6,7 @@ import './ValidIcon.scss'
 
 const ValidIcon = ({ valid }) => (
   <Tooltip
-    title={valid ? 'Paris enregistré' : 'Paris invalide'}
+    title={valid ? 'Pari enregistré' : 'Pari invalide'}
     placement="right"
     enterTouchDelay={0}
   >

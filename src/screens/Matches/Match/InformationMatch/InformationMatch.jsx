@@ -23,7 +23,7 @@ const getPhaseAff = (phase) =>
 const InformationMatch = ({ phase, group }) => {
   return (
     <Tooltip title={getPhaseText(phase)} placement="top" enterTouchDelay={0}>
-      <div className="tooltip-phase-container">
+      <div className="">
         {phase !== '0' ? getPhaseAff(phase) : `Gr. ${group}`}
       </div>
     </Tooltip>
