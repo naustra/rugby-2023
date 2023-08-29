@@ -36,7 +36,7 @@
       "code": "gb-wls",
       "elimination": true,
       "group": "C",
-      "name": "Pays de Galles",
+      "name": "Galles",
       "winOdd": 40,
       "winOddUnibet": 40
     },
@@ -60,7 +60,7 @@
       "code": "nz",
       "elimination": false,
       "group": "A",
-      "name": "Nouvelle-Zélande",
+      "name": "N. Zélande",
       "winOdd": 3.75,
       "winOddUnibet": 3.75
     },
@@ -158,7 +158,7 @@
       "code": "za",
       "elimination": false,
       "group": "B",
-      "name": "Afrique du Sud",
+      "name": "Af. du Sud",
       "winOdd": 5.5,
       "winOddUnibet": 5.5
     }

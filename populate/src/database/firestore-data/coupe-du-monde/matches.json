@@ -16,6 +16,10 @@
         "PB": 26.5,
         "PN": 18.2
       },
+      "scores": {
+        "A": 0,
+        "B": 0
+      },
       "phase": "0",
       "streaming": "TF1",
       "teamA": "-b3j145tij1hqfzo5d0h",
@@ -834,7 +838,7 @@
       "streaming": "France Télévisions",
       "teamA": "-yl5u7zxd06dh7ii6aln",
       "teamB": "-vo7g4zwoqc3ra4sxmxn",
-      "ville": "Marseilles"
+      "ville": "Marseille"
     },
     "X7eB6Gf72nTsRnqiyYFJ": {
       "dateTime": {
