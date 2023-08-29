@@ -104,7 +104,7 @@ export const updateScore = functions
             const facteurMultiplicateur = facteurMultiplicateurPhase[phase]
 
             const points = Math.round(
-              Math.min(0.33 * oddBet, oddBet - nbButsEcart) *
+              Math.max(0.33 * oddBet, oddBet - nbButsEcart) *
                 facteurMultiplicateur,
             )
 
