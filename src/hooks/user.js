@@ -1,4 +1,8 @@
-import { GoogleAuthProvider, signInWithRedirect } from '@firebase/auth'
+import {
+  GoogleAuthProvider,
+  signInWithRedirect,
+  signInWithEmailAndPassword,
+} from '@firebase/auth'
 import { collection, doc } from '@firebase/firestore'
 import { useNavigate } from 'react-router'
 import {
@@ -17,6 +21,14 @@ export const useGoogleLogin = () => {
   const provider = new GoogleAuthProvider()
 
   return () => signInWithRedirect(auth, provider)
+}
+
+export const useEmailLogin = (email, password) => {
+  const auth = useAuth()
+
+  auth.languageCode = 'fr'
+
+  return () => signInWithEmailAndPassword(auth, email, password)
 }
 
 export const useLogout = () => {

@@ -2,17 +2,27 @@ import Button from '@mui/material/Button'
 import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import Typography from '@mui/material/Typography'
+import { AiOutlineMail } from 'react-icons/ai'
 import { FaGoogle } from 'react-icons/fa'
-import { useGoogleLogin } from '../../../hooks/user'
+import { useGoogleLogin, useEmailLogin } from '../../../hooks/user'
 import './ConnectionModal.scss'
 
 const ConnectionModal = () => {
   const authenticateWithGoogle = useGoogleLogin()
+  const authenticateWithEmail = useEmailLogin()
 
   return (
     <>
       <DialogTitle>Connexion</DialogTitle>
       <DialogContent className="auth-btns-container">
+        <Button
+          color="primary"
+          onClick={authenticateWithEmail}
+          variant="contained"
+        >
+          <AiOutlineMail />
+          &nbsp; Connexion avec Email
+        </Button>
         <Button
           color="primary"
           onClick={authenticateWithGoogle}
