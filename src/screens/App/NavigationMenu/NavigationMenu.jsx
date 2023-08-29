@@ -1,7 +1,7 @@
 import Divider from '@mui/material/Divider'
 import Drawer from '@mui/material/Drawer'
 import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import PropTypes from 'prop-types'
 import { Suspense } from 'react'
@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router'
 import SideImg from '../../../assets/visuels/rules-281x310.jpg'
 import { useIsUserAdmin, useIsUserConnected } from '../../../hooks/user'
 import { openPAMTab } from '../../../utils'
-import './NavigationMenu.scss'
 
 const NavigationMenu = ({ closeMenu, menuOpen }) => {
   const isConnected = useIsUserConnected()
@@ -25,65 +24,65 @@ const NavigationMenu = ({ closeMenu, menuOpen }) => {
     <Drawer open={menuOpen} onClose={closeMenu}>
       <List>
         {/* Route accessibles sans connexion */}
-        <ListItem button onClick={goTo('/')}>
-          <img src={SideImg} className="navigation-menu-image" alt="Accueil" />
-        </ListItem>
+        <ListItemButton onClick={goTo('/')} sx={{ m: -2, mb: -1 }}>
+          <img src={SideImg} alt="Accueil" />
+        </ListItemButton>
         <Divider />
 
         {/* Route accessibles sans connexion (Doublon page d'accueil) */}
-        <ListItem button onClick={goTo('/')}>
+        <ListItemButton onClick={goTo('/')}>
           <ListItemText primary="Accueil" />
-        </ListItem>
+        </ListItemButton>
 
         {/* Route accessibles avec connexion */}
         {isConnected && (
-          <ListItem button onClick={goTo('/matches')}>
+          <ListItemButton onClick={goTo('/matches')}>
             <ListItemText primary="Pariez" />
-          </ListItem>
+          </ListItemButton>
         )}
 
         {/* Route accessibles avec connexion */}
         {isConnected && (
-          <ListItem button onClick={goTo('/ranking')}>
+          <ListItemButton onClick={goTo('/ranking')}>
             <ListItemText primary="Classement" />
-          </ListItem>
+          </ListItemButton>
         )}
 
         {/* Route accessible pour admin seulement */}
         {isAdmin && (
-          <ListItem button onClick={goTo('/matchesvalidation')}>
+          <ListItemButton onClick={goTo('/matchesvalidation')}>
             <ListItemText primary="Validation des matchs" />
-          </ListItem>
+          </ListItemButton>
         )}
 
         {/* Route accessibles avec connexion */}
         {isConnected && (
-          <ListItem button onClick={goTo('/groups')}>
+          <ListItemButton onClick={goTo('/groups')}>
             <ListItemText primary="Gestion des tribus" />
-          </ListItem>
+          </ListItemButton>
         )}
 
         {/* Route accessible pour admin seulement */}
         {isAdmin && (
-          <ListItem button onClick={goTo('/validinscription')}>
+          <ListItemButton onClick={goTo('/validinscription')}>
             <ListItemText primary="Valider l'inscription d'un membre" />
-          </ListItem>
+          </ListItemButton>
         )}
 
         {/* Routes accessibles sans connexion */}
-        <ListItem button onClick={goTo('/rules')}>
+        <ListItemButton onClick={goTo('/rules')}>
           <ListItemText primary="Réglement" />
-        </ListItem>
+        </ListItemButton>
 
         {/* Routes accessibles sans connexion */}
-        <ListItem button onClick={goTo('/faq')}>
+        <ListItemButton onClick={goTo('/faq')}>
           <ListItemText primary="FAQ" />
-        </ListItem>
+        </ListItemButton>
 
         {/* Routes accessibles sans connexion */}
-        <ListItem button onClick={openPAMTab}>
+        <ListItemButton onClick={openPAMTab}>
           <ListItemText primary="L'association PAM" />
-        </ListItem>
+        </ListItemButton>
       </List>
     </Drawer>
   )

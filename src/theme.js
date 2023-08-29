@@ -1,11 +1,15 @@
-import teal from '@mui/material/colors/teal'
-import cyan from '@mui/material/colors/cyan'
 import { createTheme } from '@mui/material/styles'
 
 const theme = createTheme({
   palette: {
-    primary: cyan,
-    secondary: teal,
+    primary: {
+      main: '#19194b',
+      contrastText: '#fff',
+    },
+    secondary: {
+      main: '#fb3103',
+      contrastText: '#fff',
+    },
   },
   typography: {
     h1: {
