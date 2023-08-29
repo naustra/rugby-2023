@@ -7,6 +7,7 @@ const db = admin.firestore()
 
 export const validApply = functions
   .region(EU_WEST_3)
+  .runWith({ maxInstances: 3 })
   .https.onCall(async ({ groupId, userId }: ValidApplyParams, { auth }) => {
     if (!auth) {
       throw new functions.https.HttpsError(

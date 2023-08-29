@@ -10,6 +10,7 @@ const db = admin.firestore()
  */
 export const onUserCreate = functions
   .region(EU_WEST_3)
+  .runWith({ maxInstances: 3 })
   .firestore.document('users/{userId}')
   .onCreate((snap) => {
     const userProfile = snap.data() as UserProfile

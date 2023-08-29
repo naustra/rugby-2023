@@ -37,6 +37,7 @@ const round = (value: number, decimals: number): number => {
 
 export const updateScore = functions
   .region(EU_WEST_3)
+  .runWith({ maxInstances: 3 })
   .firestore.document('matches/{matchId}')
   .onUpdate((change) => {
     // Get final scores

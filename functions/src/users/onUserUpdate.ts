@@ -10,6 +10,7 @@ const db = admin.firestore()
  */
 export const onUserUpdate = functions
   .region(EU_WEST_3)
+  .runWith({ maxInstances: 3 })
   .firestore.document('users/{userId}')
   .onUpdate((change) => {
     const uid = change.after.id

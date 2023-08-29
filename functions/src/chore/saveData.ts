@@ -15,6 +15,7 @@ const bucketName = `gs://${projectId}-backups`
 
 exports.scheduledFirestoreExport = functions
   .region(EU_WEST_3)
+  .runWith({ maxInstances: 3 })
   .pubsub.schedule('59 23 * * *')
   .timeZone('Europe/Paris')
   .onRun(async () => {

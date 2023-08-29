@@ -7,6 +7,7 @@ const db = admin.firestore()
 
 export const applyInGroup = functions
   .region(EU_WEST_3)
+  .runWith({ maxInstances: 3 })
   .firestore.document('groupApply/{applyId}')
   .onCreate(async (groupApplySnapshot) => {
     const { groupId, uid } = groupApplySnapshot.data() as GroupApply

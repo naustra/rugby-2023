@@ -29,6 +29,7 @@ const MIN_HOURS_BEFORE_MATCH_DELAY = 1
  */
 export const sendPrematchNotifications = functions
   .region(EU_WEST_3)
+  .runWith({ maxInstances: 3 })
   .pubsub.schedule(`every ${HOURS_BEFORE_MATCH} hours from 11:01 to 21:01`)
   .timeZone('Europe/Paris')
   .onRun(async (context) => {
