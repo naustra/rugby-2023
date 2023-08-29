@@ -102,7 +102,10 @@ export const updateScore = functions
 
             const facteurMultiplicateur = facteurMultiplicateurPhase[phase]
 
-            const points = (oddBet - nbButsEcart) * facteurMultiplicateur
+            const points = Math.round(
+              Math.min(0.33 * oddBet, oddBet - nbButsEcart) *
+                facteurMultiplicateur,
+            )
 
             promises.push(updateUserScore(userId, oldBetScore, points))
             promises.push(updatePointsWon(betId, points))
