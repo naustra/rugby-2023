@@ -55,19 +55,6 @@ const HomePage = () => {
         de rugby 2023. Jouez en famille ou entre amis et affrontez d&apos;autres
         tribus ! Le but ? Pariez au plus proche de la réalité les résultats des
         équipes, marquez des points, et tentez de gagner la première place.
-        <br />
-        <br />
-        Fans de rugby aux grands cœurs, nous récoltons des sous sur cette
-        cagnotte (mettre lien) pour financer l'association humanitaire{' '}
-        <a
-          title="Site PAM"
-          href="https://pourunailleursmeilleur.wordpress.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          PAM - Pour un Ailleurs Meilleur
-        </a>
-        .
       </p>
 
       <div className="home-buttons-div">

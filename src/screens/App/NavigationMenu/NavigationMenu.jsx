@@ -8,7 +8,6 @@ import { Suspense } from 'react'
 import { useNavigate } from 'react-router'
 import SideImg from '../../../assets/visuels/rules-281x310.jpg'
 import { useIsUserAdmin, useIsUserConnected } from '../../../hooks/user'
-import { openPAMTab } from '../../../utils'
 
 const NavigationMenu = ({ closeMenu, menuOpen }) => {
   const isConnected = useIsUserConnected()
@@ -77,11 +76,6 @@ const NavigationMenu = ({ closeMenu, menuOpen }) => {
         {/* Routes accessibles sans connexion */}
         <ListItemButton onClick={goTo('/faq')}>
           <ListItemText primary="FAQ" />
-        </ListItemButton>
-
-        {/* Routes accessibles sans connexion */}
-        <ListItemButton onClick={openPAMTab}>
-          <ListItemText primary="L'association PAM" />
         </ListItemButton>
       </List>
     </Drawer>

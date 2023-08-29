@@ -44,8 +44,7 @@ function FAQPage() {
       <FaqEntry
         question="Comment créer ma tribu ?"
         answer="Allez dans l'onglet 'Gestion des Tribus' dans le menu déroulant. Dans la section 'Créer une tribu',
-          choisissez le nom de la tribu, le coût de participation par personne, ainsi que le pourcentage
-          à reverser à PAM (choix entre 20% et 80%). un code d'accès sera alors crée, et qu'il vous suffira
+          choisissez le nom de la tribu. un code d'accès sera alors crée, et qu'il vous suffira
           à envoyer aux personnes qui souhaitent faire parti de votre tribu"
       />
       <FaqEntry
@@ -64,7 +63,7 @@ function FAQPage() {
       <FaqEntry
         question="Comment faire un don ?"
         answer="Si vous souhaitez faire un don, aller sur le lien vers la cagnotte
-            PayPal et faites un don. L'équipe de ParionsMasques vous remercie
+            PayPal et faites un don. L'équipe de la LE BIHAN Corp vous remercie
             d'avance pour votre générosité."
       />
       <FaqEntry
