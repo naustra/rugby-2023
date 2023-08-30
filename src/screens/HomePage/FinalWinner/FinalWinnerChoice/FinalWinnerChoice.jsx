@@ -57,7 +57,11 @@ const OddDisplay = (teams, userTeam) => {
 
   return (
     teamDisplayed && (
-      <Tooltip title="Cote pour la victoire finale" placement="right">
+      <Tooltip
+        title="Cote pour la victoire finale"
+        placement="right"
+        enterTouchDelay={0}
+      >
         <Typography variant="h1" className="winner-choice-odd">
           {teamDisplayed.data().winOdd}
         </Typography>

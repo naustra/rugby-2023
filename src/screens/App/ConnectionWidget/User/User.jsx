@@ -2,7 +2,6 @@ import Avatar from '@mui/material/Avatar'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import MoreVertIcon from '@mui/icons-material/MoreVert'
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useAuth } from 'reactfire'
@@ -18,10 +17,6 @@ const User = () => {
 
   return (
     <div className="user-widget">
-      <Avatar src={user.avatarUrl} className="user-avatar" />
-
-      <span className="username">{user.displayName}</span>
-
       <IconButton
         aria-label="Plus"
         aria-owns={isOpen ? 'long-menu' : null}
@@ -29,9 +24,13 @@ const User = () => {
         onClick={() => setIsOpen(true)}
         ref={anchorEl}
         color="inherit"
-        size="large"
+        // size="large"
       >
-        <MoreVertIcon />
+        <Avatar
+          src={user.photoURL}
+          alt={user.displayName}
+          className="user-avatar"
+        />
       </IconButton>
 
       <Menu

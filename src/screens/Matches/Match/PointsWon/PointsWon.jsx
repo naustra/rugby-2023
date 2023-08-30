@@ -39,14 +39,6 @@ const PointsWon = ({ pointsWon, proxi, scores, odds }) => {
   )
 }
 
-//  <Tooltip
-//           title={getCalculus(oddScore, proxi)}
-//           placement="right"
-//           enterTouchDelay={0}
-//         >
-
-//         </Tooltip>
-
 PointsWon.propTypes = {
   pointsWon: PropTypes.number,
   proxi: PropTypes.number,
