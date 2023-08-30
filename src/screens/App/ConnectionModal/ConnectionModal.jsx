@@ -11,7 +11,6 @@ const ConnectionModal = () => {
 
   return (
     <>
-      <DialogTitle>Connexion</DialogTitle>
       <DialogContent className="auth-btns-container">
         <Button
           color="primary"
