@@ -51,10 +51,11 @@ const HomePage = () => {
   return (
     <div className="home-page-div">
       <p className="home-speech">
-        Bienvenue sur ParionsMasques, le site de pronostics de la Coupe du monde
-        de rugby 2023. Jouez en famille ou entre amis et affrontez d&apos;autres
-        tribus ! Le but ? Pariez au plus proche de la réalité les résultats des
-        équipes, marquez des points, et tentez de gagner la première place.
+        Bienvenue sur Paris Entre Potos, le site de pronostics de la Coupe du
+        monde de rugby 2023. Jouez en famille ou entre amis et affrontez
+        d&apos;autres tribus ! Le but ? Pariez au plus proche de la réalité les
+        résultats des équipes, marquez des points, et tentez de gagner la
+        première place.
       </p>
 
       <div className="home-buttons-div">

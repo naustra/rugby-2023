@@ -71,7 +71,8 @@ const GroupRanking = ({ name, members }) => {
                       team.elimination ? (
                         <Tooltip
                           title="Vainqueur final éliminé"
-                          placement="right"
+                          placement="top"
+                          enterTouchDelay={0}
                         >
                           <img
                             src={imgUrlFlag(team.code).default}
@@ -82,7 +83,8 @@ const GroupRanking = ({ name, members }) => {
                       ) : team.unveiled ? (
                         <Tooltip
                           title={'Gains en cas de victoire : ' + team.winOdd}
-                          placement="right"
+                          placement="top"
+                          enterTouchDelay={0}
                         >
                           <img
                             src={imgUrlFlag(team.code).default}
@@ -93,7 +95,8 @@ const GroupRanking = ({ name, members }) => {
                       ) : (
                         <Tooltip
                           title="Vainqueur final mystère"
-                          placement="right"
+                          placement="top"
+                          enterTouchDelay={0}
                         >
                           <img
                             src={imgUrl}
@@ -105,7 +108,8 @@ const GroupRanking = ({ name, members }) => {
                     ) : (
                       <Tooltip
                         title="Cette personne a oublié de parier son vainqueur final"
-                        placement="right"
+                        placement="top"
+                        enterTouchDelay={0}
                       >
                         <img
                           src={forgotBetImgUrl}

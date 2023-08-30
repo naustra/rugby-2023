@@ -21,7 +21,10 @@ const NotificationConfiguration = () => {
           onChange={(e) => updateConfig({ PREMATCH: e.target.checked })}
           label="Activer les rappels avant match"
         />
-        <Tooltip title="Vous recevrez une notification dans les 2 heures précédent le match, seulement si vous n'avez pas rempli votre pari.">
+        <Tooltip
+          title="Vous recevrez une notification dans les 2 heures précédent le match, seulement si vous n'avez pas rempli votre pari."
+          enterTouchDelay={0}
+        >
           <InfoOutlined style={{ fontSize: 14, marginLeft: -12 }} />
         </Tooltip>
       </div>
