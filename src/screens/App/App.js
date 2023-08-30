@@ -28,7 +28,8 @@ import { Suspense, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { useAuth, useFirestore, useSigninCheck } from 'reactfire'
 import Baniere from '../../assets/visuels/bandeauSignature.jpg'
-import Baniere_mobile from '../../assets/visuels/baniere_pm.jpg'
+import BaniereTablette from '../../assets/visuels/baniere_pm.jpg'
+import BaniereMobile from '../../assets/visuels/bandeauTitreMobile.png'
 import { useNotificationPermission } from '../../hooks/notifications'
 import FAQPage from '../FAQ'
 import GroupsPage from '../Groups'
@@ -121,7 +122,8 @@ const App = () => {
           </IconButton>
           <div className="app-toolbar-title">
             <img id="imgDesktop" src={Baniere} alt="Baniere" />
-            <img id="imgMobile" src={Baniere_mobile} alt="Baniere" />
+            <img id="imgTablette" src={BaniereTablette} alt="Baniere" />
+            <img id="imgMobile" src={BaniereMobile} alt="Baniere" />
           </div>
           <Suspense fallback={null}>
             <ConnectionWidget />

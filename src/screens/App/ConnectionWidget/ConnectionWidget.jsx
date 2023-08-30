@@ -6,6 +6,7 @@ import { useIsUserConnected } from '../../../hooks/user'
 import ConnectionModal from '../ConnectionModal'
 import './ConnectionWidget.scss'
 import User from './User'
+import { FaSignInAlt } from 'react-icons/fa'
 
 const ConnectionWidget = () => {
   const isConnected = useIsUserConnected()
@@ -34,7 +35,7 @@ const ConnectionWidget = () => {
           className="connection-label"
           onClick={() => setModalOpened(true)}
         >
-          Se connecter
+          <FaSignInAlt />
         </Button>
       )}
     </div>

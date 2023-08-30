@@ -11,12 +11,18 @@
   #imgMobile {
     display: none;
   }
+  #imgTablette {
+    display: none;
+  }
   #imgDesktop {
     display: block;
   }
 
   @media all and (max-width: 949px) {
     #imgMobile {
+      display: none;
+    }
+    #imgTablette {
       display: block;
     }
     #imgDesktop {
@@ -25,6 +31,9 @@
   }
   @media all and (max-width: 669px) {
     #imgMobile {
+      display: block;
+    }
+    #imgTablette {
       display: none;
     }
   }
