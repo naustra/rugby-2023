@@ -1,6 +1,3 @@
-import MenuItem from '@mui/material/MenuItem'
-import map from 'lodash/map'
-import range from 'lodash/range'
 import PropTypes from 'prop-types'
 import Flag from '../../../../components/Flag'
 import './Bet.scss'
@@ -26,23 +23,6 @@ const Bet = ({ team, betValue, onBetValueUpdated, past }) => {
     </div>
   )
 }
-
-/**
- * Render menu items once (from 0 to 10 goals)
- */
-const menuItems = map(range(11), (n) => (
-  <MenuItem value={n} key={n}>
-    {n}
-  </MenuItem>
-))
-
-/**
- * Pure mini-component to render inner value of the select field choices
- * @param {number} value Value to render
- *
- * @return {React.ReactElement}
- */
-const renderValue = (value) => <div className="bet-select-value">{value}</div>
 
 Bet.defaultProps = {
   team: {},

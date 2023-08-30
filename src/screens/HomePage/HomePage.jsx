@@ -21,7 +21,6 @@ import { useSigninCheck } from 'reactfire'
 import myImage from '../../assets/visuels/bandeauEvenement_PM.jpg'
 import { useCompetitionData } from '../../hooks/competition'
 import FinalWinner from './FinalWinner'
-import './HomePage.scss'
 import { useNavigate } from 'react-router'
 
 const WinnerChoice = () => {
@@ -49,8 +48,8 @@ const HomePage = () => {
   } = useSigninCheck()
 
   return (
-    <div className="home-page-div">
-      <p className="home-speech">
+    <div className="text-center mx-auto w-11/12 max-w-screen-sm pt-5">
+      <p className="text-center">
         Bienvenue sur Paris Entre Potos, le site de pronostics de la Coupe du
         monde de rugby 2023. Jouez en famille ou entre amis et affrontez
         d&apos;autres tribus ! Le but ? Pariez au plus proche de la réalité les
@@ -58,39 +57,39 @@ const HomePage = () => {
         première place.
       </p>
 
-      <div className="home-buttons-div">
-        <div className="home-button-panel">
+      <div className="mx-auto flex justify-center flex-wrap p-2">
+        <div className="w-42 m-6 p-2 shadow-md">
           <p>Les règles du jeu :</p>
           <Button
-            className="home-button"
+            className="flex w-full"
             onClick={() => navigate('/rules')}
             color="primary"
           >
-            <ListIcon className="icon-left" />
+            <ListIcon className="mr-2" />
             Règles
           </Button>
         </div>
         {signedIn && (
           <>
-            <div className="home-button-panel">
+            <div className="w-42 m-6 p-2 shadow-md">
               <p>Tous vos paris : </p>
               <Button
-                className="home-button"
+                className="flex w-full"
                 onClick={() => navigate('/matches')}
                 color="primary"
               >
-                <EventAvailableIcon className="icon-left" />
+                <EventAvailableIcon className="mr-2" />
                 Parier
               </Button>
             </div>
-            <div className="home-button-panel">
+            <div className="w-42 m-6 p-2 shadow-md">
               <p>Votre classement : </p>
               <Button
-                className="home-button"
+                className="flex w-full"
                 onClick={() => navigate('/ranking')}
                 color="primary"
               >
-                <PollIcon className="icon-left" />
+                <PollIcon className="mr-2" />
                 Classement
               </Button>
             </div>
@@ -98,7 +97,7 @@ const HomePage = () => {
         )}
       </div>
       {signedIn && <WinnerChoice />}
-      <img alt="Home" className="home-logo" src={myImage} />
+      <img alt="Home" className="mt-8 shadow-md" src={myImage} />
     </div>
   )
 }

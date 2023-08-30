@@ -1,8 +1,7 @@
 import Button from '@mui/material/Button'
 import DialogContent from '@mui/material/DialogContent'
-import DialogTitle from '@mui/material/DialogTitle'
 import Typography from '@mui/material/Typography'
-import { FaGoogle } from 'react-icons/fa'
+import { GrGoogle } from 'react-icons/gr'
 import { useGoogleLogin } from '../../../hooks/user'
 import './ConnectionModal.scss'
 
@@ -15,9 +14,9 @@ const ConnectionModal = () => {
         <Button
           color="primary"
           onClick={authenticateWithGoogle}
-          variant="contained"
+          variant="outlined"
         >
-          <FaGoogle />
+          <GrGoogle />
           &nbsp; Connexion avec Google
         </Button>
 

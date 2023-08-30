@@ -7,11 +7,20 @@ import PropTypes from 'prop-types'
 import { Suspense } from 'react'
 import { useNavigate } from 'react-router'
 import SideImg from '../../../assets/visuels/rules-281x310.jpg'
-import { useIsUserAdmin, useIsUserConnected } from '../../../hooks/user'
+import { useIsUserConnected } from '../../../hooks/user'
+import { ListItemIcon } from '@mui/material'
+import {
+  GrGroup,
+  GrHome,
+  GrWorkshop,
+  GrTrophy,
+  GrUnorderedList,
+  GrCircleQuestion,
+} from 'react-icons/gr'
 
 const NavigationMenu = ({ closeMenu, menuOpen }) => {
   const isConnected = useIsUserConnected()
-  const isAdmin = useIsUserAdmin()
+  // const isAdmin = useIsUserAdmin()
   const navigate = useNavigate()
 
   const goTo = (to) => () => {
@@ -30,12 +39,18 @@ const NavigationMenu = ({ closeMenu, menuOpen }) => {
 
         {/* Route accessibles sans connexion (Doublon page d'accueil) */}
         <ListItemButton onClick={goTo('/')}>
+          <ListItemIcon>
+            <GrHome />
+          </ListItemIcon>
           <ListItemText primary="Accueil" />
         </ListItemButton>
 
         {/* Route accessibles avec connexion */}
         {isConnected && (
           <ListItemButton onClick={goTo('/matches')}>
+            <ListItemIcon>
+              <GrWorkshop />
+            </ListItemIcon>
             <ListItemText primary="Pariez" />
           </ListItemButton>
         )}
@@ -43,38 +58,36 @@ const NavigationMenu = ({ closeMenu, menuOpen }) => {
         {/* Route accessibles avec connexion */}
         {isConnected && (
           <ListItemButton onClick={goTo('/ranking')}>
+            <ListItemIcon>
+              <GrTrophy />
+            </ListItemIcon>
             <ListItemText primary="Classement" />
-          </ListItemButton>
-        )}
-
-        {/* Route accessible pour admin seulement */}
-        {isAdmin && (
-          <ListItemButton onClick={goTo('/matchesvalidation')}>
-            <ListItemText primary="Validation des matchs" />
           </ListItemButton>
         )}
 
         {/* Route accessibles avec connexion */}
         {isConnected && (
           <ListItemButton onClick={goTo('/groups')}>
+            <ListItemIcon>
+              <GrGroup />
+            </ListItemIcon>
             <ListItemText primary="Gestion des tribus" />
-          </ListItemButton>
-        )}
-
-        {/* Route accessible pour admin seulement */}
-        {isAdmin && (
-          <ListItemButton onClick={goTo('/validinscription')}>
-            <ListItemText primary="Valider l'inscription d'un membre" />
           </ListItemButton>
         )}
 
         {/* Routes accessibles sans connexion */}
         <ListItemButton onClick={goTo('/rules')}>
+          <ListItemIcon>
+            <GrCircleQuestion />
+          </ListItemIcon>
           <ListItemText primary="Réglement" />
         </ListItemButton>
 
         {/* Routes accessibles sans connexion */}
         <ListItemButton onClick={goTo('/faq')}>
+          <ListItemIcon>
+            <GrUnorderedList />
+          </ListItemIcon>
           <ListItemText primary="FAQ" />
         </ListItemButton>
       </List>
