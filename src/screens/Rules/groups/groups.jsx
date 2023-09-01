@@ -10,11 +10,15 @@ const Groups = () => (
       <p>
         Les pronostics fonctionnent avec un système de côtes basé sur notre
         propre système de calcul de côtes ! En effet, pour chaque match nous
-        proposons une côte pour chaque résultat possible. Ces côtes
-        multiplieront les points attribués selon les trois différents cas
-        ci-dessous. Nous nous réservons le droit de changer les côtes jusqu’à la
-        veille de chaque match. Les points sont attribués pour les matchs de
-        poules comme suit :
+        proposons une côte pour chaque résultat possible.
+        <br />
+        Ces côtes multiplieront les points attribués selon les trois différents
+        cas ci-dessous.
+        <br />
+        Nous nous réservons le droit de changer les côtes jusqu’à la veille de
+        chaque match.
+        <br />
+        Les points sont attribués pour les matchs de poules comme suit :
         <ol>
           <li>
             Tout d’abord c’est le type de résultat qui compte en priorité :
@@ -22,7 +26,9 @@ const Groups = () => (
           </li>
           <li>
             Ensuite soit on a le score parfait (100% de la côte est attribué),
-            soit on a un score plus ou moins proche (un malus correspondant à l'écart au score sera appliqué).
+            soit on a un score plus ou moins proche (un malus correspondant à
+            l'écart au score sera appliqué). Le minimum de points étant un tier
+            de la côte.
           </li>
         </ol>
       </p>
