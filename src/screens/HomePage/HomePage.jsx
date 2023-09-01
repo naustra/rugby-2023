@@ -10,8 +10,8 @@
  */
 
 import EventAvailableIcon from '@mui/icons-material/EventAvailable'
-import ListIcon from '@mui/icons-material/List'
-import PollIcon from '@mui/icons-material/Poll'
+import HelpIcon from '@mui/icons-material/Help'
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import { isPast } from 'date-fns'
@@ -58,20 +58,20 @@ const HomePage = () => {
       </p>
 
       <div className="mx-auto flex justify-center flex-wrap p-2">
-        <div className="w-42 m-6 p-2 shadow-md">
+        <div className="w-42 m-3 p-2 shadow-md">
           <p>Les règles du jeu :</p>
           <Button
             className="flex w-full"
             onClick={() => navigate('/rules')}
             color="primary"
           >
-            <ListIcon className="mr-2" />
+            <HelpIcon className="mr-2" />
             Règles
           </Button>
         </div>
         {signedIn && (
           <>
-            <div className="w-42 m-6 p-2 shadow-md">
+            <div className="w-42 m-3 p-2 shadow-md">
               <p>Tous vos paris : </p>
               <Button
                 className="flex w-full"
@@ -79,17 +79,17 @@ const HomePage = () => {
                 color="primary"
               >
                 <EventAvailableIcon className="mr-2" />
-                Parier
+                Pariez
               </Button>
             </div>
-            <div className="w-42 m-6 p-2 shadow-md">
+            <div className="w-42 m-3 p-2 shadow-md">
               <p>Votre classement : </p>
               <Button
                 className="flex w-full"
                 onClick={() => navigate('/ranking')}
                 color="primary"
               >
-                <PollIcon className="mr-2" />
+                <EmojiEventsIcon className="mr-2" />
                 Classement
               </Button>
             </div>

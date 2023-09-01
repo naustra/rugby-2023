@@ -3,20 +3,18 @@ import Drawer from '@mui/material/Drawer'
 import List from '@mui/material/List'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
+import HelpIcon from '@mui/icons-material/Help'
+import ListIcon from '@mui/icons-material/List'
+import HomeIcon from '@mui/icons-material/Home'
+import EventAvailableIcon from '@mui/icons-material/EventAvailable'
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
+import GroupsIcon from '@mui/icons-material/Groups'
 import PropTypes from 'prop-types'
 import { Suspense } from 'react'
 import { useNavigate } from 'react-router'
 import SideImg from '../../../assets/visuels/rules-281x310.jpg'
 import { useIsUserConnected } from '../../../hooks/user'
 import { ListItemIcon } from '@mui/material'
-import {
-  GrGroup,
-  GrHome,
-  GrWorkshop,
-  GrTrophy,
-  GrUnorderedList,
-  GrCircleQuestion,
-} from 'react-icons/gr'
 
 const NavigationMenu = ({ closeMenu, menuOpen }) => {
   const isConnected = useIsUserConnected()
@@ -29,7 +27,7 @@ const NavigationMenu = ({ closeMenu, menuOpen }) => {
   }
 
   return (
-    <Drawer open={menuOpen} onClose={closeMenu}>
+    <Drawer color="primary" open={menuOpen} onClose={closeMenu}>
       <List>
         {/* Route accessibles sans connexion */}
         <ListItemButton onClick={goTo('/')} sx={{ m: -2, mb: -1 }}>
@@ -40,7 +38,7 @@ const NavigationMenu = ({ closeMenu, menuOpen }) => {
         {/* Route accessibles sans connexion (Doublon page d'accueil) */}
         <ListItemButton onClick={goTo('/')}>
           <ListItemIcon>
-            <GrHome />
+            <HomeIcon />
           </ListItemIcon>
           <ListItemText primary="Accueil" />
         </ListItemButton>
@@ -49,7 +47,7 @@ const NavigationMenu = ({ closeMenu, menuOpen }) => {
         {isConnected && (
           <ListItemButton onClick={goTo('/matches')}>
             <ListItemIcon>
-              <GrWorkshop />
+              <EventAvailableIcon />
             </ListItemIcon>
             <ListItemText primary="Pariez" />
           </ListItemButton>
@@ -59,7 +57,7 @@ const NavigationMenu = ({ closeMenu, menuOpen }) => {
         {isConnected && (
           <ListItemButton onClick={goTo('/ranking')}>
             <ListItemIcon>
-              <GrTrophy />
+              <EmojiEventsIcon />
             </ListItemIcon>
             <ListItemText primary="Classement" />
           </ListItemButton>
@@ -69,7 +67,7 @@ const NavigationMenu = ({ closeMenu, menuOpen }) => {
         {isConnected && (
           <ListItemButton onClick={goTo('/groups')}>
             <ListItemIcon>
-              <GrGroup />
+              <GroupsIcon />
             </ListItemIcon>
             <ListItemText primary="Gestion des tribus" />
           </ListItemButton>
@@ -78,15 +76,15 @@ const NavigationMenu = ({ closeMenu, menuOpen }) => {
         {/* Routes accessibles sans connexion */}
         <ListItemButton onClick={goTo('/rules')}>
           <ListItemIcon>
-            <GrCircleQuestion />
+            <HelpIcon />
           </ListItemIcon>
-          <ListItemText primary="Réglement" />
+          <ListItemText primary="Règles" />
         </ListItemButton>
 
         {/* Routes accessibles sans connexion */}
         <ListItemButton onClick={goTo('/faq')}>
           <ListItemIcon>
-            <GrUnorderedList />
+            <ListIcon />
           </ListItemIcon>
           <ListItemText primary="FAQ" />
         </ListItemButton>
