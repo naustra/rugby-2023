@@ -11,6 +11,7 @@
       {
         "source": "/service-worker.js",
         "headers": [
+          { "key": "Content-Type", "value": "text/css" },
           {
             "key": "Cache-Control",
             "value": "no-store"
@@ -42,9 +43,7 @@
     }
   },
   "functions": {
-    "predeploy": [
-      "npm --prefix \"$RESOURCE_DIR\" run build"
-    ],
+    "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run build"],
     "source": "functions"
   }
 }
