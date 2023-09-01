@@ -1,5 +1,5 @@
-// ! PROD
-const serviceAccount = require('./.ssh_keys/rugby-2023-e5f84-firebase-adminsdk-147un-78fa4d1cad.json')
+// ! Staging
+const serviceAccount = require('./.ssh_keys/staging.json')
 
 const directoryDatabase = 'coupe-du-monde'
 
