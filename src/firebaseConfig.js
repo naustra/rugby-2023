@@ -11,7 +11,7 @@ const stagingConfig = {
 
 const productionConfig = {
   apiKey: 'AIzaSyCSRoHM86m0HqvpYxXoOd7gg6raFlvK9nc',
-  authDomain: 'rugby-2023-prod-4fa68.firebaseapp.com',
+  authDomain: 'paris-entre-potos.fun',
   databaseURL:
     'https://rugby-2023-prod-4fa68-default-rtdb.europe-west1.firebasedatabase.app',
   projectId: 'rugby-2023-prod-4fa68',
