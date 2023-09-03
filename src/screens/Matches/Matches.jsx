@@ -52,7 +52,7 @@ const Matches = () => {
           value={selectedTab}
           onChange={handleTabChange}
           centered
-          textColor="white"
+          textColor="inherit"
         >
           <Tab label="À venir" />
           <Tab label="En cours / Terminé" />

@@ -31,7 +31,7 @@ const Ranking = () => {
           value={selectedTab}
           onChange={handleTabChange}
           centered
-          textColor="white"
+          textColor="inherit"
         >
           {groups.map((group) => (
             <Tab
