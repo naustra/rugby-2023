@@ -23,8 +23,8 @@ const getPhaseAff = (phase) =>
 const InformationMatch = ({ phase, group }) => {
   return (
     <Tooltip title={getPhaseText(phase)} placement="top" enterTouchDelay={0}>
-      <div className="bg-blue-100 rounded-full border-2 border-blue-400 text-xs px-2 py-1 text-blue-600">
-        {phase !== '0' ? getPhaseAff(phase) : `Gr. ${group}`}
+      <div className="text-xs text-gray-500">
+        {phase !== '0' ? getPhaseAff(phase) : `Groupe ${group}`}
       </div>
     </Tooltip>
   )
