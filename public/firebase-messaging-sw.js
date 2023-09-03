@@ -47,7 +47,7 @@ messaging.onBackgroundMessage(({ data }) => {
 
   const notificationOptions = {
     body: data.body || buildNotificationBody(data),
-    icon: '/icon-192x192.jpg',
+    icon: '/icon-192x192.png',
     lang: 'fr',
     data: payload,
   }
