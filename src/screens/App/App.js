@@ -87,7 +87,7 @@ const updateUserProfile = (firestore, auth) => async (user) => {
   )
 }
 
-const App = () => {
+const App = ({ beforeInstallPrompt }) => {
   const { permission } = useNotificationPermission()
 
   const auth = useAuth()
@@ -142,7 +142,11 @@ const App = () => {
         <Suspense fallback={<>Loading page...</>}>
           {/* Routes accessibles sans connexion */}
           <Routes>
-            <Route exact path="/" element={<HomePage />} />
+            <Route
+              exact
+              path="/"
+              element={<HomePage beforeInstallPrompt={beforeInstallPrompt} />}
+            />
             <Route path="/rules" element={<RulesPage />} />
             <Route path="/faq" element={<FAQPage />} />
 

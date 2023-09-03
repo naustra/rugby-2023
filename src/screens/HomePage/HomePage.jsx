@@ -41,14 +41,27 @@ const WinnerChoice = () => {
   )
 }
 
-const HomePage = () => {
+const HomePage = ({ beforeInstallPrompt }) => {
   const navigate = useNavigate()
   const {
     data: { signedIn },
   } = useSigninCheck()
 
+  function install() {
+    beforeInstallPrompt?.prompt()
+  }
+
   return (
     <div className="text-center mx-auto w-11/12 max-w-screen-sm pt-5">
+      {beforeInstallPrompt ? (
+        <div className="mx-auto flex justify-center flex-wrap p-2">
+          <div className="w-42 p-2 shadow-md">
+            <Button className="flex w-full" onClick={install} color="secondary">
+              Installez l'application pour une meilleure expérience
+            </Button>
+          </div>
+        </div>
+      ) : null}
       <p className="text-center">
         Bienvenue sur Paris Entre Potos, le site de pronostics de la Coupe du
         monde de rugby 2023. Jouez en famille ou entre amis et affrontez

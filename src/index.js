@@ -22,7 +22,12 @@ import { BrowserRouter } from 'react-router-dom'
 import NotificationPermissionProvider from './screens/Notifications/NotificationPermissionProvider'
 import FirebaseProviders from './firebase/FirebaseProviders'
 
-const render = () => {
+let beforeInstallPrompt = null
+
+const render = (beforeInstallPromptEvent) => {
+  // ! beforeInstallPromptEvent is null on first render
+  // ! https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeinstallprompt_event
+  // ! Cacher le bouton si beforeInstallPromptEvent n'arrive pas
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
@@ -33,7 +38,7 @@ const render = () => {
                 <MuiThemeProvider theme={theme}>
                   <SnackbarProvider>
                     <NotificationPermissionProvider>
-                      <App />
+                      <App beforeInstallPrompt={beforeInstallPromptEvent} />
                     </NotificationPermissionProvider>
                   </SnackbarProvider>
                 </MuiThemeProvider>
@@ -46,6 +51,12 @@ const render = () => {
     document.getElementById('root'),
   )
 }
+
+window.addEventListener('beforeinstallprompt', (event) => {
+  event.preventDefault()
+  beforeInstallPrompt = event
+  render(beforeInstallPrompt) // Re-render the App with the event
+})
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
