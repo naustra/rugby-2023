@@ -16,7 +16,7 @@ const MatchInfos = ({ match }) => {
   return (
     <div className="match-infos-container">
       <div className="flex gap-2 items-center">
-        <CalendarMonthOutlined />
+        <CalendarMonthOutlined className="text-base" />
         <Tooltip
           title={format(dateTime, 'PPPppp', { locale: fr })}
           enterTouchDelay={0}
@@ -28,12 +28,12 @@ const MatchInfos = ({ match }) => {
       </div>
 
       <div className="flex gap-2 items-center">
-        <PlaceOutlined />
+        <PlaceOutlined className="text-base" />
         <div>{match.ville}</div>
       </div>
 
       <div className="flex gap-2 items-center">
-        <TvOutlined />
+        <TvOutlined className="text-base" />
         <div>{match.streaming}</div>
       </div>
     </div>
