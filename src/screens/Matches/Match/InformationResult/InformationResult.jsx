@@ -5,28 +5,25 @@ import isNumber from 'lodash/isNumber'
 import PropTypes from 'prop-types'
 import './InformationResult.scss'
 
-const proxiText = [
-  'Vous avez pronostiqué le score parfait!',
-  'Vous êtes en première proximité',
-  'Vous êtes en seconde proximité',
-  'Vous êtes en troisième proximité',
-  'Vous êtes en quatrième proximité',
-]
-
-const getMessage = (proxiLevel, hasBet) => {
+const getMessage = (hasBet, pointsWon, maxPoints) => {
   if (!hasBet) return "Vous n'avez pas pronostiqué"
-  return isNil(proxiLevel)
-    ? 'Dommage, vous ferez mieux la prochaine fois'
-    : proxiText[proxiLevel]
+  if (pointsWon === 0) return "Vous n'avez pas marqué de points"
+  if (pointsWon === maxPoints) return 'Vous avez pronostiqué le score parfait!'
+
+  return 'Vous avez pronostiqué le bon résultat'
 }
 
-const InformationResult = ({ proxi, pointsWon }) => {
+const InformationResult = ({ pointsWon, scores, odds }) => {
   // No bet ?
   const hasBet = isNumber(pointsWon)
 
+  // Find odd depending on scores
+  const { A, B } = scores
+  const oddScore = A > B ? odds.PA : A < B ? odds.PB : odds.PN
+
   return (
     <Tooltip
-      title={getMessage(proxi, hasBet)}
+      title={getMessage(hasBet, pointsWon, oddScore)}
       placement="right"
       enterTouchDelay={0}
     >
@@ -38,7 +35,6 @@ const InformationResult = ({ proxi, pointsWon }) => {
 }
 
 InformationResult.propTypes = {
-  proxi: PropTypes.number,
   pointsWon: PropTypes.number,
 }
 

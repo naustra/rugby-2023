@@ -25,23 +25,11 @@ const Match = ({ matchSnapshot }) => {
 
   const isBetValid = (updatedBet) => {
     const scoreValidator = (score) => isNumber(score) && score >= 0
-    const winnerValidator = (winner) =>
-      winner && (winner === 'A' || winner === 'B')
 
-    if (
-      !conformsTo(updatedBet, {
-        betTeamA: scoreValidator,
-        betTeamB: scoreValidator,
-      })
-    )
-      return false
-
-    return match.phase === '0'
-      ? true
-      : updatedBet.betTeamA !== updatedBet.betTeamB ||
-          conformsTo(updatedBet, {
-            betWinner: winnerValidator,
-          })
+    return conformsTo(updatedBet, {
+      betTeamA: scoreValidator,
+      betTeamB: scoreValidator,
+    })
   }
 
   const handleChange =
@@ -103,7 +91,7 @@ const Match = ({ matchSnapshot }) => {
                 disabled={past}
               />
               {past ? (
-                <InformationResult {...bet} />
+                <InformationResult {...bet} {...match} />
               ) : (
                 <ValidIcon valid={betSaved()} />
               )}

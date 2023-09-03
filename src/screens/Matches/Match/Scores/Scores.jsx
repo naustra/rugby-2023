@@ -5,16 +5,15 @@ import './Scores.scss'
 
 const Scores = ({ scores }) => {
   if (!scores) return null
-  const { A, B, winner } = scores
+  const { A, B } = scores
   const realResult = findResult(A, B)
-  const realWinner = realResult === 'N' ? winner : realResult
   return (
     <div className="scores-container">
       <Tooltip title="Score final" placement="top" enterTouchDelay={0}>
         <Typography variant="body2">
-          <span className={realWinner === 'A' ? 'winner' : ''}>{A}</span>
+          <span className={realResult === 'A' ? 'winner' : ''}>{A}</span>
           &nbsp;-&nbsp;
-          <span className={realWinner === 'B' ? 'winner' : ''}>{B}</span>
+          <span className={realResult === 'B' ? 'winner' : ''}>{B}</span>
         </Typography>
       </Tooltip>
     </div>
