@@ -1,13 +1,12 @@
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import Tooltip from '@mui/material/Tooltip'
-import isNil from 'lodash/isNil'
 import isNumber from 'lodash/isNumber'
 import PropTypes from 'prop-types'
 import './InformationResult.scss'
 
 const getMessage = (hasBet, pointsWon, maxPoints) => {
   if (!hasBet) return "Vous n'avez pas pronostiqué"
-  if (pointsWon === 0) return "Vous n'avez pas marqué de points"
+  if (pointsWon == 0) return "Vous n'avez pas marqué de points"
   if (pointsWon === maxPoints) return 'Vous avez pronostiqué le score parfait!'
 
   return 'Vous avez pronostiqué le bon résultat'
