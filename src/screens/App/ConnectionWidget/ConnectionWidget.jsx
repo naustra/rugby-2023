@@ -35,7 +35,7 @@ const ConnectionWidget = () => {
           className="connection-label"
           onClick={() => setModalOpened(true)}
         >
-          <FaSignInAlt />
+          Connexion
         </Button>
       )}
     </div>
