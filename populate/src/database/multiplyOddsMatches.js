@@ -22,9 +22,9 @@ const multiplyOddsMatches = async () => {
 
     if (oddsUnibet) {
       const oddsUpdated = {
-        PA: oddsUnibet.PA * factorMultiplicator,
-        PB: oddsUnibet.PB * factorMultiplicator,
-        PN: oddsUnibet.PN * factorMultiplicator,
+        PA: Math.round(oddsUnibet.PA * factorMultiplicator),
+        PB: Math.round(oddsUnibet.PB * factorMultiplicator),
+        PN: Math.round(oddsUnibet.PN * factorMultiplicator),
       }
 
       await admin
