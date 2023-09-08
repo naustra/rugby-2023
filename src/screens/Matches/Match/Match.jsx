@@ -5,11 +5,11 @@ import { useState } from 'react'
 import { useBet } from '../../../hooks/bets'
 import { useTeam } from '../../../hooks/teams'
 import InformationMatch from './InformationMatch'
-import InformationResult from './InformationResult'
 import './Match.scss'
 import MatchInfos from './MatchInfos'
 import ValidIcon from './ValidIcon'
 import Flag from '../../../components/Flag'
+import PointsWon from './PointsWon/PointsWon'
 
 const empty = {}
 
@@ -86,12 +86,22 @@ const Match = ({ matchSnapshot }) => {
                 }
                 inputMode="numeric"
                 pattern="[0-9]*"
-                value={currentBet?.betTeamA >= 0 ? currentBet?.betTeamA : ''}
+                value={
+                  !past
+                    ? currentBet?.betTeamA >= 0
+                      ? currentBet?.betTeamA
+                      : ''
+                    : match.scores.A
+                }
                 onChange={handleTeamAChange}
                 disabled={past}
               />
               {past ? (
-                <InformationResult {...bet} {...match} />
+                <PointsWon
+                  pointsWon={currentBet.pointsWon}
+                  scores={match.scores}
+                  odds={match.odds}
+                />
               ) : (
                 <ValidIcon valid={betSaved()} />
               )}
@@ -106,7 +116,13 @@ const Match = ({ matchSnapshot }) => {
                 }
                 inputMode="numeric"
                 pattern="[0-9]*"
-                value={currentBet?.betTeamB >= 0 ? currentBet?.betTeamB : ''}
+                value={
+                  !past
+                    ? currentBet?.betTeamB >= 0
+                      ? currentBet?.betTeamB
+                      : ''
+                    : match.scores.B
+                }
                 onChange={handleTeamBChange}
                 disabled={past}
               />
