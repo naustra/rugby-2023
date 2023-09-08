@@ -4,19 +4,21 @@ import './PointsWon.scss'
 import { Tooltip } from '@mui/material'
 import isNumber from 'lodash/isNumber'
 
-const getMessage = (hasBet, pointsWon, maxPoints) => {
-  if (!hasBet) return "Vous n'avez pas pronostiqué"
-  if (pointsWon == 0) return "Vous n'avez pas marqué de points"
-  if (pointsWon === maxPoints) return 'Vous avez pronostiqué le score parfait!'
+const getMessage = (betTeamA, betTeamB, pointsWon, maxPoints) => {
+  const hasBet = isNumber(betTeamA) && isNumber(betTeamB)
 
-  return 'Vous avez pronostiqué le bon résultat'
+  const scoreBet = `: ${betTeamA} - ${betTeamB}`
+
+  if (!hasBet) return "Vous n'avez pas pronostiqué" + scoreBet
+  if (pointsWon == 0) return "Vous n'avez pas marqué de points" + scoreBet
+  if (pointsWon === maxPoints)
+    return 'Vous avez pronostiqué le score parfait!' + scoreBet
+
+  return 'Vous avez pronostiqué le bon résultat' + scoreBet
 }
 
-const PointsWon = ({ pointsWon, scores, odds }) => {
+const PointsWon = ({ betTeamA, betTeamB, pointsWon, scores, odds }) => {
   if (!scores) return null
-
-  // No bet ?
-  const hasBet = isNumber(pointsWon)
 
   // Find odd depending on scores
   const { A, B } = scores
@@ -24,7 +26,7 @@ const PointsWon = ({ pointsWon, scores, odds }) => {
 
   return (
     <Tooltip
-      title={getMessage(hasBet, pointsWon, oddScore)}
+      title={getMessage(betTeamA, betTeamB, pointsWon, oddScore)}
       placement="bottom"
       enterTouchDelay={0}
       className="points-won-container"

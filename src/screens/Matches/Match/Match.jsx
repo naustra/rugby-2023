@@ -97,11 +97,7 @@ const Match = ({ matchSnapshot }) => {
                 disabled={past}
               />
               {past ? (
-                <PointsWon
-                  pointsWon={currentBet.pointsWon}
-                  scores={match.scores}
-                  odds={match.odds}
-                />
+                <PointsWon {...match} {...currentBet} />
               ) : (
                 <ValidIcon valid={betSaved()} />
               )}
