@@ -6,6 +6,8 @@ const { serviceAccount } = require('../chooseDatabase.js')
 const admin = require('firebase-admin')
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
+  databaseURL:
+    'https://rugby-2023-prod-4fa68-default-rtdb.europe-west1.firebasedatabase.app',
 })
 
 /**
@@ -23,8 +25,8 @@ async function getNotificationSubscription() {
 }
 
 const data = {
-  title: "Début de l'EURO dans moins d'une heure !",
-  body: 'Heureux de vous compter parmi nous ! Encore quelque minute pour choisir votre vainqueur final ! ;)',
+  title: 'Début de la coupe du monde Vendredi à 21h !',
+  body: 'Heureux de vous compter parmi nous ! Choisissez votre vainqueur final avant le début de la compétition ! ;)',
   url: '/',
 }
 

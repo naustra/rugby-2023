@@ -1,5 +1,5 @@
 // ! Staging
-const serviceAccount = require('./.ssh_keys/staging.json')
+const serviceAccount = require('./.ssh_keys/prod.json')
 
 const directoryDatabase = 'coupe-du-monde'
 
