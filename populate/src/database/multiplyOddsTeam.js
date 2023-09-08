@@ -23,7 +23,7 @@ const multiplyOddsTeams = async () => {
     const originalWinOdd = team.data().winOdd
 
     if (winOddUnibet) {
-      const winOddUpdated = winOddUnibet * factorMultiplicator
+      const winOddUpdated = Math.round(winOddUnibet * factorMultiplicator)
 
       await admin
 
