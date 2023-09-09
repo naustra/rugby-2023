@@ -1,11 +1,12 @@
 {
-  "name": "parionsmasques-functions",
+  "name": "paris-entre-potos-functions",
   "description": "Cloud Functions for Firebase",
   "version": "0.1.0",
   "main": "build/index.js",
   "dependencies": {
     "@google-cloud/firestore": "^4.15.1",
     "@google-cloud/storage": "^5.19.4",
+    "axios": "^1.5.0",
     "firebase-admin": "^10.2.0",
     "firebase-functions": "^4.4.1"
   },
