@@ -10,12 +10,7 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 })
 
-//23:
-// id:54
-// name:"European Rugby Champions Cup"
-// type:"Cup"
-// logo:"https://media-2.api-sports.io/rugby/leagues/54.png"
-// const db = admin.firestore()
+const db = admin.firestore()
 
 const headers = {
   'X-RapidAPI-Key': process.env.API_RUGBY_KEY,
@@ -29,7 +24,7 @@ const getLeagues = async () => {
     headers,
   }
   const response = await axios.request(options)
-  console.log(response.data)
+  return response.data
 }
 
 const getGames = async () => {
@@ -56,45 +51,57 @@ const getGames = async () => {
   )
 
   console.table(response.data.response)
+  return response.data.response
 }
 
-getGames().then(() => process.exit(0))
+const getGame = async (id) => {
+  const options = {
+    method: 'GET',
+    url: 'https://api-rugby.p.rapidapi.com/games/',
+    params: {
+      id: id,
+    },
+    headers,
+  }
+  const response = await axios.request(options)
+  return response.data.response[0]
+}
 
-// const displayBets = async () => {
-//   const querySnapshot = await db.collection('bets').get()
+const updateScores = async () => {
+  const now = new Date()
+  const inTwoHours = new Date()
+  inTwoHours.setHours(inTwoHours.getHours() + 2)
 
-//   const table = await Promise.all(
-//     querySnapshot.docs.map(async (doc) => {
-//       const { uid, matchId, betTeamA, betTeamB, pointsWon } = doc.data()
+  const matchesToNotify = await db
+    .collection('matches')
+    .where('dateTime', '>=', now)
+    .where('dateTime', '<', inTwoHours)
+    .get()
 
-//       const { teamA, teamB, scores } = (
-//         await db.collection('matches').doc(matchId).get()
-//       ).data()
-//       const { name: nameTeamA } = (
-//         await db.collection('teams').doc(teamA).get()
-//       ).data()
-//       const { name: nameTeamB } = (
-//         await db.collection('teams').doc(teamB).get()
-//       ).data()
-//       const { displayName: userName } = (
-//         await db.collection('opponents').doc(uid).get()
-//       ).data()
+  await Promise.all(
+    matchesToNotify.docs.map(async (matchSnap) => {
+      const match = matchSnap.data()
+      if (match.finished) return
 
-//       const score = betTeamA + ' - ' + betTeamB
-//       const scoreReel = scores ? scores.A + ' - ' + scores.B : 'not played'
+      const gameStatus = await getGame(match.idApiRugby)
+      console.log(
+        '🚀 ~ file: api_rugby_test.js:86 ~ matchesToNotify.docs.map ~ gameStatus:',
+        gameStatus,
+      )
 
-//       return {
-//         userName,
-//         nameTeamA,
-//         score,
-//         nameTeamB,
-//         scoreReel,
-//         pointsWon,
-//       }
-//     }),
-//   )
+      // Update game Score and status
+      await db
+        .collection('matches')
+        .doc(matchSnap.id)
+        .update({
+          scores: {
+            A: gameStatus.scores.home,
+            B: gameStatus.scores.away,
+          },
+          finished: gameStatus.status.long === 'Finished',
+        })
+    }),
+  )
+}
 
-//   console.table(table)
-// }
-
-// displayBets().then(() => process.exit(0))
+updateScores().then(() => process.exit(0))
