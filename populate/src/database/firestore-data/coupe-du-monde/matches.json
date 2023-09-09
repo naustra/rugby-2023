@@ -2,13 +2,13 @@
    "matches": {
       "-Kj2zgKRUwOUbY09TiKi-0": {
          "dateTime": {
-            "_nanoseconds": 0,
-            "_seconds": 1694199600
+            "_nanoseconds": 442000000,
+            "_seconds": 1694200500
          },
          "display": true,
          "odds": {
-            "PA": 203.5,
-            "PB": 218.9,
+            "PA": 204,
+            "PB": 219,
             "PN": 2365
          },
          "oddsUnibet": {
@@ -18,8 +18,8 @@
          },
          "phase": "0",
          "scores": {
-            "A": 0,
-            "B": 0
+            "A": 27,
+            "B": 13
          },
          "streaming": "TF1",
          "teamA": "-b3j145tij1hqfzo5d0h",
@@ -33,7 +33,7 @@
          },
          "display": true,
          "odds": {
-            "PA": 111.1,
+            "PA": 111,
             "PB": 2200,
             "PN": 8800
          },
@@ -43,6 +43,10 @@
             "PN": 80
          },
          "phase": "0",
+         "scores": {
+            "A": 52,
+            "B": 8
+         },
          "streaming": "M6",
          "teamA": "-j862kl0yi0nfmngb1n8",
          "teamB": "-p80u4yp27pe0yq1m8nc",
@@ -54,8 +58,9 @@
             "_seconds": 1694879100
          },
          "display": false,
+         "idApiRugby": "40853",
          "odds": {
-            "PA": 111.1,
+            "PA": 111,
             "PB": 2530,
             "PN": 6600
          },
@@ -76,8 +81,9 @@
             "_seconds": 1695570300
          },
          "display": false,
+         "idApiRugby": "40860",
          "odds": {
-            "PA": 113.3,
+            "PA": 113,
             "PB": 1155,
             "PN": 4400
          },
@@ -98,8 +104,9 @@
             "_seconds": 1694955600
          },
          "display": false,
+         "idApiRugby": "40855",
          "odds": {
-            "PA": 214.5,
+            "PA": 215,
             "PB": 209,
             "PN": 3850
          },
@@ -120,8 +127,9 @@
             "_seconds": 1694965500
          },
          "display": false,
+         "idApiRugby": "16958",
          "odds": {
-            "PA": 111.1,
+            "PA": 111,
             "PB": 1518,
             "PN": 4950
          },
@@ -142,6 +150,7 @@
             "_seconds": 1694977200
          },
          "display": false,
+         "idApiRugby": "16959",
          "odds": {
             "PA": 132,
             "PB": 528,
@@ -164,9 +173,10 @@
             "_seconds": 1695224700
          },
          "display": false,
+         "idApiRugby": "40856",
          "odds": {
-            "PA": 167.2,
-            "PB": 291.5,
+            "PA": 167,
+            "PB": 292,
             "PN": 2475
          },
          "oddsUnibet": {
@@ -186,9 +196,10 @@
             "_seconds": 1695322800
          },
          "display": false,
+         "idApiRugby": "40857",
          "odds": {
-            "PA": 137.5,
-            "PB": 423.5,
+            "PA": 138,
+            "PB": 424,
             "PN": 2750
          },
          "oddsUnibet": {
@@ -208,8 +219,9 @@
             "_seconds": 1695397500
          },
          "display": false,
+         "idApiRugby": "16960",
          "odds": {
-            "PA": 113.3,
+            "PA": 113,
             "PB": 1100,
             "PN": 3300
          },
@@ -230,6 +242,7 @@
             "_seconds": 1695470400
          },
          "display": false,
+         "idApiRugby": "40858",
          "odds": {
             "PA": 209,
             "PB": 209,
@@ -252,9 +265,10 @@
             "_seconds": 1695483900
          },
          "display": false,
+         "idApiRugby": "40859",
          "odds": {
             "PA": 341,
-            "PB": 148.5,
+            "PB": 149,
             "PN": 2750
          },
          "oddsUnibet": {
@@ -275,7 +289,7 @@
          },
          "display": true,
          "odds": {
-            "PA": 111.1,
+            "PA": 111,
             "PB": 2530,
             "PN": 6600
          },
@@ -285,6 +299,10 @@
             "PN": 60
          },
          "phase": "0",
+         "scores": {
+            "A": 82,
+            "B": 8
+         },
          "streaming": "M6",
          "teamA": "-4oa75ucoei2xqcmcw55",
          "teamB": "-oxh3a2vosqcx68ssmmd",
@@ -296,8 +314,9 @@
             "_seconds": 1695495600
          },
          "display": false,
+         "idApiRugby": "16961",
          "odds": {
-            "PA": 123.20000000000002,
+            "PA": 123,
             "PB": 605,
             "PN": 2750
          },
@@ -318,6 +337,7 @@
             "_seconds": 1695582000
          },
          "display": false,
+         "idApiRugby": "16962",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -340,6 +360,7 @@
             "_seconds": 1695829500
          },
          "display": false,
+         "idApiRugby": "40861",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -362,6 +383,7 @@
             "_seconds": 1695927600
          },
          "display": false,
+         "idApiRugby": "16963",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -384,6 +406,7 @@
             "_seconds": 1696014000
          },
          "display": false,
+         "idApiRugby": "16964",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -406,6 +429,7 @@
             "_seconds": 1696078800
          },
          "display": false,
+         "idApiRugby": "40862",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -428,6 +452,7 @@
             "_seconds": 1696088700
          },
          "display": false,
+         "idApiRugby": "40863",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -450,6 +475,7 @@
             "_seconds": 1696175100
          },
          "display": false,
+         "idApiRugby": "40865",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -472,6 +498,7 @@
             "_seconds": 1696186800
          },
          "display": false,
+         "idApiRugby": "40866",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -494,6 +521,7 @@
             "_seconds": 1696532400
          },
          "display": false,
+         "idApiRugby": "40867",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -517,7 +545,7 @@
          },
          "display": true,
          "odds": {
-            "PA": 113.3,
+            "PA": 113,
             "PB": 1155,
             "PN": 4400
          },
@@ -527,6 +555,10 @@
             "PN": 40
          },
          "phase": "0",
+         "scores": {
+            "A": 35,
+            "B": 15
+         },
          "streaming": "M6",
          "teamA": "-15vkjrz347bb8661p2c",
          "teamB": "-s01yam76lu79pjuwxq0",
@@ -538,6 +570,7 @@
             "_seconds": 1696618800
          },
          "display": false,
+         "idApiRugby": "16965",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -560,6 +593,7 @@
             "_seconds": 1696762800
          },
          "display": false,
+         "idApiRugby": "16968",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -582,6 +616,7 @@
             "_seconds": 1696683600
          },
          "display": false,
+         "idApiRugby": "40868",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -604,6 +639,7 @@
             "_seconds": 1696693500
          },
          "display": false,
+         "idApiRugby": "16966",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -626,6 +662,7 @@
             "_seconds": 1696779900
          },
          "display": false,
+         "idApiRugby": "40869",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -648,6 +685,7 @@
             "_seconds": 1696791600
          },
          "display": false,
+         "idApiRugby": "40870",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -671,7 +709,7 @@
          },
          "display": true,
          "odds": {
-            "PA": 214.5,
+            "PA": 215,
             "PB": 209,
             "PN": 3850
          },
@@ -681,6 +719,10 @@
             "PN": 35
          },
          "phase": "0",
+         "scores": {
+            "A": 24,
+            "B": 3
+         },
          "streaming": "TF1",
          "teamA": "-tbgtcmmvw8bwex4piti",
          "teamB": "-kv10juhy4xip6e0lsmn",
@@ -692,8 +734,9 @@
             "_seconds": 1694343600
          },
          "display": true,
+         "idApiRugby": "40849",
          "odds": {
-            "PA": 111.1,
+            "PA": 111,
             "PB": 4950,
             "PN": 1518
          },
@@ -714,9 +757,10 @@
             "_seconds": 1694372400
          },
          "display": true,
+         "idApiRugby": "16957",
          "odds": {
-            "PA": 167.2,
-            "PB": 291.5,
+            "PA": 167,
+            "PB": 292,
             "PN": 2475
          },
          "oddsUnibet": {
@@ -736,6 +780,7 @@
             "_seconds": 1694718000
          },
          "display": false,
+         "idApiRugby": "40850",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -758,6 +803,7 @@
             "_seconds": 1694804400
          },
          "display": false,
+         "idApiRugby": "40851",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -780,6 +826,7 @@
             "_seconds": 1694869200
          },
          "display": false,
+         "idApiRugby": "40852",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -802,6 +849,7 @@
             "_seconds": 1694890800
          },
          "display": false,
+         "idApiRugby": "40854",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -824,6 +872,7 @@
             "_seconds": 1694360700
          },
          "display": true,
+         "idApiRugby": "16956",
          "odds": {
             "PA": 132,
             "PB": 528,
@@ -846,6 +895,7 @@
             "_seconds": 1696100400
          },
          "display": false,
+         "idApiRugby": "40864",
          "odds": {
             "PA": 1738,
             "PB": 2915,
@@ -868,6 +918,7 @@
             "_seconds": 1696705200
          },
          "display": false,
+         "idApiRugby": "16967",
          "odds": {
             "PA": 1738,
             "PB": 2915,
