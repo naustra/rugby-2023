@@ -37,12 +37,12 @@ export const updateResult = functions
   .timeZone('Europe/Paris')
   .onRun(async (context) => {
     const now = new Date(context.timestamp)
-    const twoHoursAgo = new Date(context.timestamp)
-    twoHoursAgo.setHours(twoHoursAgo.getHours() - 2)
+    const threeHoursAgo = new Date(context.timestamp)
+    threeHoursAgo.setHours(threeHoursAgo.getHours() - 3)
 
     const matchesToUpdate = await db
       .collection('matches')
-      .where('dateTime', '>=', twoHoursAgo)
+      .where('dateTime', '>=', threeHoursAgo)
       .where('dateTime', '<', now)
       .get()
 

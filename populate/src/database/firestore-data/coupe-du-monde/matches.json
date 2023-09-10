@@ -2,10 +2,12 @@
    "matches": {
       "-Kj2zgKRUwOUbY09TiKi-0": {
          "dateTime": {
-            "_nanoseconds": 442000000,
-            "_seconds": 1694200500
+            "_nanoseconds": 0,
+            "_seconds": 1694300400
          },
          "display": true,
+         "finished": true,
+         "idApiRugby": "40846",
          "odds": {
             "PA": 204,
             "PB": 219,
@@ -18,8 +20,8 @@
          },
          "phase": "0",
          "scores": {
-            "A": 27,
-            "B": 13
+            "A": 52,
+            "B": 8
          },
          "streaming": "TF1",
          "teamA": "-b3j145tij1hqfzo5d0h",
@@ -757,6 +759,7 @@
             "_seconds": 1694372400
          },
          "display": true,
+         "finished": false,
          "idApiRugby": "16957",
          "odds": {
             "PA": 167,
@@ -769,6 +772,10 @@
             "PN": 22.5
          },
          "phase": "0",
+         "scores": {
+            "A": null,
+            "B": null
+         },
          "streaming": "TF1",
          "teamA": "-5ltshzo1rqw0av6x5i8",
          "teamB": "-koy8srrsgmrirzki1f8",
@@ -779,7 +786,7 @@
             "_nanoseconds": 0,
             "_seconds": 1694718000
          },
-         "display": false,
+         "display": true,
          "idApiRugby": "40850",
          "odds": {
             "PA": 1738,
@@ -787,9 +794,9 @@
             "PN": 2002
          },
          "oddsUnibet": {
-            "PA": 15.8,
-            "PB": 26.5,
-            "PN": 18.2
+            "PA": 1.01,
+            "PB": 12.8,
+            "PN": 90
          },
          "phase": "0",
          "streaming": "TF1",
@@ -802,7 +809,7 @@
             "_nanoseconds": 0,
             "_seconds": 1694804400
          },
-         "display": false,
+         "display": true,
          "idApiRugby": "40851",
          "odds": {
             "PA": 1738,
@@ -810,9 +817,9 @@
             "PN": 2002
          },
          "oddsUnibet": {
-            "PA": 15.8,
-            "PB": 26.5,
-            "PN": 18.2
+            "PA": 1.01,
+            "PB": 12.5,
+            "PN": 90
          },
          "phase": "0",
          "streaming": "TF1",
