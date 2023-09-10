@@ -10,15 +10,12 @@ admin.initializeApp({
 
 const db = admin.firestore()
 
-const round = (value, decimals) =>
-  Number(`${Math.round(`${value}e${decimals}`)}${`e-${decimals}`}`)
-
 db.collection('opponents')
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       const { uid, score, displayName } = doc.data()
-      // console.log(uid, score, displayName)
+      console.log(uid, score, displayName)
 
       return db
         .collection('bets')
@@ -28,16 +25,16 @@ db.collection('opponents')
           let betScore = 0
           betSnap.forEach((betDoc) => {
             const { pointsWon } = betDoc.data()
-            if (!isNaN(pointsWon)) betScore += round(pointsWon, 2) // eslint-disable-line no-restricted-globals
+            if (!isNaN(pointsWon)) betScore += Math.round(pointsWon) // eslint-disable-line no-restricted-globals
           })
           if (Math.abs(score - betScore) > 0.01) {
-            console.log(`User: ${displayName} ${score} ${round(betScore, 2)}`)
-            // return db
-            //   .collection('users')
-            //   .doc(id)
-            //   .update({
-            //     score: round(betScore, 2),
-            //   })
+            console.log(`User: ${displayName} ${score} ${Math.round(betScore)}`)
+            return db
+              .collection('opponents')
+              .doc(uid)
+              .update({
+                score: Math.round(betScore),
+              })
           }
         })
     })
