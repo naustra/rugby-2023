@@ -2,7 +2,7 @@
    "matches": {
       "-Kj2zgKRUwOUbY09TiKi-0": {
          "dateTime": {
-            "_nanoseconds": 707000000,
+            "_nanoseconds": 0,
             "_seconds": 1694200500
          },
          "display": true,
@@ -793,9 +793,9 @@
          "display": true,
          "idApiRugby": "40850",
          "odds": {
-            "PA": 1738,
-            "PB": 2915,
-            "PN": 2002
+            "PA": 111,
+            "PB": 1408,
+            "PN": 9900
          },
          "oddsUnibet": {
             "PA": 1.01,
@@ -816,9 +816,9 @@
          "display": true,
          "idApiRugby": "40851",
          "odds": {
-            "PA": 1738,
-            "PB": 2915,
-            "PN": 2002
+            "PA": 111,
+            "PB": 1375,
+            "PN": 9900
          },
          "oddsUnibet": {
             "PA": 1.01,
@@ -883,7 +883,7 @@
             "_seconds": 1694360700
          },
          "display": true,
-         "finished": false,
+         "finished": true,
          "idApiRugby": "16956",
          "odds": {
             "PA": 132,
