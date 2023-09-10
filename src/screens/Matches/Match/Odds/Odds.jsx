@@ -1,15 +1,10 @@
 import isNumber from 'lodash/isNumber'
 
 const Odds = ({ past, betTeamA, betTeamB, scores, odds }) => {
-  if (!scores) return null
-
-  // Find odd depending on scores
-  const { A, B } = scores
-
   const oddToFocus = past
-    ? A > B
+    ? scores?.A > scores?.B
       ? 'PA'
-      : A < B
+      : scores?.A < scores?.B
       ? 'PB'
       : 'PN'
     : !isNumber(betTeamA) || !isNumber(betTeamB)
