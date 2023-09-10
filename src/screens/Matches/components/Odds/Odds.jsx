@@ -13,21 +13,21 @@ const Odds = ({ scoreA, scoreB, odds }) => {
   return (
     <div className="flex justify-between">
       <p
-        className={`rounded border px-1.5 py-1 text-xs bg-gray-100 ${
+        className={`font-sans rounded border px-1.5 py-1 text-sm bg-gray-100 ${
           oddToFocus === 'PA' ? 'border-[#19194B]' : 'text-gray-500'
         }`}
       >
         {odds.PA}
       </p>
       <p
-        className={`rounded border px-1.5 py-1 text-xs bg-gray-100 ${
+        className={`font-sans rounded border px-1.5 py-1 text-sm bg-gray-100 ${
           oddToFocus === 'PN' ? 'border-[#19194B]' : 'text-gray-500'
         }`}
       >
         {odds.PN}
       </p>
       <p
-        className={`rounded border px-1.5 py-1 text-xs bg-gray-100 ${
+        className={`font-sans rounded border px-1.5 py-1 text-sm bg-gray-100 ${
           oddToFocus === 'PB' ? 'border-[#19194B]' : 'text-gray-500'
         }`}
       >

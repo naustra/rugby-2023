@@ -7,14 +7,11 @@ import isNumber from 'lodash/isNumber'
 const getMessage = (betTeamA, betTeamB, pointsWon, maxPoints) => {
   const hasBet = isNumber(betTeamA) && isNumber(betTeamB)
 
-  const scoreBet = `: ${betTeamA} - ${betTeamB}`
+  if (!hasBet) return "Vous n'avez pas pronostiqué"
+  if (!pointsWon) return "Vous n'avez pas marqué de points"
+  if (pointsWon === maxPoints) return 'Vous avez pronostiqué le score parfait!'
 
-  if (!hasBet) return "Vous n'avez pas pronostiqué" + scoreBet
-  if (!pointsWon) return "Vous n'avez pas marqué de points" + scoreBet
-  if (pointsWon === maxPoints)
-    return 'Vous avez pronostiqué le score parfait!' + scoreBet
-
-  return 'Vous avez pronostiqué le bon résultat' + scoreBet
+  return 'Vous avez pronostiqué le bon résultat'
 }
 
 const PointsWon = ({ betTeamA, betTeamB, pointsWon, scores, odds }) => {

@@ -1,86 +1,74 @@
 import PropTypes from 'prop-types'
 import { useBet } from '../../../hooks/bets'
 import { useTeam } from '../../../hooks/teams'
-import InformationMatch from './InformationMatch'
 import './Match.scss'
-import MatchInfos from './MatchInfos'
-import Odds from '../components/Odds'
 import Flag from '../../../components/Flag'
 import PointsWon from './PointsWon/PointsWon'
+import { Divider } from '@mui/material'
+import { isNumber } from 'lodash'
 
 const empty = {}
 
 const Match = ({ matchSnapshot }) => {
-  const currentBet = useBet(matchSnapshot.id)
+  const [currentBet, _] = useBet(matchSnapshot.id)
 
   const match = matchSnapshot.data()
   const teamA = useTeam(match.teamA)
   const teamB = useTeam(match.teamB)
 
+  const myOdd =
+    !isNumber(currentBet?.betTeamA) || !isNumber(currentBet?.betTeamB)
+      ? null
+      : currentBet?.betTeamA > currentBet?.betTeamB
+      ? match.odds.PA
+      : currentBet?.betTeamA < currentBet?.betTeamB
+      ? match.odds.PB
+      : match.odds.PN
+
+  console.log('🚀 ~ file: Match.jsx:21 ~ Match ~ myOdd:', myOdd)
   return (
     match.display && (
       <div className="rounded-xl border w-full p-2 gap-4 max-w-lg text-gray-800 bg-white space-y-2">
-        <div className="text-center">
-          <InformationMatch phase={match.phase} group={teamA.group} />
-        </div>
-
-        <div className="flex justify-around items-center">
-          <div className="flex flex-col items-center justify-center gap-2 mt-1 w-24">
-            <div>
-              <Flag country={teamA.code} className="h-10"></Flag>
-            </div>
+        <div className="flex justify-center items-center">
+          <div className="flex items-center gap-2 mt-1">
             <p className="font-sans">{teamA.name}</p>
+            <Flag
+              country={teamA.code}
+              style={{ width: '40px', height: '40px' }}
+            ></Flag>
           </div>
 
-          <div className="text-[#19194B] text-center w-36 space-y-2">
-            <div className="flex justify-center gap-2 items-center">
-              <input
-                type="text"
-                placeholder="..."
-                className="w-16 text-4xl font-sans text-right"
-                id={`betValue${teamA.code}`}
-                error={
-                  currentBet?.betTeamA < 0 ||
-                  [1, 2, 4].includes(currentBet?.betTeamA)
-                }
-                inputMode="numeric"
-                pattern="[0-9]*"
-                value={match.scores.A}
-                disabled={true}
-              />
-              <PointsWon {...match} {...currentBet} />
-              <input
-                type="text"
-                placeholder="..."
-                className="w-16 text-4xl font-sans text-left"
-                id={`betValue${teamB.code}`}
-                error={
-                  currentBet?.betTeamB < 0 ||
-                  [1, 2, 4].includes(currentBet?.betTeamA)
-                }
-                inputMode="numeric"
-                pattern="[0-9]*"
-                value={match.scores.B}
-                disabled={true}
-              />
+          <div className="text-[#19194B] text-center m-auto space-y-2">
+            <div className="flex justify-center items-center ">
+              <p className="font-sans rounded border px-1.5 py-1 text-xl bg-gray-100 border-[#19194B]">
+                {`${match.scores.A} : ${match.scores.B}`}
+              </p>
             </div>
-            <Odds
-              {...match}
-              scoreA={match?.scores?.A}
-              scoreB={match?.scores?.B}
-            />
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-2 mt-1 w-24">
-            <div>
-              <Flag country={teamB.code} className="h-10"></Flag>
-            </div>
+          <div className="flex items-center gap-2 mt-1">
+            <Flag
+              country={teamB.code}
+              style={{ width: '40px', height: '40px' }}
+            ></Flag>
             <p className="font-sans">{teamB.name}</p>
           </div>
         </div>
-
-        <div className="col-span-3">
-          <MatchInfos match={match} />
+        <Divider />
+        <div className="flex justify-between items-center">
+          <div className="flex flex-col items-center justify-center mt-1">
+            <p className="font-sans">Ma cote</p>
+            <p className="font-sans">{myOdd ?? '-'}</p>
+          </div>
+          <div className="flex flex-col items-center justify-center mt-1 m-auto">
+            <p className="font-sans">Mon score</p>
+            <p className="font-sans">{`${currentBet?.betTeamA ?? ''} - ${
+              currentBet?.betTeamB ?? ''
+            }`}</p>
+          </div>
+          <div className="mr-2">
+            <PointsWon {...match} {...currentBet} />
+          </div>
         </div>
       </div>
     )

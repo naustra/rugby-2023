@@ -53,8 +53,7 @@ const Match = ({ matchSnapshot }) => {
   const betSaved = () =>
     isBetValid(currentBet) &&
     currentBet.betTeamA === bet?.betTeamA &&
-    currentBet.betTeamB === bet?.betTeamB &&
-    currentBet.betWinner === bet?.betWinner
+    currentBet.betTeamB === bet?.betTeamB
 
   return (
     match.display && (
