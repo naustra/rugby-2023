@@ -2,8 +2,8 @@
    "matches": {
       "-Kj2zgKRUwOUbY09TiKi-0": {
          "dateTime": {
-            "_nanoseconds": 0,
-            "_seconds": 1694300400
+            "_nanoseconds": 707000000,
+            "_seconds": 1694200500
          },
          "display": true,
          "finished": true,
@@ -20,8 +20,8 @@
          },
          "phase": "0",
          "scores": {
-            "A": 52,
-            "B": 8
+            "A": 27,
+            "B": 13
          },
          "streaming": "TF1",
          "teamA": "-b3j145tij1hqfzo5d0h",
@@ -722,8 +722,8 @@
          },
          "phase": "0",
          "scores": {
-            "A": 24,
-            "B": 3
+            "A": 27,
+            "B": 10
          },
          "streaming": "TF1",
          "teamA": "-tbgtcmmvw8bwex4piti",
@@ -748,6 +748,10 @@
             "PN": 13.8
          },
          "phase": "0",
+         "scores": {
+            "A": 42,
+            "B": 12
+         },
          "streaming": "France TV",
          "teamA": "-lt7n3kpgzmfj487029j",
          "teamB": "-j9p716y3qazwd6f4m0d",
@@ -879,6 +883,7 @@
             "_seconds": 1694360700
          },
          "display": true,
+         "finished": false,
          "idApiRugby": "16956",
          "odds": {
             "PA": 132,
@@ -891,6 +896,10 @@
             "PN": 30
          },
          "phase": "0",
+         "scores": {
+            "A": 18,
+            "B": 3
+         },
          "streaming": "France TV",
          "teamA": "-yl5u7zxd06dh7ii6aln",
          "teamB": "-vo7g4zwoqc3ra4sxmxn",
