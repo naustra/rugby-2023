@@ -33,17 +33,17 @@ const getGame = async (id: string) => {
 export const updateResult = functions
   .region(EU_WEST_3)
   .runWith({ maxInstances: 1 })
-  .pubsub.schedule('*/5 13-22 * * *')
+  .pubsub.schedule('*/3 13-22 * * *')
   .timeZone('Europe/Paris')
   .onRun(async (context) => {
     const now = new Date(context.timestamp)
-    const inTwoHours = new Date(context.timestamp)
-    inTwoHours.setHours(inTwoHours.getHours() + 2)
+    const twoHoursAgo = new Date(context.timestamp)
+    twoHoursAgo.setHours(twoHoursAgo.getHours() - 2)
 
     const matchesToUpdate = await db
       .collection('matches')
-      .where('dateTime', '>=', now)
-      .where('dateTime', '<', inTwoHours)
+      .where('dateTime', '>=', twoHoursAgo)
+      .where('dateTime', '<', now)
       .get()
 
     await Promise.all(
