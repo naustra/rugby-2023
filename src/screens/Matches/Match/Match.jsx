@@ -7,6 +7,7 @@ import { useTeam } from '../../../hooks/teams'
 import InformationMatch from './InformationMatch'
 import './Match.scss'
 import MatchInfos from './MatchInfos'
+import Odds from './Odds'
 import ValidIcon from './ValidIcon'
 import Flag from '../../../components/Flag'
 import PointsWon from './PointsWon/PointsWon'
@@ -123,36 +124,7 @@ const Match = ({ matchSnapshot }) => {
                 disabled={past}
               />
             </div>
-            <div className="flex justify-between">
-              <p
-                className={`rounded border px-1.5 py-1 text-xs bg-gray-100 ${
-                  currentBet?.betTeamA > currentBet?.betTeamB
-                    ? 'border-[#19194B]'
-                    : 'text-gray-500'
-                }`}
-              >
-                {match.odds.PA}
-              </p>
-              <p
-                className={`rounded border px-1.5 py-1 text-xs bg-gray-100 ${
-                  currentBet?.betTeamA &&
-                  currentBet?.betTeamA === currentBet?.betTeamB
-                    ? 'border-[#19194B]'
-                    : 'text-gray-500'
-                }`}
-              >
-                {match.odds.PN}
-              </p>
-              <p
-                className={`rounded border px-1.5 py-1 text-xs bg-gray-100 ${
-                  currentBet?.betTeamA < currentBet?.betTeamB
-                    ? 'border-[#19194B]'
-                    : 'text-gray-500'
-                }`}
-              >
-                {match.odds.PB}
-              </p>
-            </div>
+            <Odds past={past} {...match} {...currentBet} />
           </div>
 
           <div className="flex flex-col items-center justify-center gap-2 mt-1 w-24">

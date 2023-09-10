@@ -10,7 +10,7 @@ const getMessage = (betTeamA, betTeamB, pointsWon, maxPoints) => {
   const scoreBet = `: ${betTeamA} - ${betTeamB}`
 
   if (!hasBet) return "Vous n'avez pas pronostiqué" + scoreBet
-  if (pointsWon == 0) return "Vous n'avez pas marqué de points" + scoreBet
+  if (!pointsWon) return "Vous n'avez pas marqué de points" + scoreBet
   if (pointsWon === maxPoints)
     return 'Vous avez pronostiqué le score parfait!' + scoreBet
 

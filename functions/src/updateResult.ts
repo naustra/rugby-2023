@@ -33,7 +33,7 @@ const getGame = async (id: string) => {
 export const updateResult = functions
   .region(EU_WEST_3)
   .runWith({ maxInstances: 1 })
-  .pubsub.schedule('*/3 13-22 * * *')
+  .pubsub.schedule('*/1 13-22 * * *')
   .timeZone('Europe/Paris')
   .onRun(async (context) => {
     const now = new Date(context.timestamp)

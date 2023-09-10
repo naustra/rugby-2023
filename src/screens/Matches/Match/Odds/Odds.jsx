@@ -1,64 +1,50 @@
-import PropTypes from 'prop-types'
-import Tooltip from '@mui/material/Tooltip'
-import padStart from 'lodash/padStart'
+import isNumber from 'lodash/isNumber'
 
-import './Odds.scss'
+const Odds = ({ past, betTeamA, betTeamB, scores, odds }) => {
+  if (!scores) return null
 
-const toHex = (number) =>
-  padStart(Math.min(Math.round(Math.abs(number)), 255).toString(16), 2, '0')
+  // Find odd depending on scores
+  const { A, B } = scores
 
-const getColor = (value) => {
-  const r = (128 / 13) * (value + 1)
-  const g = (-128 / 11) * (value - 12)
-  return `#${toHex(r)}${toHex(g)}00`
-}
+  const oddToFocus = past
+    ? A > B
+      ? 'PA'
+      : A < B
+      ? 'PB'
+      : 'PN'
+    : !isNumber(betTeamA) || !isNumber(betTeamB)
+    ? null
+    : betTeamA > betTeamB
+    ? 'PA'
+    : betTeamA < betTeamB
+    ? 'PB'
+    : 'PN'
 
-const Odds = ({ A, B, N, teamA, teamB }) => {
-  const oddBasis = (
-    <div className="odds-container">
-      <Tooltip
-        placement="right"
-        title={`Cote de victoire de l'équipe: ${teamA.name}`}
-        enterTouchDelay={0}
+  return (
+    <div className="flex justify-between">
+      <p
+        className={`rounded border px-1.5 py-1 text-xs bg-gray-100 ${
+          oddToFocus === 'PA' ? 'border-[#19194B]' : 'text-gray-500'
+        }`}
       >
-        <div className="odd left" style={{ backgroundColor: getColor(A) }}>
-          {A}
-        </div>
-      </Tooltip>
-      {N !== 0 ? (
-        <Tooltip placement="top" title="Cote du match nul" enterTouchDelay={0}>
-          <div className="odd" style={{ backgroundColor: getColor(N) }}>
-            {N}
-          </div>
-        </Tooltip>
-      ) : (
-        <div></div>
-      )}
-      <Tooltip
-        placement="left"
-        title={`Cote de victoire de l'équipe: ${teamB.name}`}
-        enterTouchDelay={0}
+        {odds.PA}
+      </p>
+      <p
+        className={`rounded border px-1.5 py-1 text-xs bg-gray-100 ${
+          oddToFocus === 'PN' ? 'border-[#19194B]' : 'text-gray-500'
+        }`}
       >
-        <div className="odd right" style={{ backgroundColor: getColor(B) }}>
-          {B}
-        </div>
-      </Tooltip>
+        {odds.PN}
+      </p>
+      <p
+        className={`rounded border px-1.5 py-1 text-xs bg-gray-100 ${
+          oddToFocus === 'PB' ? 'border-[#19194B]' : 'text-gray-500'
+        }`}
+      >
+        {odds.PB}
+      </p>
     </div>
   )
-
-  return oddBasis
-}
-
-Odds.propTypes = {
-  A: PropTypes.number,
-  B: PropTypes.number,
-  N: PropTypes.number,
-  teamA: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-  }),
-  teamB: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-  }),
 }
 
 export default Odds
