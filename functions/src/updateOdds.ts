@@ -69,10 +69,11 @@ export const updateOdds = functions
               PB: bets[2].value,
             },
             odds: {
-              PA: bets[0].value * COEFF_MULTIPLIER,
-              PN: bets[1].value * COEFF_MULTIPLIER,
-              PB: bets[2].value * COEFF_MULTIPLIER,
+              PA: Math.round(bets[0].value * COEFF_MULTIPLIER),
+              PN: Math.round(bets[1].value * COEFF_MULTIPLIER),
+              PB: Math.round(bets[2].value * COEFF_MULTIPLIER),
             },
+            display: true,
           })
       }),
     )
