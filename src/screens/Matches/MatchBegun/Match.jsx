@@ -1,63 +1,21 @@
-import conformsTo from 'lodash/conformsTo'
-import isNumber from 'lodash/isNumber'
 import PropTypes from 'prop-types'
-import { useState } from 'react'
 import { useBet } from '../../../hooks/bets'
 import { useTeam } from '../../../hooks/teams'
 import InformationMatch from './InformationMatch'
 import './Match.scss'
 import MatchInfos from './MatchInfos'
-import Odds from './Odds'
-import ValidIcon from './ValidIcon'
+import Odds from '../components/Odds'
 import Flag from '../../../components/Flag'
 import PointsWon from './PointsWon/PointsWon'
 
 const empty = {}
 
 const Match = ({ matchSnapshot }) => {
-  const [bet, saveBet] = useBet(matchSnapshot.id)
-  const [currentBet, setCurrentBet] = useState(bet)
+  const currentBet = useBet(matchSnapshot.id)
 
   const match = matchSnapshot.data()
   const teamA = useTeam(match.teamA)
   const teamB = useTeam(match.teamB)
-
-  const past = match.dateTime.toMillis() <= Date.now()
-
-  const isBetValid = (updatedBet) => {
-    const scoreValidator = (score) => isNumber(score) && score >= 0
-
-    return conformsTo(updatedBet, {
-      betTeamA: scoreValidator,
-      betTeamB: scoreValidator,
-    })
-  }
-
-  const handleChange =
-    (team) =>
-    ({ target: { value } }) => {
-      const updatedBet = {
-        ...currentBet,
-        [`betTeam${team}`]: Number(value),
-      }
-      setCurrentBet(updatedBet)
-      saveBetIfValid(updatedBet)
-    }
-
-  const handleTeamAChange = handleChange('A')
-  const handleTeamBChange = handleChange('B')
-
-  const saveBetIfValid = (updatedBet) => {
-    if (isBetValid(updatedBet)) {
-      saveBet(updatedBet)
-    }
-  }
-
-  const betSaved = () =>
-    isBetValid(currentBet) &&
-    currentBet.betTeamA === bet?.betTeamA &&
-    currentBet.betTeamB === bet?.betTeamB &&
-    currentBet.betWinner === bet?.betWinner
 
   return (
     match.display && (
@@ -87,21 +45,10 @@ const Match = ({ matchSnapshot }) => {
                 }
                 inputMode="numeric"
                 pattern="[0-9]*"
-                value={
-                  !past
-                    ? currentBet?.betTeamA >= 0
-                      ? currentBet?.betTeamA
-                      : ''
-                    : match.scores.A
-                }
-                onChange={handleTeamAChange}
-                disabled={past}
+                value={match.scores.A}
+                disabled={true}
               />
-              {past ? (
-                <PointsWon {...match} {...currentBet} />
-              ) : (
-                <ValidIcon valid={betSaved()} />
-              )}
+              <PointsWon {...match} {...currentBet} />
               <input
                 type="text"
                 placeholder="..."
@@ -113,18 +60,15 @@ const Match = ({ matchSnapshot }) => {
                 }
                 inputMode="numeric"
                 pattern="[0-9]*"
-                value={
-                  !past
-                    ? currentBet?.betTeamB >= 0
-                      ? currentBet?.betTeamB
-                      : ''
-                    : match.scores.B
-                }
-                onChange={handleTeamBChange}
-                disabled={past}
+                value={match.scores.B}
+                disabled={true}
               />
             </div>
-            <Odds past={past} {...match} {...currentBet} />
+            <Odds
+              {...match}
+              scoreA={match?.scores?.A}
+              scoreB={match?.scores?.B}
+            />
           </div>
 
           <div className="flex flex-col items-center justify-center gap-2 mt-1 w-24">

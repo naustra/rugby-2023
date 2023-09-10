@@ -7,7 +7,8 @@ import map from 'lodash/map'
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import { useCompetitionData } from '../../hooks/competition'
 import { useMatches } from '../../hooks/matches'
-import Match from './Match'
+import MatchToBet from './MatchToBet'
+import MatchBegun from './MatchBegun'
 import './matches.scss'
 
 const Matches = () => {
@@ -59,9 +60,19 @@ const Matches = () => {
         </Tabs>
       </AppBar>
       <div className="matches-container">
-        {map(filteredMatches, (documentSnapshot) => (
-          <Match matchSnapshot={documentSnapshot} key={documentSnapshot.id} />
-        ))}
+        {selectedTab === 0
+          ? map(filteredMatches, (documentSnapshot) => (
+              <MatchToBet
+                matchSnapshot={documentSnapshot}
+                key={documentSnapshot.id}
+              />
+            ))
+          : map(filteredMatches, (documentSnapshot) => (
+              <MatchBegun
+                matchSnapshot={documentSnapshot}
+                key={documentSnapshot.id}
+              />
+            ))}
       </div>
     </>
   ) : (

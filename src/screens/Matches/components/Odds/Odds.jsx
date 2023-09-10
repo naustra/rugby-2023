@@ -1,19 +1,14 @@
 import isNumber from 'lodash/isNumber'
 
-const Odds = ({ past, betTeamA, betTeamB, scores, odds }) => {
-  const oddToFocus = past
-    ? scores?.A > scores?.B
+const Odds = ({ scoreA, scoreB, odds }) => {
+  const oddToFocus =
+    !isNumber(scoreA) || !isNumber(scoreB)
+      ? null
+      : scoreA > scoreB
       ? 'PA'
-      : scores?.A < scores?.B
+      : scoreA < scoreB
       ? 'PB'
       : 'PN'
-    : !isNumber(betTeamA) || !isNumber(betTeamB)
-    ? null
-    : betTeamA > betTeamB
-    ? 'PA'
-    : betTeamA < betTeamB
-    ? 'PB'
-    : 'PN'
 
   return (
     <div className="flex justify-between">
