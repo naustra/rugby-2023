@@ -29,12 +29,12 @@ db.collection('opponents')
           })
           if (Math.abs(score - betScore) > 0.01) {
             console.log(`User: ${displayName} ${score} ${Math.round(betScore)}`)
-            return db
-              .collection('opponents')
-              .doc(uid)
-              .update({
-                score: Math.round(betScore),
-              })
+            // return db
+            //   .collection('opponents')
+            //   .doc(uid)
+            //   .update({
+            //     score: Math.round(betScore),
+            //   })
           }
         })
     })
