@@ -47,7 +47,7 @@ export const updateOdds = functions
       oddsGames.map(async (matchData: any) => {
         const matchSnap = await db
           .collection('matches')
-          .where('idApiRugby', '==', matchData.game.id)
+          .where('idApiRugby', '==', matchData.game.id.toString())
           .get()
 
         if (matchSnap.size === 0) return
@@ -57,21 +57,21 @@ export const updateOdds = functions
         if (match.finished) return
 
         const bets = matchData.bookmakers[0].bets[0].values
-
+        if (!bets) return
         // Update game Score and status
         await db
           .collection('matches')
           .doc(matchSnap.docs[0].id)
           .update({
             oddsUnibet: {
-              PA: bets[0].value,
-              PN: bets[1].value,
-              PB: bets[2].value,
+              PA: bets[0].odd,
+              PN: bets[1].odd,
+              PB: bets[2].odd,
             },
             odds: {
-              PA: Math.round(bets[0].value * COEFF_MULTIPLIER),
-              PN: Math.round(bets[1].value * COEFF_MULTIPLIER),
-              PB: Math.round(bets[2].value * COEFF_MULTIPLIER),
+              PA: Math.round(bets[0].odd * COEFF_MULTIPLIER),
+              PN: Math.round(bets[1].odd * COEFF_MULTIPLIER),
+              PB: Math.round(bets[2].odd * COEFF_MULTIPLIER),
             },
             display: true,
           })

@@ -1,5 +1,5 @@
 /*
- * Check if the sum of points won equals to the points people have in ranking
+ * Get score from API Rugby
  */
 const axios = require('axios')
 require('dotenv').config({ path: '../.env' })

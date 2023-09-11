@@ -1,5 +1,5 @@
 /*
- * Check if the sum of points won equals to the points people have in ranking
+ * Get odds from API Rugby
  */
 const axios = require('axios')
 require('dotenv').config({ path: '../.env' })
@@ -10,8 +10,6 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 })
 
-// ! Test bookmakers[6].bets[0].values ([0].value)
-
 const db = admin.firestore()
 
 const headers = {
@@ -19,99 +17,57 @@ const headers = {
   'X-RapidAPI-Host': 'api-rugby.p.rapidapi.com',
 }
 
-const getOddsUnibetGame = async (id) => {
+const getOddsGames = async () => {
   const options = {
     method: 'GET',
     url: 'https://api-rugby.p.rapidapi.com/odds',
-    params: { game: id },
-    headers,
-  }
-  const response = await axios.request(options)
-  return response.data
-}
-
-const getLeagues = async () => {
-  const options = {
-    method: 'GET',
-    url: 'https://api-rugby.p.rapidapi.com/leagues',
-    headers,
-  }
-  const response = await axios.request(options)
-  return response.data
-}
-
-const getGames = async () => {
-  const options = {
-    method: 'GET',
-    url: 'https://api-rugby.p.rapidapi.com/games',
     params: {
       league: '69',
       season: '2023',
+      bookmaker: '6',
+      bet: '1',
     },
     headers,
   }
   const response = await axios.request(options)
-  // save in json file
-  const fs = require('fs')
-  fs.writeFileSync(
-    'games.json',
-    JSON.stringify(
-      response.data.response.map((game) => ({
-        id: game.id,
-        date: game.date,
-      })),
-    ),
-  )
-
-  console.table(response.data.response)
   return response.data.response
 }
 
-const getGame = async (id) => {
-  const options = {
-    method: 'GET',
-    url: 'https://api-rugby.p.rapidapi.com/games/',
-    params: {
-      id: id,
-    },
-    headers,
-  }
-  const response = await axios.request(options)
-  return response.data.response[0]
-}
-
 const updateScores = async () => {
-  const now = new Date()
-  const inTwoHours = new Date()
-  inTwoHours.setHours(inTwoHours.getHours() + 2)
-
-  const matchesToNotify = await db
-    .collection('matches')
-    .where('dateTime', '>=', now)
-    .where('dateTime', '<', inTwoHours)
-    .get()
+  const oddsGames = await getOddsGames()
 
   await Promise.all(
-    matchesToNotify.docs.map(async (matchSnap) => {
-      const match = matchSnap.data()
+    oddsGames.map(async (matchData) => {
+      const matchSnap = await db
+        .collection('matches')
+        .where('idApiRugby', '==', matchData.game.id.toString())
+        .get()
+
+      if (matchSnap.size === 0) return
+
+      const match = matchSnap.docs[0].data()
+
       if (match.finished) return
 
-      const gameStatus = await getGame(match.idApiRugby)
-      console.log(
-        '🚀 ~ file: api_rugby_test.js:86 ~ matchesToNotify.docs.map ~ gameStatus:',
-        gameStatus,
-      )
+      const bets = matchData.bookmakers[0].bets[0].values
+      if (!bets) return
 
       // Update game Score and status
       await db
         .collection('matches')
-        .doc(matchSnap.id)
+        .doc(matchSnap.docs[0].id)
         .update({
-          scores: {
-            A: gameStatus.scores.home,
-            B: gameStatus.scores.away,
+          oddsUnibet: {
+            PA: bets[0].odd,
+            PN: bets[1].odd,
+            PB: bets[2].odd,
           },
-          finished: gameStatus.status.long === 'Finished',
+          odds: {
+            PA: Math.round(bets[0].odd * 110),
+            PN: Math.round(bets[1].odd * 110),
+            PB: Math.round(bets[2].odd * 110),
+          },
+          display: true,
         })
     }),
   )
