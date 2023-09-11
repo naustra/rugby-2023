@@ -10,10 +10,11 @@ const Bonus = () => (
       Vainqueur final
     </Typography>
     <p>
-      Chaque joueur pronostique également le champion de la Coupe du monde de rugby 2023 avant que
-      la compétition commence. Si jamais celui-ci est trouvé par le parieur une
-      fois la compétition terminée, la cote associée au pays pronostiqué est
-      ajouté aux autres points gagnés durant toute la compétition.
+      Chaque joueur pronostique également le champion de la Coupe du monde de
+      rugby 2023 avant que la compétition commence. Si jamais celui-ci est
+      trouvé par le parieur une fois la compétition terminée, la cote associée
+      au pays pronostiqué est ajouté aux autres points gagnés durant toute la
+      compétition.
     </p>
     <div>
       <Typography variant="h2">
@@ -42,6 +43,7 @@ const Bonus = () => (
           ]}
           rows={[
             ['Nombres de matchs', '40', '4', '2', '1', '1', 'N/A'],
+            ['Facteur multiplicateur', 'N/A', '2', '4', '6', '10', 'N/A'],
             ['% points total', '45', '12.5', '9', '5', '7', '10'],
           ]}
         />
