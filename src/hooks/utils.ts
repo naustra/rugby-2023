@@ -41,7 +41,7 @@ export const useBatchedMultiGet = (ids: string[], collectionName: string) => {
   }, [firestore, idChunks, ids, collectionName])
 
   return useMemo(
-    () => Object.values(entities).filter((u) => ids.includes(u.id)),
+    () => Object.values(entities).filter((u) => ids?.includes(u.id)),
     [entities, ids],
   )
 }

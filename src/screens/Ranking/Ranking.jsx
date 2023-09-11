@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { useGroupsForUserMember } from '../../hooks/groups'
 import GroupRanking from './GroupRanking'
 import './ranking.scss'
+import { useAllOpponents } from '../../hooks/opponents'
 
 const Ranking = () => {
   const [selectedTab, setSelectedTab] = useState(0)
@@ -14,6 +15,8 @@ const Ranking = () => {
   const handleTabChange = (event, value) => {
     setSelectedTab(value)
   }
+
+  const allOpponents = useAllOpponents()
 
   return isEmpty(groups) ? (
     <>
@@ -33,6 +36,7 @@ const Ranking = () => {
           centered
           textColor="inherit"
         >
+          <Tab label="Général" />
           {groups.map((group) => (
             <Tab
               key={group.id}
@@ -46,7 +50,16 @@ const Ranking = () => {
         </Tabs>
       </AppBar>
       <div className="ranking-container">
-        {!isEmpty(groups) && <GroupRanking {...groups[selectedTab]?.data()} />}
+        {!isEmpty(groups) && selectedTab === 0 ? (
+          <GroupRanking
+            {...{
+              name: 'Général',
+              opponentsProvided: allOpponents,
+            }}
+          />
+        ) : (
+          <GroupRanking {...groups[selectedTab - 1]?.data()} />
+        )}
       </div>
     </>
   )

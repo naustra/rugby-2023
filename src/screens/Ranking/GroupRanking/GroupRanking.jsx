@@ -23,15 +23,18 @@ export const imgUrlFlag = memoize((country) =>
   require(`../../../assets/flags/${country}.svg`),
 )
 
-const GroupRanking = ({ name, members }) => {
+const GroupRanking = ({ name, members, opponentsProvided }) => {
   const { uid } = useAuth().currentUser
   const opponents = useOpponents(members)
+
+  const opponentsUsed = opponentsProvided || opponents
+
   const sortedOpponents = useMemo(
     () =>
-      orderBy(opponents, (userSnapshot) => userSnapshot.data().score ?? 0, [
+      orderBy(opponentsUsed, (userSnapshot) => userSnapshot.data().score ?? 0, [
         'desc',
       ]),
-    [opponents],
+    [opponentsUsed],
   )
 
   const teams = useTeams()
