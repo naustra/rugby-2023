@@ -153,7 +153,7 @@ const App = ({ beforeInstallPrompt }) => {
             {signedIn && (
               <>
                 {/* Routes accessibles avec connexion */}
-                <Route path="/matches" element={<MatchesPage />} />
+                <Route path="/matches/*" element={<MatchesPage />} />
                 <Route path="/ranking" element={<RankingPage />} />
                 <Route path="/groups" element={<GroupsPage />} />
                 <Route path="/profile" element={<Profile />} />

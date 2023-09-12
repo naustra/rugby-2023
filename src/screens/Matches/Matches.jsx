@@ -10,13 +10,20 @@ import { useMatches } from '../../hooks/matches'
 import MatchToBet from './MatchToBet'
 import MatchBegun from './MatchBegun'
 import './matches.scss'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Matches = () => {
-  const [selectedTab, setSelectedTab] = useState(0)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const urlParams = new URLSearchParams(location.search)
+  const [selectedTab, setSelectedTab] = useState(
+    Number(urlParams.get('tab') || '0'),
+  )
   const [comparingDate, setComparingDate] = useState(Date.now())
 
   const handleTabChange = (event, value) => {
     setSelectedTab(value)
+    navigate(`${location.pathname}?tab=${value}`)
   }
 
   useEffect(() => {
@@ -24,19 +31,25 @@ const Matches = () => {
     return clearInterval(handle)
   })
 
+  useEffect(() => {
+    const tabFromUrl = urlParams.get('tab') || '0'
+    setSelectedTab(Number(tabFromUrl))
+  }, [location.search])
+
   const matches = useMatches()
+  console.log('🚀 ~ file: Matches.jsx:39 ~ Matches ~ matches:', matches)
 
   const filteredMatches = useMemo(
     () =>
       selectedTab === 0
         ? matches.filter((match) => {
-            const timestamp = match.get('dateTime').toMillis()
+            const timestamp = match.dateTime?.toMillis()
 
             return timestamp > comparingDate
           })
         : matches
             .filter((match) => {
-              const timestamp = match.get('dateTime').toMillis()
+              const timestamp = match.dateTime?.toMillis()
 
               return timestamp <= comparingDate
             })
@@ -61,17 +74,11 @@ const Matches = () => {
       </AppBar>
       <div className="matches-container">
         {selectedTab === 0
-          ? map(filteredMatches, (documentSnapshot) => (
-              <MatchToBet
-                matchSnapshot={documentSnapshot}
-                key={documentSnapshot.id}
-              />
+          ? map(filteredMatches, (match) => (
+              <MatchToBet match={match} key={match.id} />
             ))
-          : map(filteredMatches, (documentSnapshot) => (
-              <MatchBegun
-                matchSnapshot={documentSnapshot}
-                key={documentSnapshot.id}
-              />
+          : map(filteredMatches, (match) => (
+              <MatchBegun match={match} key={match.id} />
             ))}
       </div>
     </>

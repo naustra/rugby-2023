@@ -6,7 +6,6 @@ import { useIsUserConnected } from '../../../hooks/user'
 import ConnectionModal from '../ConnectionModal'
 import './ConnectionWidget.scss'
 import User from './User'
-import { FaSignInAlt } from 'react-icons/fa'
 
 const ConnectionWidget = () => {
   const isConnected = useIsUserConnected()

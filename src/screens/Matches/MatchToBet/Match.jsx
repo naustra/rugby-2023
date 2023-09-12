@@ -13,11 +13,10 @@ import Flag from '../../../components/Flag'
 
 const empty = {}
 
-const Match = ({ matchSnapshot }) => {
-  const [bet, saveBet] = useBet(matchSnapshot.id)
+const Match = ({ match }) => {
+  const [bet, saveBet] = useBet(match.id)
   const [currentBet, setCurrentBet] = useState(bet)
 
-  const match = matchSnapshot.data()
   const teamA = useTeam(match.teamA)
   const teamB = useTeam(match.teamB)
 

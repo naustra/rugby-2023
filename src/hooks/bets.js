@@ -4,8 +4,27 @@ import {
   serverTimestamp,
   doc,
   setDoc,
+  query,
+  where,
 } from '@firebase/firestore'
-import { useFirestore, useFirestoreDocData, useUser } from 'reactfire'
+import {
+  useFirestore,
+  useFirestoreCollection,
+  useFirestoreDocData,
+  useUser,
+} from 'reactfire'
+
+export const useBets = (matchId, members) => {
+  const firestore = useFirestore()
+  const betsCollection = collection(firestore, 'bets')
+  const betsQuery = query(
+    betsCollection,
+    where('matchId', '==', matchId),
+    where('uid', 'in', members),
+  )
+
+  return useFirestoreCollection(betsQuery).data?.docs
+}
 
 export const useBet = (matchId) => {
   const {

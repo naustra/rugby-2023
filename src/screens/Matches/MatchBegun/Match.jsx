@@ -6,13 +6,15 @@ import Flag from '../../../components/Flag'
 import PointsWon from './PointsWon/PointsWon'
 import { Divider } from '@mui/material'
 import { isNumber } from 'lodash'
+import { useNavigate } from 'react-router-dom'
 
 const empty = {}
 
-const Match = ({ matchSnapshot }) => {
-  const [currentBet, _] = useBet(matchSnapshot.id)
+const Match = ({ match }) => {
+  const [currentBet] = useBet(match.id)
+  console.log('🚀 ~ file: Match.jsx:15 ~ Match ~ match.id:', match.id)
+  const navigate = useNavigate()
 
-  const match = matchSnapshot.data()
   const teamA = useTeam(match.teamA)
   const teamB = useTeam(match.teamB)
 
@@ -25,10 +27,12 @@ const Match = ({ matchSnapshot }) => {
       ? match.odds.PB
       : match.odds.PN
 
-  console.log('🚀 ~ file: Match.jsx:21 ~ Match ~ myOdd:', myOdd)
   return (
     match.display && (
-      <div className="rounded-xl border w-full p-2 gap-4 max-w-lg text-gray-800 bg-white space-y-2">
+      <button
+        className="rounded-xl border w-full p-2 gap-4 max-w-lg text-gray-800 bg-white space-y-2"
+        onClick={() => navigate(`/matches/${match.id}`)}
+      >
         <div className="flex justify-center items-center">
           <div className="flex items-center gap-2 mt-1">
             <p className="font-sans">{teamA.name}</p>
@@ -70,7 +74,7 @@ const Match = ({ matchSnapshot }) => {
             <PointsWon {...match} {...currentBet} />
           </div>
         </div>
-      </div>
+      </button>
     )
   )
 }

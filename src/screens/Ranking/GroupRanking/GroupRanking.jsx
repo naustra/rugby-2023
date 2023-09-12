@@ -50,6 +50,7 @@ const GroupRanking = ({ name, members, opponentsProvided }) => {
           <TableBody>
             {sortedOpponents.map((userSnapshot, index) => {
               const user = userSnapshot.data()
+              if (!user) return null
 
               const team = user.winnerTeam
                 ? teams.find((a) => a.id === user.winnerTeam).data()
