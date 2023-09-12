@@ -15,7 +15,10 @@ import { useLocation, useNavigate } from 'react-router-dom'
 const Matches = () => {
   const navigate = useNavigate()
   const location = useLocation()
-  const urlParams = new URLSearchParams(location.search)
+  const urlParams = useMemo(
+    () => new URLSearchParams(location.search),
+    [location.search],
+  )
   const [selectedTab, setSelectedTab] = useState(
     Number(urlParams.get('tab') || '0'),
   )
@@ -34,7 +37,7 @@ const Matches = () => {
   useEffect(() => {
     const tabFromUrl = urlParams.get('tab') || '0'
     setSelectedTab(Number(tabFromUrl))
-  }, [location.search])
+  }, [urlParams])
 
   const matches = useMatches()
   console.log('🚀 ~ file: Matches.jsx:39 ~ Matches ~ matches:', matches)
