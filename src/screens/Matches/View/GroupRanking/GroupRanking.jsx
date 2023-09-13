@@ -13,20 +13,23 @@ import { useAuth } from 'reactfire'
 import InlineAvatar from 'components/Avatar'
 import './GroupRanking.scss'
 import { TableHead } from '@mui/material'
-import { useBets } from 'hooks/bets'
+import { useBetsFromGame } from 'hooks/bets'
 
 const GroupRanking = ({ name, opponents, match }) => {
   const { uid } = useAuth().currentUser
   const membersIds = opponents?.map((opponent) => opponent.data().uid)
 
-  const bets = useBets(match.id, membersIds)
+  const bets = useBetsFromGame(match.id)
+
+  const betsFiltered = useMemo(
+    () =>
+      membersIds ? bets?.filter((bet) => membersIds.includes(bet.uid)) : bets,
+    [bets, membersIds],
+  )
 
   const sortedBets = useMemo(
-    () =>
-      orderBy(bets, (betSnapshot) => betSnapshot.data().pointsWon ?? 0, [
-        'desc',
-      ]),
-    [bets],
+    () => orderBy(betsFiltered, (bet) => bet.pointsWon ?? 0, ['desc']),
+    [betsFiltered],
   )
 
   if (!bets) return null
@@ -53,8 +56,7 @@ const GroupRanking = ({ name, opponents, match }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {sortedBets.map((betSnapshot, index) => {
-              const bet = betSnapshot.data()
+            {sortedBets.map((bet, index) => {
               const userSnapshot = opponents.find(
                 (opponent) => opponent.id === bet.uid,
               )
@@ -62,7 +64,7 @@ const GroupRanking = ({ name, opponents, match }) => {
 
               return (
                 <TableRow
-                  key={betSnapshot.id}
+                  key={bet.id}
                   className={bet.uid === uid ? 'own-ranking-row' : ''}
                 >
                   <TableCell>

@@ -4,14 +4,22 @@ import {
   serverTimestamp,
   doc,
   setDoc,
+  where,
+  query,
 } from '@firebase/firestore'
-import { useFirestore, useFirestoreDocData, useUser } from 'reactfire'
-import { useBatchedMultiGet } from './utils'
+import {
+  useFirestore,
+  useFirestoreCollectionData,
+  useFirestoreDocData,
+  useUser,
+} from 'reactfire'
 
-export const useBets = (matchId, members) => {
-  return useBatchedMultiGet(members, 'bets', [
-    { field: 'matchId', operator: '==', value: matchId },
-  ])
+export const useBetsFromGame = (matchId) => {
+  const firestore = useFirestore()
+  const matches = collection(firestore, 'bets')
+  const matchesQuery = query(matches, where('matchId', '==', matchId))
+
+  return useFirestoreCollectionData(matchesQuery, { idField: 'id' }).data
 }
 
 export const useBet = (matchId) => {

@@ -1,7 +1,6 @@
 import chunk from 'lodash/chunk'
 import isEmpty from 'lodash/isEmpty'
 import keyBy from 'lodash/keyBy'
-import { WhereFilterOp } from '@firebase/firestore-types'
 import { useEffect, useMemo, useState } from 'react'
 import {
   documentId,
@@ -15,12 +14,7 @@ import {
 import { useFirestore } from 'reactfire'
 import { Dictionary } from 'lodash'
 
-// * Used to get more than 30 documents at a time with "in" operator
-export const useBatchedMultiGet = (
-  ids: string[],
-  collectionName: string,
-  conditions: Array<{ field: string; operator: WhereFilterOp; value: any }>,
-) => {
+export const useBatchedMultiGet = (ids: string[], collectionName: string) => {
   const idChunks = useMemo(() => chunk(ids, 10), [ids])
   const [entities, setEntities] = useState<
     Dictionary<QueryDocumentSnapshot<DocumentData>>
@@ -33,13 +27,7 @@ export const useBatchedMultiGet = (
     const collectionRef = collection(firestore, collectionName)
 
     const unsubscribes = idChunks.map((idChunk) => {
-      let queryRef = query(collectionRef, where(documentId(), 'in', idChunk))
-
-      // Apply additional conditions
-      conditions?.forEach(({ field, operator, value }) => {
-        queryRef = query(queryRef, where(field, operator, value))
-      })
-
+      const queryRef = query(collectionRef, where(documentId(), 'in', idChunk))
       return onSnapshot(queryRef, (snap) => {
         const addedEntities = keyBy(snap.docs, 'id')
         setEntities((currentEntities) => ({
@@ -50,7 +38,7 @@ export const useBatchedMultiGet = (
     })
 
     return () => unsubscribes.forEach((unsubscribe) => unsubscribe())
-  }, [firestore, idChunks, ids, collectionName, conditions])
+  }, [firestore, idChunks, ids, collectionName])
 
   return useMemo(
     () => Object.values(entities).filter((u) => ids?.includes(u.id)),
