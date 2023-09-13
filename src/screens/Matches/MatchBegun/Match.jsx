@@ -36,7 +36,7 @@ const Match = ({ match }) => {
   return (
     match.display && (
       <button
-        className="rounded-xl border w-full p-2 gap-4 max-w-lg text-gray-800 bg-white space-y-2"
+        className="rounded-xl border w-full p-2 gap-4 max-w-lg text-gray-800 bg-white space-y-2 hover:bg-gray-100"
         onClick={() => navigate(`/matches/${match.id}`)}
       >
         <div className="flex justify-center items-center">
