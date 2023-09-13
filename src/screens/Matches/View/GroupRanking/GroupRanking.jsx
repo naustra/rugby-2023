@@ -84,10 +84,12 @@ const GroupRanking = ({ name, opponents, match }) => {
                       placement="top"
                       enterTouchDelay={0}
                     >
-                      {`- ${
-                        Math.abs(ScoreA - bet.betTeamA) +
-                        Math.abs(ScoreB - bet.betTeamB)
-                      }`}
+                      {bet.pointsWon > 0
+                        ? `- ${
+                            Math.abs(ScoreA - bet.betTeamA) +
+                            Math.abs(ScoreB - bet.betTeamB)
+                          }`
+                        : '-'}
                     </Tooltip>
                   </TableCell>
                   <TableCell
