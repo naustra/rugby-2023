@@ -5,7 +5,7 @@ import isEmpty from 'lodash/isEmpty'
 import { Suspense, useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useGroupsForUserMember } from '../../../hooks/groups'
-import GroupRanking from './GroupRanking'
+import GroupMatchDetails from './GroupMatchDetails'
 import './ranking.scss'
 import { useAllOpponents } from '../../../hooks/opponents'
 import { useMatch } from 'hooks/matches'
@@ -74,7 +74,7 @@ const Details = () => {
           </AppBar>
           <div className="ranking-container">
             {!isEmpty(groups) && selectedTab === 0 ? (
-              <GroupRanking
+              <GroupMatchDetails
                 {...{
                   name: 'Général',
                   opponents: allOpponents,
@@ -82,7 +82,7 @@ const Details = () => {
                 }}
               />
             ) : (
-              <GroupRanking
+              <GroupMatchDetails
                 {...groups[selectedTab - 1]?.data()}
                 match={match}
                 opponents={allOpponents.filter((opponent) =>

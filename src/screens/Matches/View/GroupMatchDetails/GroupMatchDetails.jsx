@@ -11,11 +11,11 @@ import PropTypes from 'prop-types'
 import { useMemo } from 'react'
 import { useAuth } from 'reactfire'
 import InlineAvatar from 'components/Avatar'
-import './GroupRanking.scss'
+import './GroupMatchDetails.scss'
 import { TableHead } from '@mui/material'
 import { useBetsFromGame } from 'hooks/bets'
 
-const GroupRanking = ({ name, opponents, match }) => {
+const GroupMatchDetails = ({ name, opponents, match }) => {
   const { uid } = useAuth().currentUser
   const membersIds = opponents?.map((opponent) => opponent.data().uid)
 
@@ -109,10 +109,10 @@ const GroupRanking = ({ name, opponents, match }) => {
   )
 }
 
-GroupRanking.propTypes = {
+GroupMatchDetails.propTypes = {
   name: PropTypes.string.isRequired,
   members: PropTypes.arrayOf(PropTypes.string).isRequired,
   selection: PropTypes.number,
 }
 
-export default GroupRanking
+export default GroupMatchDetails
