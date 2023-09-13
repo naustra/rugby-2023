@@ -10,7 +10,7 @@ import './ranking.scss'
 import { useAllOpponents } from '../../hooks/opponents'
 
 const Ranking = () => {
-  const [selectedTab, setSelectedTab] = useState(0)
+  const [selectedTab, setSelectedTab] = useState(1)
   const groups = useGroupsForUserMember()
   const handleTabChange = (event, value) => {
     setSelectedTab(value)
