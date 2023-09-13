@@ -60,8 +60,6 @@ const GroupRanking = ({ name, opponents, match }) => {
               )
               const user = userSnapshot?.data()
 
-              console.log(bet.uid === uid)
-
               return (
                 <TableRow
                   key={betSnapshot.id}

@@ -40,7 +40,6 @@ const Matches = () => {
   }, [urlParams])
 
   const matches = useMatches()
-  console.log('🚀 ~ file: Matches.jsx:39 ~ Matches ~ matches:', matches)
 
   const filteredMatches = useMemo(
     () =>
