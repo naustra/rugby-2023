@@ -12,7 +12,6 @@ const empty = {}
 
 const Match = ({ match }) => {
   const [currentBet] = useBet(match.id)
-  console.log('🚀 ~ file: Match.jsx:15 ~ Match ~ match.id:', match.id)
   const navigate = useNavigate()
 
   const teamA = useTeam(match.teamA)
@@ -24,6 +23,13 @@ const Match = ({ match }) => {
       : currentBet?.betTeamA > currentBet?.betTeamB
       ? match.odds.PA
       : currentBet?.betTeamA < currentBet?.betTeamB
+      ? match.odds.PB
+      : match.odds.PN
+
+  const winningOdd =
+    match.scores.A > match.scores.B
+      ? match.odds.PA
+      : match.scores.A < match.scores.B
       ? match.odds.PB
       : match.odds.PN
 
@@ -59,12 +65,16 @@ const Match = ({ match }) => {
           </div>
         </div>
         <Divider />
-        <div className="flex justify-between items-center">
-          <div className="flex flex-col items-center justify-center mt-1">
+        <div className="flex justify-between items-center gap-2 pt-1">
+          <div className="flex flex-col items-center justify-center">
             <p className="font-sans">Ma cote</p>
             <p className="font-sans">{myOdd ?? '-'}</p>
           </div>
-          <div className="flex flex-col items-center justify-center mt-1 m-auto">
+          <div className="flex flex-col items-center justify-center">
+            <p className="font-sans">Cote gagnante</p>
+            <p className="font-sans">{winningOdd}</p>
+          </div>
+          <div className="flex flex-col items-center justify-center m-auto">
             <p className="font-sans">Mon score</p>
             <p className="font-sans">{`${currentBet?.betTeamA ?? ''} - ${
               currentBet?.betTeamB ?? ''
