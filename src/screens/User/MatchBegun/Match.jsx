@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useBet, useBetFromUser } from '../../../hooks/bets'
+import { useBetFromUser } from '../../../hooks/bets'
 import { useTeam } from '../../../hooks/teams'
 import './Match.scss'
 import Flag from '../../../components/Flag'
