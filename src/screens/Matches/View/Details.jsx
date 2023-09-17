@@ -21,7 +21,7 @@ const Details = () => {
   const navigate = useNavigate()
   const [selectedTab, setSelectedTab] = useState(1)
   const groups = useGroupsForUserMember()
-  const handleTabChange = (event, value) => {
+  const handleTabChange = (_, value) => {
     setSelectedTab(value)
   }
   const match = useMatch(id)

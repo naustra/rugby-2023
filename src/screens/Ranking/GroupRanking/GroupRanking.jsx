@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography'
 import memoize from 'lodash/memoize'
 import orderBy from 'lodash/orderBy'
 import PropTypes from 'prop-types'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { useAuth } from 'reactfire'
 import forgotBetImgUrl from '../../../assets/icons/ForgotBet.png'
 import imgUrl from '../../../assets/icons/mask6.png'
@@ -18,6 +18,7 @@ import { useOpponents } from '../../../hooks/opponents'
 import { useTeams } from '../../../hooks/teams'
 import './GroupRanking.scss'
 import OwnRank from './OwnRank'
+import { useNavigate } from 'react-router-dom'
 
 export const imgUrlFlag = memoize((country) =>
   require(`../../../assets/flags/${country}.svg`),
@@ -26,6 +27,7 @@ export const imgUrlFlag = memoize((country) =>
 const GroupRanking = ({ name, members, opponentsProvided }) => {
   const { uid } = useAuth().currentUser
   const opponents = useOpponents(members)
+  const navigate = useNavigate()
 
   const opponentsUsed = opponentsProvided || opponents
 
@@ -60,6 +62,9 @@ const GroupRanking = ({ name, members, opponentsProvided }) => {
                 <TableRow
                   key={userSnapshot.id}
                   className={userSnapshot.id === uid ? 'own-ranking-row' : ''}
+                  onClick={() => {
+                    navigate(`/user/${userSnapshot.id}`)
+                  }}
                 >
                   <TableCell padding="none">
                     <Typography variant="overline">#{index + 1}</Typography>

@@ -34,6 +34,7 @@ import { useNotificationPermission } from '../../hooks/notifications'
 import FAQPage from '../FAQ'
 import GroupsPage from '../Groups'
 import HomePage from '../HomePage'
+import UserPage from '../User'
 import MatchesPage from '../Matches'
 import NotFoundPage from '../NotFoundPage'
 import NotificationHandler from '../Notifications/NotificationHandler'
@@ -154,6 +155,7 @@ const App = ({ beforeInstallPrompt }) => {
               <>
                 {/* Routes accessibles avec connexion */}
                 <Route path="/matches/*" element={<MatchesPage />} />
+                <Route path="/user/*" element={<UserPage />} />
                 <Route path="/ranking" element={<RankingPage />} />
                 <Route path="/groups" element={<GroupsPage />} />
                 <Route path="/profile" element={<Profile />} />

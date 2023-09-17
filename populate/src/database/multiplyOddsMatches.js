@@ -14,7 +14,12 @@ if (!factorMultiplicator) {
 
 // Iterate through all matches
 const multiplyOddsMatches = async () => {
-  const matches = await admin.firestore().collection('matches').get()
+  const now = new Date()
+  const matches = await admin
+    .firestore()
+    .collection('matches')
+    .where('datetime', '>', now)
+    .get()
 
   for (const match of matches.docs) {
     const oddsUnibet = match.data().oddsUnibet

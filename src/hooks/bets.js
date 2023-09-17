@@ -22,6 +22,14 @@ export const useBetsFromGame = (matchId) => {
   return useFirestoreCollectionData(matchesQuery, { idField: 'id' }).data
 }
 
+export const useBetFromUser = (matchId, uid) => {
+  const firestore = useFirestore()
+  const betsCollection = collection(firestore, 'bets')
+  const documentRef = doc(betsCollection, `${matchId}_${uid}`)
+
+  return [useFirestoreDocData(documentRef).data]
+}
+
 export const useBet = (matchId) => {
   const {
     data: { uid },
