@@ -7,14 +7,21 @@ import { useMatches } from '../../hooks/matches'
 import MatchBegun from './MatchBegun'
 import './User.scss'
 import { AppBar, Tab, Tabs } from '@mui/material'
+import InlineAvatar from 'components/Avatar/Avatar'
+import { useOpponent } from 'hooks/opponents'
+import { useParams } from 'react-router-dom'
 
 const User = () => {
+  const { id } = useParams()
   const [comparingDate, setComparingDate] = useState(Date.now())
+  const opponent = useOpponent(id)
 
   useEffect(() => {
     const handle = setInterval(() => setComparingDate(Date.now()), 5000)
     return clearInterval(handle)
   })
+
+  const user = opponent.data()
 
   const matches = useMatches()
 
@@ -27,13 +34,12 @@ const User = () => {
     .reverse()
 
   const LaunchBetDate = new Date(useCompetitionData().launchBet.seconds * 1000)
-  console.log('🚀 ~ file: User.jsx:31 ~ User ~ LaunchBetDate:', LaunchBetDate)
 
   return isPast(LaunchBetDate) ? (
     <>
       <AppBar position="fixed" className="matches-tab-bar" color="secondary">
         <Tabs centered textColor="inherit" value={0}>
-          <Tab label="En cours / Terminé" />
+          <InlineAvatar {...user} />
         </Tabs>
       </AppBar>
       <div className="matches-container">
