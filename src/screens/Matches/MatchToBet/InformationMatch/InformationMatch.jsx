@@ -6,16 +6,16 @@ import './InformationMatch.scss'
 const getPhaseText = (phase) =>
   ({
     0: 'Côtes normales',
-    8: 'Côtes augmentées de 65%',
-    4: 'Côtes augmentées de 250%',
-    2: 'Côtes augmentées de 360%',
-    1: 'Côtes augmentées de 560%',
+    4: 'Côtes multipliées par 2',
+    3: 'Côtes multipliées par 6',
+    2: 'Côtes multipliées par 4',
+    1: 'Côtes multipliées par 8',
   }[phase])
 
 const getPhaseAff = (phase) =>
   ({
-    8: '8eme',
     4: '4rts',
+    3: '3eme place',
     2: 'Demi',
     1: 'Fin.',
   }[phase])
