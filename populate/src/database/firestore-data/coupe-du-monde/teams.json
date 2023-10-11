@@ -2,7 +2,7 @@
    "teams": {
       "-0agys2jsljwl7s7x32j": {
          "code": "uy",
-         "elimination": false,
+         "elimination": true,
          "group": "A",
          "name": "Uruguay",
          "winOdd": 660000,
@@ -10,7 +10,7 @@
       },
       "-15vkjrz347bb8661p2c": {
          "code": "au",
-         "elimination": false,
+         "elimination": true,
          "group": "C",
          "name": "Australie",
          "winOdd": 2640,
@@ -18,7 +18,7 @@
       },
       "-3z1ybtzkm6dtyr0qv8z": {
          "code": "ws",
-         "elimination": false,
+         "elimination": true,
          "group": "D",
          "name": "Samoa",
          "winOdd": 110000,
@@ -50,7 +50,7 @@
       },
       "-b91330v345czod558y0": {
          "code": "pt",
-         "elimination": false,
+         "elimination": true,
          "group": "C",
          "name": "Portugal",
          "winOdd": 660000,
@@ -66,7 +66,7 @@
       },
       "-j862kl0yi0nfmngb1n8": {
          "code": "it",
-         "elimination": false,
+         "elimination": true,
          "group": "A",
          "name": "Italie",
          "unveiled": false,
@@ -75,7 +75,7 @@
       },
       "-j9p716y3qazwd6f4m0d": {
          "code": "cl",
-         "elimination": false,
+         "elimination": true,
          "group": "D",
          "name": "Chili",
          "winOdd": 660000,
@@ -99,7 +99,7 @@
       },
       "-lt7n3kpgzmfj487029j": {
          "code": "jp",
-         "elimination": false,
+         "elimination": true,
          "group": "D",
          "name": "Japon",
          "winOdd": 66000,
@@ -107,7 +107,7 @@
       },
       "-oxh3a2vosqcx68ssmmd": {
          "code": "ro",
-         "elimination": false,
+         "elimination": true,
          "group": "B",
          "name": "Roumanie",
          "winOdd": 660000,
@@ -115,7 +115,7 @@
       },
       "-p80u4yp27pe0yq1m8nc": {
          "code": "na",
-         "elimination": false,
+         "elimination": true,
          "group": "A",
          "name": "Namibie",
          "winOdd": 660000,
@@ -123,7 +123,7 @@
       },
       "-s01yam76lu79pjuwxq0": {
          "code": "ge",
-         "elimination": false,
+         "elimination": true,
          "group": "C",
          "name": "Géorgie",
          "winOdd": 165000,
@@ -140,7 +140,7 @@
       },
       "-v69orwwy1vzwzi1gd7s": {
          "code": "to",
-         "elimination": false,
+         "elimination": true,
          "group": "B",
          "name": "Tonga",
          "winOdd": 110000,
@@ -148,7 +148,7 @@
       },
       "-vo7g4zwoqc3ra4sxmxn": {
          "code": "gb-sct",
-         "elimination": false,
+         "elimination": true,
          "group": "B",
          "name": "Écosse",
          "winOdd": 11000,
