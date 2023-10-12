@@ -15,7 +15,7 @@ const facteurMultiplicateurPhase = {
   4: 2,
   2: 4,
   3: 6,
-  1: 8,
+  1: 10,
 }
 
 const Match = ({ match }) => {
