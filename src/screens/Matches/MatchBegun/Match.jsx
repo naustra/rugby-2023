@@ -10,6 +10,14 @@ import { useNavigate } from 'react-router-dom'
 
 const empty = {}
 
+const facteurMultiplicateurPhase = {
+  0: 1,
+  4: 2,
+  2: 4,
+  3: 6,
+  1: 8,
+}
+
 const Match = ({ match }) => {
   const [currentBet] = useBet(match.id)
   const navigate = useNavigate()
@@ -73,6 +81,12 @@ const Match = ({ match }) => {
           <div className="flex flex-col items-center justify-center">
             <p className="font-sans">Cote gagnante</p>
             <p className="font-sans">{winningOdd}</p>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <p className="font-sans">Multiplication</p>
+            <p className="font-sans">
+              {`x ${facteurMultiplicateurPhase[match.phase]}`}
+            </p>
           </div>
           <div className="flex flex-col items-center justify-center m-auto">
             <p className="font-sans">Mon score</p>

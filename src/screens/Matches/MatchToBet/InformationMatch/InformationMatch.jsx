@@ -14,10 +14,10 @@ const getPhaseText = (phase) =>
 
 const getPhaseAff = (phase) =>
   ({
-    4: '4rts',
-    3: '3eme place',
-    2: 'Demi',
-    1: 'Fin.',
+    4: '4rts (Points x2)',
+    3: '3eme place (Points x6)',
+    2: 'Demi (Points x4)',
+    1: 'Fin. (Points x8)',
   }[phase])
 
 const InformationMatch = ({ phase, group }) => {
