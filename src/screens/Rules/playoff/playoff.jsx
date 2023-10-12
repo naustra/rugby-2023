@@ -9,9 +9,7 @@ const Playoff = () => (
       <p>
         Le fonctionnement des paris à partir de ce niveau de la compétition est
         identique à celui de la phase de groupe, à un détail près, la côte du
-        match nul d'existe plus. Pour gérer les très rares exceptions des tirs
-        au buts, en cas de victoire aux tirs au buts, cela sera décompté comme
-        une victoire avec un seul point d'avance.
+        match nul s'applique uniquement pour les tirs au buts.
       </p>
     </div>
     <div>

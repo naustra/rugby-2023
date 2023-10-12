@@ -5,11 +5,11 @@ import './InformationMatch.scss'
 // https://docs.google.com/spreadsheets/d/1ZioOtyCblJtJf0WAaRxVWmnibqOeC7eDcJYDVEYRqng/edit?usp=sharing
 const getPhaseText = (phase) =>
   ({
-    0: 'Côtes normales',
-    4: 'Côtes multipliées par 2',
-    3: 'Côtes multipliées par 6',
-    2: 'Côtes multipliées par 4',
-    1: 'Côtes multipliées par 8',
+    0: 'Points par défaut (x1)',
+    4: 'Points multipliées par 2',
+    3: 'Points multipliées par 6',
+    2: 'Points multipliées par 4',
+    1: 'Points multipliées par 8',
   }[phase])
 
 const getPhaseAff = (phase) =>
