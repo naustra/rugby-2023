@@ -9,12 +9,7 @@ import GroupMatchDetails from './GroupMatchDetails'
 import './Details.scss'
 import { useAllOpponents } from '../../../hooks/opponents'
 import { useMatch } from 'hooks/matches'
-import { memoize } from 'lodash'
 import MatchBegun from '../MatchBegun'
-
-export const imgUrlFlag = memoize((country) =>
-  require(`../../../assets/flags/${country}.svg`),
-)
 
 const Details = () => {
   const { id } = useParams()

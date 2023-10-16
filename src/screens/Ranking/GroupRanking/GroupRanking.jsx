@@ -19,6 +19,7 @@ import { useTeams } from '../../../hooks/teams'
 import './GroupRanking.scss'
 import OwnRank from './OwnRank'
 import { useNavigate } from 'react-router-dom'
+import Flag from 'components/Flag'
 
 export const imgUrlFlag = memoize((country) =>
   require(`../../../assets/flags/${country}.svg`),
@@ -62,14 +63,16 @@ const GroupRanking = ({ name, members, opponentsProvided }) => {
                 <TableRow
                   key={userSnapshot.id}
                   className={userSnapshot.id === uid ? 'own-ranking-row' : ''}
-                  onClick={() => {
-                    navigate(`/user/${userSnapshot.id}`)
-                  }}
                 >
                   <TableCell padding="none">
                     <Typography variant="overline">#{index + 1}</Typography>
                   </TableCell>
-                  <TableCell padding="normal">
+                  <TableCell
+                    padding="normal"
+                    onClick={() => {
+                      navigate(`/user/${userSnapshot.id}`)
+                    }}
+                  >
                     <InlineAvatar {...user} />
                   </TableCell>
                   <TableCell padding="none">
@@ -78,29 +81,22 @@ const GroupRanking = ({ name, members, opponentsProvided }) => {
                   <TableCell padding="normal">
                     {team ? (
                       team.elimination ? (
-                        <Tooltip
-                          title="Vainqueur final éliminé"
-                          placement="top"
-                          enterTouchDelay={0}
-                        >
-                          <img
-                            src={imgUrlFlag(team.code).default}
-                            alt={team.code}
-                            className="bet-winner-beaten"
-                          />
-                        </Tooltip>
+                        <Flag
+                          tooltipText={
+                            'Vainqueur final éliminé : ' + team.className
+                          }
+                          country={team.code}
+                          style={{ width: '40px', height: '40px' }}
+                        ></Flag>
                       ) : team.unveiled ? (
-                        <Tooltip
-                          title={'Gains en cas de victoire : ' + team.winOdd}
-                          placement="top"
-                          enterTouchDelay={0}
-                        >
-                          <img
-                            src={imgUrlFlag(team.code).default}
-                            alt={team.code}
-                            className="bet-winner-unveiled"
-                          />
-                        </Tooltip>
+                        <Flag
+                          tooltipText={
+                            'Gains en cas de victoire : ' + team.winOdd
+                          }
+                          country={team.code}
+                          style={{ width: '40px', height: '40px' }}
+                          className="bet-winner-unveiled"
+                        ></Flag>
                       ) : (
                         <Tooltip
                           title="Vainqueur final mystère"
