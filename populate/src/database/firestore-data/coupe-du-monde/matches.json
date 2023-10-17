@@ -1088,6 +1088,32 @@
          "teamB": "-oxh3a2vosqcx68ssmmd",
          "ville": "Lille"
       },
+      "Y7eB6Gf72nTsRnqiyYEJ": {
+         "dateTime": {
+            "_nanoseconds": 0,
+            "_seconds": 1696705200
+         },
+         "display": true,
+         "odds": {
+            "PA": 129,
+            "PB": 583,
+            "PN": 3410
+         },
+         "oddsUnibet": {
+            "PA": 15.8,
+            "PB": 26.5,
+            "PN": 18.2
+         },
+         "phase": "0",
+         "scores": {
+            "A": 36,
+            "B": 14
+         },
+         "streaming": "TF1",
+         "teamA": "-4oa75ucoei2xqcmcw55",
+         "teamB": "-vo7g4zwoqc3ra4sxmxn",
+         "ville": "Saint-Denis"
+      },
       "Y7eB6Gf72nTsRnqiyYEK": {
          "dateTime": {
             "_nanoseconds": 0,
@@ -1197,6 +1223,58 @@
          },
          "streaming": "TF1",
          "teamA": "-b3j145tij1hqfzo5d0h",
+         "teamB": "-yl5u7zxd06dh7ii6aln",
+         "ville": "Saint-Denis"
+      },
+      "Y7eB6Gf72nTsRnqiyYEP": {
+         "dateTime": {
+            "_nanoseconds": 74000000,
+            "_seconds": 1697828400
+         },
+         "display": true,
+         "finished": false,
+         "idApiRugby": "43566",
+         "odds": {
+            "PA": 1110,
+            "PB": 120,
+            "PN": 4950
+         },
+         "oddsUnibet": {
+            "PA": "10",
+            "PB": "45",
+            "PN": "1.09"
+         },
+         "phase": "2",
+         "scores": {
+         },
+         "streaming": "TF1",
+         "teamA": "-kv10juhy4xip6e0lsmn",
+         "teamB": "-ea5m9rzcr63k8j7brxs",
+         "ville": "Saint-Denis"
+      },
+      "Y7eB6Gf72nTsRnqiyYEQ": {
+         "dateTime": {
+            "_nanoseconds": 131000000,
+            "_seconds": 1697914800
+         },
+         "display": true,
+         "finished": false,
+         "idApiRugby": "43567",
+         "odds": {
+            "PA": 647,
+            "PB": 127,
+            "PN": 3850
+         },
+         "oddsUnibet": {
+            "PA": "5.88",
+            "PB": "1.15",
+            "PN": "35"
+         },
+         "phase": "2",
+         "scores": {
+         },
+         "streaming": "TF1",
+         "teamA": "-tbgtcmmvw8bwex4piti",
          "teamB": "-yl5u7zxd06dh7ii6aln",
          "ville": "Saint-Denis"
       }
