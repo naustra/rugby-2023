@@ -26,7 +26,7 @@
       },
       "-4oa75ucoei2xqcmcw55": {
          "code": "ie",
-         "elimination": false,
+         "elimination": true,
          "group": "B",
          "name": "Irlande",
          "winOdd": 1210,
@@ -34,7 +34,7 @@
       },
       "-5ltshzo1rqw0av6x5i8": {
          "code": "gb-wls",
-         "elimination": false,
+         "elimination": true,
          "group": "C",
          "name": "Galles",
          "winOdd": 11000,
@@ -42,7 +42,7 @@
       },
       "-b3j145tij1hqfzo5d0h": {
          "code": "fr",
-         "elimination": false,
+         "elimination": true,
          "group": "A",
          "name": "France",
          "winOdd": 935,
@@ -83,7 +83,7 @@
       },
       "-koy8srrsgmrirzki1f8": {
          "code": "fj",
-         "elimination": false,
+         "elimination": true,
          "group": "C",
          "name": "Fidji",
          "winOdd": 22000,
