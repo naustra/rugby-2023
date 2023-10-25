@@ -61,6 +61,7 @@
          "elimination": false,
          "group": "A",
          "name": "N. Zélande",
+         "unveiled": true,
          "winOdd": 880,
          "winOddUnibet": 4
       },
@@ -91,7 +92,7 @@
       },
       "-kv10juhy4xip6e0lsmn": {
          "code": "ar",
-         "elimination": false,
+         "elimination": true,
          "group": "D",
          "name": "Argentine",
          "winOdd": 5500,
@@ -131,7 +132,7 @@
       },
       "-tbgtcmmvw8bwex4piti": {
          "code": "gb-eng",
-         "elimination": false,
+         "elimination": true,
          "group": "D",
          "name": "Angleterre",
          "unveiled": true,
@@ -159,6 +160,7 @@
          "elimination": false,
          "group": "B",
          "name": "Af. du Sud",
+         "unveiled": true,
          "winOdd": 990,
          "winOddUnibet": 4.5
       }

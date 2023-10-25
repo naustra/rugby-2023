@@ -1232,7 +1232,7 @@
             "_seconds": 1697828400
          },
          "display": true,
-         "finished": false,
+         "finished": true,
          "idApiRugby": "43566",
          "odds": {
             "PA": 1110,
@@ -1246,6 +1246,8 @@
          },
          "phase": "2",
          "scores": {
+            "A": 6,
+            "B": 44
          },
          "streaming": "TF1",
          "teamA": "-kv10juhy4xip6e0lsmn",
@@ -1272,6 +1274,8 @@
          },
          "phase": "2",
          "scores": {
+            "A": 15,
+            "B": 16
          },
          "streaming": "TF1",
          "teamA": "-tbgtcmmvw8bwex4piti",
