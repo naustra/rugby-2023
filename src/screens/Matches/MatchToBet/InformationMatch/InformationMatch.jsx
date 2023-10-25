@@ -9,7 +9,7 @@ const getPhaseText = (phase) =>
     4: 'Points multipliées par 2',
     3: 'Points multipliées par 6',
     2: 'Points multipliées par 4',
-    1: 'Points multipliées par 8',
+    1: 'Points multipliées par 10',
   }[phase])
 
 const getPhaseAff = (phase) =>
@@ -17,7 +17,7 @@ const getPhaseAff = (phase) =>
     4: '4rts (Points x2)',
     3: '3eme place (Points x6)',
     2: 'Demi (Points x4)',
-    1: 'Fin. (Points x8)',
+    1: 'Fin. (Points x10)',
   }[phase])
 
 const InformationMatch = ({ phase, group }) => {

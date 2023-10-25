@@ -1228,7 +1228,7 @@
       },
       "Y7eB6Gf72nTsRnqiyYEP": {
          "dateTime": {
-            "_nanoseconds": 74000000,
+            "_nanoseconds": 0,
             "_seconds": 1697828400
          },
          "display": true,
@@ -1256,7 +1256,7 @@
       },
       "Y7eB6Gf72nTsRnqiyYEQ": {
          "dateTime": {
-            "_nanoseconds": 131000000,
+            "_nanoseconds": 0,
             "_seconds": 1697914800
          },
          "display": true,
@@ -1279,6 +1279,58 @@
          },
          "streaming": "TF1",
          "teamA": "-tbgtcmmvw8bwex4piti",
+         "teamB": "-yl5u7zxd06dh7ii6aln",
+         "ville": "Saint-Denis"
+      },
+      "Y7eB6Gf72nTsRnqiyYEX": {
+         "dateTime": {
+            "_nanoseconds": 426000000,
+            "_seconds": 1698433200
+         },
+         "display": true,
+         "finished": false,
+         "idApiRugby": "43598",
+         "odds": {
+            "PA": 374,
+            "PB": 150,
+            "PN": 3300
+         },
+         "oddsUnibet": {
+            "PA": "3.4",
+            "PB": "1.36",
+            "PN": "30"
+         },
+         "phase": "3",
+         "scores": {
+         },
+         "streaming": "TF1",
+         "teamA": "-yl5u7zxd06dh7ii6aln",
+         "teamB": "-tbgtcmmvw8bwex4piti",
+         "ville": "Saint-Denis"
+      },
+      "Y7eB6Gf72nTsRnqiyYEY": {
+         "dateTime": {
+            "_nanoseconds": 412000000,
+            "_seconds": 1698519600
+         },
+         "display": true,
+         "finished": false,
+         "idApiRugby": "43599",
+         "odds": {
+            "PA": 198,
+            "PB": 242,
+            "PN": 2200
+         },
+         "oddsUnibet": {
+            "PA": "1.8",
+            "PB": "2.2",
+            "PN": "20"
+         },
+         "phase": "1",
+         "scores": {
+         },
+         "streaming": "TF1",
+         "teamA": "-ea5m9rzcr63k8j7brxs",
          "teamB": "-yl5u7zxd06dh7ii6aln",
          "ville": "Saint-Denis"
       }
